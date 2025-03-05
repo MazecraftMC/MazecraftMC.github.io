@@ -121,8 +121,8 @@ h1 {
 
 .header {
     width: 100%;
-    padding: 1rem 2rem;
-    background-color: rgba(0, 0, 0, 0.4);  /* Black with 40% opacity */
+    padding: 0.5rem 1rem;
+    background-color: rgba(0, 0, 0, 0.5);/* Black with 40% opacity */
     position: fixed;
     top: 0;
     left: 0;
@@ -155,7 +155,7 @@ h1 {
     height: 36px;
     padding: 0 1.2rem;
     background: rgba(88, 101, 242, 0.15);
-    border: 1px solid rgba(88, 101, 242, 0.3);
+    border: 1px solid rgba(109, 121, 255, 0.3);
     border-radius: 4px;
     color: rgba(255, 255, 255, 0.9);
     text-decoration: none;
