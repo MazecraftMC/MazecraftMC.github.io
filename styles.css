@@ -63,12 +63,12 @@ h1 {
 }
 
 .join-button {
-    padding: 0.75rem 2rem;  /* Reduced from 1rem to 0.75rem */
+    padding: 0.57rem 1.9rem;  /* Reduced from 1rem to 0.75rem */
     font-size: 1.3rem;
     
-    background: linear-gradient(to bottom, #ff8c00, #ff4500);
+    background: linear-gradient(to bottom, #ff1100, #ff4500);
     border: none;
-    border-radius: 8px;
+    border-radius: 2px;
     color: white;
     cursor: pointer;
     font-family: 'Minecraft', Arial, sans-serif;
