@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Store - Mazecraft Network</title>
+    <style>
+        @font-face {
+            font-family: 'Minecraft';
+            src: url('../fonts/Minecraft.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        body {
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #1a1a1a;
+            font-family: 'Minecraft', 'Montserrat', sans-serif;
+            overflow: hidden;
+        }
+
+        #particles-js {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            background: #1a1a1a;
+        }
+
+        #particles-js canvas {
+            background: linear-gradient(180deg, 
+                rgba(0, 132, 255, 0.2) 0%,
+                rgba(0, 132, 255, 0) 100%);
+        }
+
+        .content {
+            position: relative;
+            z-index: 2;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        .coming-soon {
+            font-size: 5rem;
+            font-weight: normal;
+            color: #fff;
+            text-transform: uppercase;
+            text-align: center;
+            animation: glow 2s ease-in-out infinite alternate;
+            text-shadow: 0 0 10px #0084ff,
+                         0 0 20px #0084ff,
+                         0 0 30px #0084ff;
+            letter-spacing: 2px;
+        }
+
+        @keyframes glow {
+            from {
+                transform: scale(1);
+                opacity: 1;
+            }
+            to {
+                transform: scale(1.1);
+                opacity: 0.8;
+            }
+        }
+
+        .subtitle {
+            position: absolute;
+            bottom: 20%;
+            color: #888;
+            font-size: 1.5rem;
+            text-align: center;
+            animation: fade 2s ease-in-out infinite alternate;
+            font-family: 'Minecraft', 'Montserrat', sans-serif;
+            letter-spacing: 1px;
+        }
+
+        @keyframes fade {
+            from {
+                opacity: 0.5;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="particles-js"></div>
+    <div class="content">
+        <div class="coming-soon">Coming Soon</div>
+        <div class="subtitle">© 2025 Mazecraft Network & Mazecraft Studios</div>
+    </div>
+
+    <!-- Add particles.js library -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script>
+        particlesJS('particles-js', {
+            particles: {
+                number: {
+                    value: 80,
+                    density: {
+                        enable: true,
+                        value_area: 800
+                    }
+                },
+                color: {
+                    value: '#0084ff'
+                },
+                shape: {
+                    type: 'circle'
+                },
+                opacity: {
+                    value: 0.5,
+                    random: false
+                },
+                size: {
+                    value: 3,
+                    random: true
+                },
+                line_linked: {
+                    enable: true,
+                    distance: 150,
+                    color: '#0084ff',
+                    opacity: {
+                        value: 0.4,
+                        anim: {
+                            enable: true,
+                            speed: 1,
+                            opacity_min: 0.1
+                        }
+                    },
+                    width: 1
+                },
+                move: {
+                    enable: true,
+                    speed: 2,
+                    direction: 'none',
+                    random: false,
+                    straight: false,
+                    out_mode: 'out',
+                    bounce: false
+                }
+            },
+            interactivity: {
+                detect_on: 'canvas',
+                events: {
+                    onhover: {
+                        enable: true,
+                        mode: 'grab'
+                    },
+                    onclick: {
+                        enable: true,
+                        mode: 'push'
+                    },
+                    resize: true
+                }
+            },
+            retina_detect: true
+        });
+    </script>
+</body>
+</html>

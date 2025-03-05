@@ -1,2 +1,1 @@
-# MazecraftMC.github.io
-Just a test website
+# mazecraftnet.github.io

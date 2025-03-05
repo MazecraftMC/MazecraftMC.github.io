@@ -1,3 +1,322 @@
-<html>
-    hello
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Home - Mazecraft Network</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <div class="logo">
+            <img src="images/logo.svg" alt="Mazecraft Logo" class="logo-image">
+        </div>
+        <nav class="nav-menu">
+            <a href="pages/store.html" class="nav-button">Store</a>
+            <a href="pages/docs.html" class="nav-button">Docs</a>
+            <a href="map/map.html" class="nav-button">Map</a>
+            <a href="pages/downloads.html" class="nav-button">Downloads</a>
+        </nav>
+        <div class="sidebar-toggle" onclick="toggleSidebar()">
+            <span class="sidebar-icon">☰</span>
+        </div>
+        <div class="sidebar">
+            <div class="sidebar-header">
+                
+                <span class="close-sidebar" onclick="toggleSidebar()">×</span>
+            </div>
+            <nav class="sidebar-nav">
+                <a href="pages/store.html" class="sidebar-link">Store</a>
+                <a href="pages/docs.html" class="sidebar-link">Docs</a>
+                <a href="map/map.html" class="sidebar-link">Map</a>
+                <a href="pages/downloads.html" class="sidebar-link">Downloads</a>
+            </nav>
+        </div>
+    </header>
+    <div class="hero-container">
+        <h1 class="hero-text">Welcome to Mazecraft Network</h1>
+        <p class="hero-subtitle">Your Ultimate Minecraft Adventure Awaits</p>
+        <button class="join-button" onclick="copyServerIP()">Join Now</button>
+    </div>
+
+    <section class="about-section">
+        <div class="container">
+            <h2 class="section-title">About Us</h2>
+            <p class="section-text">
+                Welcome to Mazecraft Network, where creativity meets adventure! Our server 
+                offers unique gameplay experiences, friendly community, and endless 
+                possibilities for Minecraft enthusiasts.
+            </p>
+        </div>
+    </section>
+
+    <section class="team-section">
+        <div class="container">
+            <h2 class="section-title">Our Team</h2>
+            <div class="team-grid">
+                <!-- First Team Member -->
+                <div class="team-member">
+                    <div class="member-image">
+                        <img src="images/team.png" alt="Team Member 1">
+                    </div>
+                    <h3 class="member-name">Pixelis0P</h3>
+                    <p class="member-role">Founder</p>
+                    <p class="discord-id">Discord: #Pixel9421</p>
+                </div>
+
+                <!-- Second Team Member -->
+                <div class="team-member">
+                    <div class="member-image">
+                        <img src="images/team.png" alt="Team Member 2">
+                    </div>
+                    <h3 class="member-name">Pixelis0P</h3>
+                    <p class="member-role">Administrator</p>
+                    <p class="discord-id">Discord: #Pixel9421</p>
+                </div>
+
+                <!-- Third Team Member -->
+                <div class="team-member">
+                    <div class="member-image">
+                        <img src="images/team.png" alt="Team Member 3">
+                    </div>
+                    <h3 class="member-name">Pixelis0P</h3>
+                    <p class="member-role">Moderator</p>
+                    <p class="discord-id">Discord: #Pixel9421</p>
+                </div>
+
+                <!-- Fourth Team Member -->
+                <div class="team-member">
+                    <div class="member-image">
+                        <img src="images/team.png" alt="Team Member 4">
+                    </div>
+                    <h3 class="member-name">Pixelis0P</h3>
+                    <p class="member-role">Helper</p>
+                    <p class="discord-id">Discord: #Pixel9421</p>
+                </div>
+
+                <!-- Fifth Team Member -->
+                <div class="team-member">
+                    <div class="member-image">
+                        <img src="images/team.png" alt="Team Member 5">
+                    </div>
+                    <h3 class="member-name">Pixelis0P</h3>
+                    <p class="member-role">Helper</p>
+                    <p class="discord-id">Discord: #Pixel9421</p>
+                </div>
+
+                <!-- Sixth Team Member -->
+                <div class="team-member">
+                    <div class="member-image">
+                        <img src="images/team.png" alt="Team Member 6">
+                    </div>
+                    <h3 class="member-name">Pixelis0P</h3>
+                    <p class="member-role">Helper</p>
+                    <p class="discord-id">Discord: #Pixel9421</p>
+                </div>
+
+                <!-- Seventh Team Member -->
+                <div class="team-member">
+                    <div class="member-image">
+                        <img src="images/team.png" alt="Team Member 7">
+                    </div>
+                    <h3 class="member-name">Pixelis0P</h3>
+                    <p class="member-role">Helper</p>
+                    <p class="discord-id">Discord: #Pixel9421</p>
+                </div>
+
+                <!-- Eighth Team Member -->
+                <div class="team-member">
+                    <div class="member-image">
+                        <img src="images/team.png" alt="Team Member 8">
+                    </div>
+                    <h3 class="member-name">Pixelis0P</h3>
+                    <p class="member-role">Helper</p>
+                    <p class="discord-id">Discord: #Pixel9421</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="gamemodes-header">
+        <div class="container">
+            <h2 class="section-title">Our Gamemodes</h2>
+            <p class="section-text">
+                Discover unique worlds and adventures across our diverse game modes.
+            </p>
+        </div>
+    </section>
+
+
+    <section class="realms-section">
+        <div class="container">
+            <div class="realms-content">
+                <div class="realms-image">
+                    <img src="images/wanderlight.png" alt="Wanderlight SMP" class="realm-logo glow-effect">
+                </div>
+                <div class="realms-text">
+                    <h2 class="section-title">Wanderlight SMP</h2>
+                    <p class="section-text">
+                        Embark on an epic adventure through a world where ancient secrets, mythical creatures, and untamed landscapes come to life. Wanderlight Realms blends immersive exploration, challenging battles, and vibrant biomes to create a captivating fantasy experience.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="realms-section weaponworks">
+        <div class="container">
+            <div class="realms-content reverse">
+                <div class="realms-text">
+                    <h2 class="section-title">Unlimited Weaponworks</h2>
+                    <p class="section-text">
+                        Command, create, and conquer with Create Weaponworks! This Create-powered modpack invites you to unleash your engineering prowess in a world where warfare meets intricate contraptions. Build tanks, deploy powerful cannons, craft advanced technologies, and lead your forces to victory in Minecraft’s most innovative war simulation.
+                    </p>
+                </div>
+                <div class="realms-image">
+                    <img src="images/weaponworks.png" alt="Weaponworks" class="realm-logo glow-effect">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="realms-section">
+        <div class="container">
+            <div class="realms-content">
+                <div class="realms-image">
+                    <img src="images/industrial.png" alt="Industrial Horizons" class="realm-logo glow-effect">
+                </div>
+                <div class="realms-text">
+                    <h2 class="section-title">Industrial Horizons</h2>
+                    <p class="section-text">
+                        Unleash your creativity and dominate automation with Industrial Horizons! This Create-powered modpack lets you dive into a world where engineering meets imagination. From automating everything to mining everything, and even embarking on an interplanetary journey, the possibilities are endless.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="realms-section tournaments">
+        <div class="container">
+            <div class="realms-content reverse">
+                <div class="realms-text">
+                    <h2 class="section-title">Tournaments</h2>
+                    <p class="section-text">
+                        Coming Soon!
+                    </p>
+                    <div class="slideshow-container">
+                        <div class="slides fade">
+                            <img src="images/slide1.png" alt="Tournament 1">
+                        </div>
+                        <div class="slides fade">
+                            <img src="images/slide2.png" alt="Tournament 2">
+                        </div>
+                        <div class="slides fade">
+                            <img src="images/slide3.png" alt="Tournament 3">
+                        </div>
+                        <div class="slides fade">
+                            <img src="images/slide4.png" alt="Tournament 4">
+                        </div>
+                        <div class="slides fade">
+                            <img src="images/slide5.png" alt="Tournament 5">
+                        </div>
+                        <div class="slides fade">
+                            <img src="images/slide6.png" alt="Tournament 6">
+                        </div>
+                        <div class="slides fade">
+                            <img src="images/slide7.png" alt="Tournament 7">
+                        </div>
+                    </div>
+                    <div class="dots-container">
+                        <span class="dot" onclick="currentSlide(1)"></span>
+                        <span class="dot" onclick="currentSlide(2)"></span>
+                        <span class="dot" onclick="currentSlide(3)"></span>
+                        <span class="dot" onclick="currentSlide(4)"></span>
+                        <span class="dot" onclick="currentSlide(5)"></span>
+                        <span class="dot" onclick="currentSlide(6)"></span>
+                        <span class="dot" onclick="currentSlide(7)"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="discord-section">
+    <div class="container">
+        <h2 class="section-title">Join Our Community</h2>
+        <div class="discord-content">
+            <div class="discord-text">
+                <p class="section-text">
+                    Join our vibrant Discord community! Connect with fellow players, 
+                    participate in events, get server updates, and become part of our 
+                    growing family. Our community is built on respect, creativity, and 
+                    the love for Minecraft.
+                </p>
+                <a href="https://discord.gg/your-invite" class="discord-join-button">
+                    Join Us
+                </a>
+            </div>
+            <div class="discord-widget">
+                <iframe 
+                    src="https://discord.com/widget?id=1332989818975551550&theme=dark" 
+                    width="350" 
+                    height="500" 
+                    allowtransparency="true" 
+                    frameborder="0" 
+                    style="background-color: transparent;"
+                    sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts">
+                </iframe>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <section class="socials-section">
+    <div class="container">
+        <h2 class="section-title">Our Socials</h2>
+        <p class="section-text">Make sure to follow us on our socials</p>
+        <div class="social-buttons">
+            <a href="https://youtube.com/@MazecraftNetwork" class="social-button youtube">
+                <img src="images/socials/youtube.svg" alt="YouTube">
+                YouTube
+            </a>
+            <a href="https://discord.gg/your-invite" class="social-button discord">
+                <img src="images/socials/discord.svg" alt="Discord">
+                Discord
+            </a>
+            <a href="https://twitter.com/MazecraftNet" class="social-button twitter">
+                <img src="images/socials/x.svg" alt="Twitter">
+                Twitter
+            </a>
+            <a href="https://bsky.app/profile/mazecraft.bsky.social" class="social-button bluesky">
+                <img src="images/socials/bluesky.svg" alt="Bluesky">
+                Bluesky
+            </a>
+        </div>
+    </div>
+</section>
+
+    <footer class="footer">
+        <p class="footer-text">Made with hate by Pixel:)</p>
+        <p class="footer-copyright">© 2025 Mazecraft Network & Mazecraft Studios. All Rights Reserved.</p>
+    </footer>
+    <script>
+        function copyServerIP() {
+            const serverIP = "mc.mazecraft.fun"; // Replace with your actual server IP
+            navigator.clipboard.writeText(serverIP).then(() => {
+                alert("Server IP copied to clipboard!");
+            }).catch(err => {
+                console.error('Failed to copy:', err);
+            });
+        }
+
+        function toggleMenu() {
+            const navMenu = document.querySelector('.nav-menu');
+            navMenu.classList.toggle('active');
+        }
+    </script>
+    <script src="script.js"></script>
+</body>
 </html>
