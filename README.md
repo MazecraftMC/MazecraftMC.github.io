@@ -1,1 +1,1 @@
-# mazecraftnet.github.io
+# mazecraftmc.github.io
