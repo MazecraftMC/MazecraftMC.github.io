@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Store - Coming Soon</title>
+    <link rel="icon" href="../images/icon.svg" type="image/icon type">
     <style>
         @font-face {
             font-family: 'Minecraft';
@@ -12,8 +13,8 @@
 
         body {
             margin: 0;
-            padding: 0;
-            height: 100vh;
+            padding: 20px;
+            min-height: 100vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -25,6 +26,7 @@
             color: white;
             font-family: 'Minecraft', Arial, sans-serif;
             position: relative;
+            text-align: center;
         }
 
         body::before {
@@ -55,26 +57,27 @@
         }
 
         .logo {
-            width: 500px;  /* Increased from 200px */
+            width: 80%;
+            max-width: 500px;
             margin-bottom: 2rem;
             animation: fadeIn 1s ease-out;
         }
 
         h1 {
-            font-size: 5rem;  /* Increased from 3rem */
+            font-size: clamp(2.5rem, 10vw, 5rem);
             margin-bottom: 1rem;
             font-family: 'Minecraft', Arial, sans-serif;
-            text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.5);  /* Added drop shadow */
+            text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.5);
             animation: fadeIn 1s ease-out 0.2s;
             opacity: 0;
             animation-fill-mode: forwards;
         }
 
         p {
-            font-size: 2rem;  /* Increased from 1.2rem */
+            font-size: clamp(1.2rem, 5vw, 2rem);
             margin-bottom: 2rem;
             font-family: 'Minecraft', Arial, sans-serif;
-            text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5);  /* Added drop shadow */
+            text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5);
             animation: fadeIn 1s ease-out 0.4s;
             opacity: 0;
             animation-fill-mode: forwards;
@@ -90,10 +93,24 @@
             animation: fadeIn 1s ease-out 0.6s;
             opacity: 0;
             animation-fill-mode: forwards;
+            font-size: clamp(1rem, 3vw, 1.2rem);
         }
 
         .back-button:hover {
             background-color: #000000CC;
+        }
+
+        @media (max-height: 500px) {
+            .logo {
+                margin-bottom: 1rem;
+                max-width: 300px;
+            }
+            h1 {
+                margin-bottom: 0.5rem;
+            }
+            p {
+                margin-bottom: 1rem;
+            }
         }
     </style>
 </head>
