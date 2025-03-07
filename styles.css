@@ -346,50 +346,139 @@ h1 {
 
 .realms-section {
     padding: 4rem 0;
+    position: relative;
+    overflow: hidden;
     background-color: rgba(0, 0, 0, 0.7);
+}
+
+.wanderlith {
+    position: relative;
+    z-index: 1;
+}
+
+.weaponworks {
+    position: relative;
+    z-index: 1;
 }
 
 .realms-content {
     display: flex;
     align-items: center;
-    gap: 3rem;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 1rem;
+    gap: 4rem;
+    position: relative;
+    padding: 2rem;  /* Added padding for better spacing */
+    border-radius: 8px;  /* Optional: adds rounded corners */
+}
+
+.realms-content.reverse {
+    flex-direction: row-reverse;
 }
 
 .realms-image {
-    flex: 0 0 256px;
+    flex: 0 0 40%; /* Changed from flex: 1 to control width better */
+    position: relative;
+    max-width: 400px; /* Add maximum width */
+    margin: 0 auto; /* Center the image container */
 }
 
 .realm-logo {
-    width: 256px;
-    height: 256px;
-    object-fit: cover;
-    border-radius: 8px;
-    box-shadow: 0 0 20px rgba(88, 101, 242, 0.3);
+    max-width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.realm-logo:hover {
+    transform: scale(1.05);
 }
 
 .realms-text {
     flex: 1;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.realm-features {
+    list-style: none;
+    padding: 0;
+    margin-top: 1.5rem;
+}
+
+.realm-features li {
+    padding: 0.5rem 0;
+    padding-left: 2rem;
+    position: relative;
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.realm-features li::before {
+    content: '⚔';
+    position: absolute;
+    left: 0;
+    color: #FFE4A3;
+}
+
+.glow-effect {
+    filter: drop-shadow(0 0 8px rgba(255, 228, 163, 0.3));
 }
 
 @media (max-width: 768px) {
     .realms-content {
         flex-direction: column;
+        gap: 2rem;
         text-align: center;
+        padding: 1.5rem;
+        margin: 0 1rem; /* Add some margin on mobile */
+    }
+    
+    .realms-content.reverse {
+        flex-direction: column;
+    }
+    
+    .realm-features li {
+        text-align: left;
+    }
+
+    .realms-content {
+        flex-direction: column;
+        gap: 2rem;
+        padding: 1.5rem;
     }
 
     .realms-content.reverse {
         flex-direction: column;
     }
 
-    .realms-image {
-        margin: 20px 0;
+    .realms-content.reverse .realms-image {
+        order: -1; /* This forces the image to always appear before text in mobile */
     }
 
-    .realm-logo {
-        max-width: 200px;
+    .realms-image {
+        flex: 0 0 auto;
+        width: 80%; /* Make image smaller on mobile */
+        max-width: 300px; /* Limit maximum width on mobile */
+    }
+
+    .realms-text {
+        text-align: center;
+    }
+
+    .realm-features {
+        display: inline-block;
+        text-align: left;
+        margin: 0 auto;
+    }
+}
+
+@media (max-width: 480px) {
+    .realms-image {
+        width: 90%;
+        max-width: 250px;
+    }
+
+    .realms-content {
+        padding: 1rem;
+        gap: 1.5rem;
     }
 }
 
@@ -596,23 +685,19 @@ h1 {
 }
 
 .social-button.youtube {
-    background: linear-gradient(to bottom, #ff0000, #cc0000);
-    box-shadow: 0 4px 8px rgba(255, 0, 0, 0.3);
+    background: #00000025;
 }
 
 .social-button.discord {
-    background: linear-gradient(to bottom, #5865F2, #4752C4);
-    box-shadow: 0 4px 8px rgba(88, 101, 242, 0.3);
+    background: #00000025;
 }
 
 .social-button.twitter {
-    background: linear-gradient(to bottom, #1DA1F2, #0D95E8);
-    box-shadow: 0 4px 8px rgba(29, 161, 242, 0.3);
+    background: #00000025;
 }
 
 .social-button.bluesky {
-    background: linear-gradient(to bottom, #0085FF, #0066CC);
-    box-shadow: 0 4px 8px rgba(0, 133, 255, 0.3);
+    background: #00000025;
 }
 
 @media (max-width: 768px) {
@@ -867,3 +952,125 @@ h1 {
         opacity: 0;
     }
 }
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.animate {
+    opacity: 0;
+    animation: fadeInUp 0.6s ease forwards;
+}
+
+.delay-1 {
+    animation-delay: 0.2s;
+}
+
+.delay-2 {
+    animation-delay: 0.4s;
+}
+
+.delay-3 {
+    animation-delay: 0.6s;
+}
+
+.firefly {
+    position: fixed;
+    pointer-events: none;
+    width: 4px;
+    height: 4px;
+    background: #FFE4A3;
+    border-radius: 50%;
+    filter: blur(1px);
+    animation: firefly-float var(--duration) ease-in-out infinite;
+    opacity: 0;
+    z-index: 1000;
+    box-shadow: 0 0 4px #FFE4A3,
+                0 0 8px #FFE4A3;
+}
+
+@keyframes firefly-float {
+    0%, 100% {
+        transform: translate(0, 0);
+        opacity: 0;
+    }
+    10%, 90% {
+        opacity: var(--opacity);
+    }
+    50% {
+        transform: translate(
+            calc(var(--move-x) * 1px),
+            calc(var(--move-y) * 1px)
+        );
+        opacity: var(--opacity);
+    }
+}
+
+.ambient-orb {
+    position: fixed;
+    pointer-events: none;
+    border-radius: 50%;
+    filter: blur(8px);
+    opacity: 0;
+    z-index: -1;
+    background: radial-gradient(circle at center, rgba(255, 255, 255, 0.15), transparent 70%);
+    animation: orbFloat var(--float-duration) ease-in-out infinite;
+}
+
+@keyframes orbFloat {
+    0% {
+        opacity: 0;
+        transform: translate(var(--start-x), var(--start-y)) scale(0.8);
+    }
+    20%, 80% {
+        opacity: var(--orb-opacity);
+    }
+    100% {
+        opacity: 0;
+        transform: translate(var(--end-x), var(--end-y)) scale(1.2);
+    }
+}
+
+.fade-in-section {
+    opacity: 0;
+    transform: translateY(20vh);
+    visibility: hidden;
+    transition: opacity 1.2s ease-out, transform 1.2s ease-out;
+    will-change: opacity, visibility;
+}
+
+.fade-in-section.is-visible {
+    opacity: 1;
+    transform: none;
+    visibility: visible;
+}
+
+.stagger-item {
+    opacity: 0;
+    animation: none;
+}
+
+.stagger-item.is-visible {
+    animation: fadeInUp 0.6s ease-out forwards;
+}
+
+.stagger-delay-1 { animation-delay: 0.2s; }
+.stagger-delay-2 { animation-delay: 0.4s; }
+.stagger-delay-3 { animation-delay: 0.6s; }
+.stagger-delay-4 { animation-delay: 0.8s; }
