@@ -16,7 +16,7 @@
 }
 
 body {
-    background-image: url('images/background.webp');
+    background-image: url('images/bg.webp');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -122,7 +122,7 @@ h1 {
 .header {
     width: 100%;
     padding: 0.5rem 1rem;
-    background-color: rgba(0, 0, 0, 0.5);/* Black with 40% opacity */
+    background-color: #00000080;/* Black with 40% opacity */
     position: fixed;
     top: 0;
     left: 0;
@@ -230,7 +230,7 @@ h1 {
         top: 60px;
         left: 0;
         width: 100%;
-        background: rgba(0, 0, 0, 0.95);
+        background: #000000f2;
         flex-direction: column;
         align-items: center;
         padding: 20px 0;
@@ -844,5 +844,26 @@ h1 {
 
     .footer-text, .footer-copyright {
         font-size: 0.9rem;
+    }
+}
+
+.particle {
+    position: fixed;
+    pointer-events: none;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.8) 0%, rgba(255, 255, 255, 0) 100%);
+    width: 4px;
+    height: 4px;
+    z-index: 9999;
+    animation: float 3s ease-in infinite;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0) translateX(0);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-100px) translateX(var(--move-x, 0));
+        opacity: 0;
     }
 }

@@ -37,9 +37,13 @@
 </head>
 
 <body>
+    <button onclick="goBack()" class="back-button">Back</button>
     <div id="map"></div>
 
     <script type="text/javascript">
+        function goBack() {
+            window.history.back();
+        }
 
         if (UnminedCustomMarkers && UnminedCustomMarkers.isEnabled && UnminedCustomMarkers.markers) {
             UnminedMapProperties.markers = UnminedMapProperties.markers.concat(UnminedCustomMarkers.markers);
@@ -51,8 +55,6 @@
 
         const mapElement = document.getElementById('map');
         const unmined = new Unmined(mapElement, UnminedMapProperties, UnminedRegions);
-
-
     </script>
 </body>
 
