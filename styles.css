@@ -412,7 +412,7 @@ h1 {
 }
 
 .realm-features li::before {
-    content: '⚔';
+    content: '*';
     position: absolute;
     left: 0;
     color: #FFE4A3;
