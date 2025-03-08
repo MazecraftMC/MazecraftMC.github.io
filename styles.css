@@ -47,22 +47,15 @@ body {
     object-fit: cover;
 }
 
-/@media (max-width: 768px) {
-    /* Remove this line that was hiding the video on mobile */
-    /* #background-video {
-        display: none;
-    } */
-    
+/* Add this fallback style for mobile devices or where video might not play well */
+@media (max-width: 768px) {
     #background-video {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
+        display: none;
     }
     
-    /* Keep the fallback image in case video fails */
+    /* Keep the current background image as fallback */
     body {
         background-image: url('images/bg.webp');
-        background-size: cover;
     }
 }
 
