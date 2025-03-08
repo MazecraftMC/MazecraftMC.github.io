@@ -16,13 +16,54 @@
 }
 
 body {
-    background-image: url('images/bg.webp');
+    
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     background-attachment: fixed;
     min-height: 100vh;
     font-family: 'Minecraft', Arial, sans-serif;
+}
+
+.video-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -2;
+    overflow: hidden;
+}
+
+#background-video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    transform: translateX(-50%) translateY(-50%);
+    object-fit: cover;
+}
+
+/@media (max-width: 768px) {
+    /* Remove this line that was hiding the video on mobile */
+    /* #background-video {
+        display: none;
+    } */
+    
+    #background-video {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    
+    /* Keep the fallback image in case video fails */
+    body {
+        background-image: url('images/bg.webp');
+        background-size: cover;
+    }
 }
 
 .container {
