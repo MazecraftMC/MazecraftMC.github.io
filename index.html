@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MazecraftMC Network - Premium Minecraft Server</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="resources/images/favicon.ico" type="image/x-icon">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo">
+                <img src="resources/images/mazecraft.png" alt="MazecraftMC">
+            </a>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="pages/store.html">Store</a></li>
+                <li><a href="pages/map.html">Map</a></li>
+                <li><a href="pages/downloads.html">Download</a></li>
+                <li><a href="pages/forums.html">Forums</a></li>
+                <li><a href="pages/docs.html">Docs</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <img src="resources/images/mazecraft.png" alt="MazecraftMC Network" class="hero-logo">
+        <p class="hero-subtitle">Where Adventure Begins</p>
+        
+        <div class="server-ip-container">
+            <div class="server-ip-label">Server IP</div>
+            <div class="server-ip-box">
+                <input type="text" class="server-ip" value="play.mazecraftmc.fun" readonly>
+                <button class="copy-btn" onclick="copyServerIP()" title="Copy Server IP">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gamemodes Section -->
+    <section class="section gamemodes">
+        <h2 class="section-title">Game Modes</h2>
+        
+        <div class="gamemode">
+            <div class="gamemode-content">
+                <h3>Survival</h3>
+                <p>Experience the ultimate survival challenge in our custom-crafted world. Build, explore, and survive in a community-driven environment with enhanced gameplay mechanics. Our survival world features custom terrain generation, unique biomes, and player-driven economy systems.</p>
+                <p>Join forces with other players to create magnificent builds, establish trading networks, and compete in seasonal events. Whether you're a casual builder or hardcore survivalist, our Survival world has something for everyone.</p>
+            </div>
+            <div class="gamemode-image">
+                <img src="resources/images/slide5.webp" alt="Survival Gamemode">
+            </div>
+        </div>
+
+        <div class="gamemode reverse">
+            <div class="gamemode-content">
+                <h3>Coming Soon</h3>
+                <p>We're working hard to bring you exciting new game modes that will revolutionize your Minecraft experience. From creative building competitions to PvP arenas, adventure maps to mini-games - the future of MazecraftMC is bright!</p>
+                <p>Stay tuned for announcements about our upcoming features. Join our Discord community to be the first to know about new releases, beta testing opportunities, and exclusive previews.</p>
+            </div>
+            <div class="gamemode-image">
+                <img src="resources/images/slide3.webp" alt="Coming Soon">
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section class="section team">
+        <h2 class="section-title">Meet Our Team</h2>
+        <div class="team-grid">
+            <div class="team-card">
+                <img src="resources/images/team.png" alt="MazeBuilder" class="team-avatar">
+                <h4>MazeBuilder</h4>
+                <div class="role">Server Owner & Developer</div>
+                <div class="contact"><strong>Discord:</strong> MazeBuilder#1234</div>
+                <div class="contact"><strong>Email:</strong> admin@mazecraftmc.fun</div>
+            </div>
+            
+            <div class="team-card">
+                <img src="resources/images/team.png" alt="CraftMaster" class="team-avatar">
+                <h4>CraftMaster</h4>
+                <div class="role">Head Moderator</div>
+                <div class="contact"><strong>Discord:</strong> CraftMaster#5678</div>
+                <div class="contact"><strong>Email:</strong> mod@mazecraftmc.fun</div>
+            </div>
+            
+            <div class="team-card">
+                <img src="resources/images/team.png" alt="PixelGuardian" class="team-avatar">
+                <h4>PixelGuardian</h4>
+                <div class="role">Community Manager</div>
+                <div class="contact"><strong>Discord:</strong> PixelGuardian#9012</div>
+                <div class="contact"><strong>Email:</strong> community@mazecraftmc.fun</div>
+            </div>
+            
+            <div class="team-card">
+                <img src="resources/images/team.png" alt="BlockWizard" class="team-avatar">
+                <h4>BlockWizard</h4>
+                <div class="role">Builder & Designer</div>
+                <div class="contact"><strong>Discord:</strong> BlockWizard#3456</div>
+                <div class="contact"><strong>Email:</strong> builds@mazecraftmc.fun</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Discord Section -->
+    <section class="section discord">
+        <h2 class="section-title">Join Our Community</h2>
+        <div class="discord-content">
+            <p>Connect with fellow players, get support, participate in events, and stay updated with the latest news from MazecraftMC Network. Our Discord community is the heart of our server!</p>
+            <p>Get exclusive access to server announcements, participate in building contests, and chat with our friendly community members 24/7.</p>
+            <a href="https://discord.gg/mazecraftmc" class="btn" target="_blank">Join Discord</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-top">
+                <div class="footer-section">
+                    <h3>MazecraftMC Network</h3>
+                    <p>The ultimate Minecraft server experience. Join thousands of players in our community-driven survival world with custom features and endless possibilities.</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <div class="footer-links">
+                        <a href="#home">Home</a>
+                        <a href="pages/store.html">Store</a>
+                        <a href="pages/map.html">Server Map</a>
+                        <a href="pages/downloads.html">Downloads</a>
+                        <a href="pages/forums.html">Forums</a>
+                        <a href="pages/docs.html">Documentation</a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Community</h3>
+                    <div class="footer-links">
+                        <a href="https://discord.gg/mazecraftmc" target="_blank">Discord Server</a>
+                        <a href="https://youtube.com/@mazecraftmc" target="_blank">YouTube Channel</a>
+                        <a href="https://bsky.app/profile/mazecraftmc" target="_blank">Bluesky</a>
+                        <a href="#">Support Center</a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Server Info</h3>
+                    <div class="footer-links">
+                        <a href="#">Server Rules</a>
+                        <a href="#">Player Statistics</a>
+                        <a href="#">Leaderboards</a>
+                        <a href="#">Vote for Server</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="social-links">
+                <a href="https://discord.gg/mazecraftmc" class="social-link" target="_blank">
+                    <img src="resources/images/discord.svg" alt="Discord">
+                </a>
+                <a href="https://youtube.com/@mazecraftmc" class="social-link" target="_blank">
+                    <img src="resources/images/youtube.svg" alt="YouTube">
+                </a>
+                <a href="https://bsky.app/profile/mazecraftmc" class="social-link" target="_blank">
+                    <img src="resources/images/bluesky.svg" alt="Bluesky">
+                </a>
+            </div>
+            
+            <div class="footer-bottom">
+                <div class="footer-text">
+                    <div class="made-with-love">Made with ❤️ by PixelMCN & MCN Team</div>
+                    <div class="copyright">&copy; 2025 MazecraftMC Network. All rights reserved.</div>
+                    <div class="disclaimer">Not affiliated with Mojang Studios or Minecraft. Minecraft is a trademark of Mojang Studios.</div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="scripts.js"></script>
+</body>
+</html>
