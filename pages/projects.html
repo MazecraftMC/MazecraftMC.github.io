@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Downloads - MazecraftMC Network</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="icon" href="../resources/images/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+    <style>
+        .downloads-header {
+            padding: 120px 20px 60px;
+            text-align: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .downloads-header h1 {
+            font-size: 3rem;
+            margin-bottom: 15px;
+            color: var(--pure-white);
+        }
+
+        .downloads-header p {
+            font-size: 1.2rem;
+            color: var(--light-gray);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .repos-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px 80px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .loading {
+            text-align: center;
+            padding: 60px 20px;
+            color: var(--light-gray);
+        }
+
+        .loading i {
+            font-size: 3rem;
+            color: var(--pastel-orange);
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .repo-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 30px;
+        }
+
+        .repo-card {
+            background: var(--secondary-black);
+            border-radius: 12px;
+            padding: 25px;
+            border: 1px solid rgba(255, 25, 0, 0.1);
+            transition: all 0.3s ease;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        .repo-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 10px 30px rgba(255, 25, 0, 0.2);
+            border-color: rgba(255, 25, 0, 0.3);
+        }
+
+        .repo-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+            gap: 12px;
+        }
+
+        .repo-icon {
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 25, 0, 0.1);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--pastel-orange);
+            font-size: 1.2rem;
+            flex-shrink: 0;
+        }
+
+        .repo-name {
+            font-size: 1.3rem;
+            color: var(--pure-white);
+            margin: 0;
+            font-weight: 600;
+            flex: 1;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+
+        .repo-description {
+            color: var(--light-gray);
+            margin-bottom: 20px;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            min-height: 44px;
+        }
+
+        .repo-stats {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+
+        .repo-stat {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            color: var(--light-gray);
+            font-size: 0.9rem;
+        }
+
+        .repo-stat i {
+            color: var(--pastel-orange);
+        }
+
+        .language-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: rgba(255, 25, 0, 0.1);
+            padding: 4px 12px;
+            border-radius: 12px;
+            font-size: 0.85rem;
+            color: var(--pastel-orange);
+        }
+
+        .language-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: var(--pastel-orange);
+        }
+
+        .repo-actions {
+            display: flex;
+            gap: 10px;
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .repo-btn {
+            flex: 1;
+            padding: 10px 16px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: all 0.2s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        .repo-btn-primary {
+            background: var(--pastel-orange);
+            color: white;
+            border: 1px solid var(--pastel-orange);
+        }
+
+        .repo-btn-primary:hover {
+            background: #ff3319;
+            transform: translateY(-2px);
+        }
+
+        .repo-btn-secondary {
+            background: rgba(255, 25, 0, 0.1);
+            color: var(--pastel-orange);
+            border: 1px solid rgba(255, 25, 0, 0.3);
+        }
+
+        .repo-btn-secondary:hover {
+            background: rgba(255, 25, 0, 0.2);
+            transform: translateY(-2px);
+        }
+
+        .error-message {
+            text-align: center;
+            padding: 60px 20px;
+            color: var(--light-gray);
+        }
+
+        .error-message i {
+            font-size: 3rem;
+            color: var(--pastel-orange);
+            margin-bottom: 20px;
+        }
+
+        @media (max-width: 768px) {
+            .downloads-header h1 {
+                font-size: 2rem;
+            }
+
+            .downloads-header p {
+                font-size: 1rem;
+            }
+
+            .repo-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .repo-actions {
+                flex-direction: column;
+            }
+
+            .repo-btn {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="../index.html" class="logo">
+                <img src="../resources/images/mazecraft.png" alt="MazecraftMC">
+            </a>
+            <ul class="nav-links">
+                <li><a href="../index.html#home">Home</a></li>
+                <li><a href="store.html">Store</a></li>
+                <li><a href="map.html">Map</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="forums.html">Forums</a></li>
+                <li><a href="docs.html">Docs</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Downloads Header -->
+    <section class="downloads-header">
+        <h1>GitHub Repositories</h1>
+        <p>Explore our open-source projects, mods, plugins, and resources</p>
+    </section>
+
+    <!-- Loading State -->
+    <div id="loading" class="loading">
+        <i class="fas fa-spinner"></i>
+        <p>Loading repositories...</p>
+    </div>
+
+    <!-- Repositories Container -->
+    <div id="repos-container" class="repos-container" style="display: none;">
+        <div id="repo-grid" class="repo-grid"></div>
+    </div>
+
+    <!-- Error Message -->
+    <div id="error-message" class="error-message" style="display: none;">
+        <i class="fas fa-exclamation-triangle"></i>
+        <h2>Unable to Load Repositories</h2>
+        <p>Please check back later or visit our <a href="https://github.com/MazecraftMC" target="_blank" style="color: var(--pastel-orange);">GitHub page</a> directly.</p>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-top">
+            <div class="footer-section">
+                <h3>MazecraftMC Network</h3>
+                <p>The ultimate Minecraft server experience with custom gamemodes and an amazing community.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                    <li><a href="../index.html#gamemodes">Gamemodes</a></li>
+                    <li><a href="../index.html#team">Team</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Connect</h4>
+                <p>Server: play.mazecraftmc.fun</p>
+                <p>Email: support@mazecraftmc.fun</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>Made with ❤️ by PixelMCN & MCN Team</p>
+            <p>&copy; 2024 MazecraftMC Network. All rights reserved.</p>
+            <p class="disclaimer">Disclaimer: MazecraftMC is not affiliated with Mojang Studios or Microsoft Corporation.</p>
+        </div>
+    </footer>
+
+    <script>
+        // GitHub API Configuration
+        const GITHUB_USERNAME = 'PixelMCN'; // Change this to your GitHub username/organization
+
+        // Fetch repositories from GitHub
+        async function fetchRepositories() {
+            try {
+                const response = await fetch(`https://api.github.com/users/${GITHUB_USERNAME}/repos?sort=updated&per_page=12`);
+                
+                if (!response.ok) {
+                    throw new Error('Failed to fetch repositories');
+                }
+                
+                const repos = await response.json();
+                displayRepositories(repos);
+            } catch (error) {
+                console.error('Error fetching repositories:', error);
+                showError();
+            }
+        }
+
+        // Fetch commit count for a repository
+        async function fetchCommitCount(owner, repo) {
+            try {
+                const response = await fetch(`https://api.github.com/repos/${owner}/${repo}/commits?per_page=1`);
+                const linkHeader = response.headers.get('Link');
+                
+                if (linkHeader) {
+                    const match = linkHeader.match(/page=(\d+)>; rel="last"/);
+                    return match ? parseInt(match[1]) : 1;
+                }
+                
+                const commits = await response.json();
+                return commits.length;
+            } catch (error) {
+                return 0;
+            }
+        }
+
+        // Display repositories
+        async function displayRepositories(repos) {
+            const loading = document.getElementById('loading');
+            const container = document.getElementById('repos-container');
+            const grid = document.getElementById('repo-grid');
+
+            if (repos.length === 0) {
+                showError();
+                return;
+            }
+
+            loading.style.display = 'none';
+            container.style.display = 'block';
+
+            for (const repo of repos) {
+                const commitCount = await fetchCommitCount(GITHUB_USERNAME, repo.name);
+                const card = createRepoCard(repo, commitCount);
+                grid.appendChild(card);
+            }
+
+            // Animate cards
+            anime({
+                targets: '.repo-card',
+                opacity: [0, 1],
+                translateY: [20, 0],
+                duration: 800,
+                delay: anime.stagger(100),
+                easing: 'easeOutExpo'
+            });
+        }
+
+        // Create repository card
+        function createRepoCard(repo, commitCount) {
+            const card = document.createElement('div');
+            card.className = 'repo-card';
+
+            const languageColor = getLanguageColor(repo.language);
+            const description = repo.description || 'No description available';
+            const stars = repo.stargazers_count || 0;
+            const forks = repo.forks_count || 0;
+
+            card.innerHTML = `
+                <div class="repo-header">
+                    <div class="repo-icon">
+                        <i class="fas fa-code-branch"></i>
+                    </div>
+                    <h3 class="repo-name" title="${repo.name}">${repo.name}</h3>
+                </div>
+                <p class="repo-description">${description}</p>
+                <div class="repo-stats">
+                    <div class="repo-stat">
+                        <i class="fas fa-star"></i>
+                        <span>${stars}</span>
+                    </div>
+                    <div class="repo-stat">
+                        <i class="fas fa-code-branch"></i>
+                        <span>${forks}</span>
+                    </div>
+                    <div class="repo-stat">
+                        <i class="fas fa-history"></i>
+                        <span>${commitCount} commits</span>
+                    </div>
+                </div>
+                ${repo.language ? `
+                <div class="language-badge">
+                    <span class="language-dot" style="background: ${languageColor}"></span>
+                    <span>${repo.language}</span>
+                </div>
+                ` : ''}
+                <div class="repo-actions">
+                    <a href="${repo.html_url}/releases/latest" target="_blank" class="repo-btn repo-btn-primary">
+                        <i class="fas fa-download"></i>
+                        Download
+                    </a>
+                    <a href="${repo.html_url}" target="_blank" class="repo-btn repo-btn-secondary">
+                        <i class="fab fa-github"></i>
+                        View on GitHub
+                    </a>
+                </div>
+            `;
+
+            return card;
+        }
+
+        // Get language color
+        function getLanguageColor(language) {
+            const colors = {
+                'JavaScript': '#f1e05a',
+                'TypeScript': '#2b7489',
+                'Python': '#3572A5',
+                'Java': '#b07219',
+                'HTML': '#e34c26',
+                'CSS': '#563d7c',
+                'PHP': '#4F5D95',
+                'Ruby': '#701516',
+                'Go': '#00ADD8',
+                'Rust': '#dea584',
+                'C++': '#f34b7d',
+                'C#': '#178600',
+                'Shell': '#89e051',
+                'Kotlin': '#F18E33',
+                'Swift': '#ffac45'
+            };
+            return colors[language] || '#FF1900';
+        }
+
+        // Show error message
+        function showError() {
+            document.getElementById('loading').style.display = 'none';
+            document.getElementById('error-message').style.display = 'block';
+        }
+
+        // Initialize page
+        document.addEventListener('DOMContentLoaded', () => {
+            // Page transition animation
+            anime({
+                targets: 'body',
+                opacity: [0, 1],
+                duration: 800,
+                easing: 'easeOutExpo'
+            });
+
+            // Animate header
+            anime({
+                targets: '.downloads-header h1',
+                translateY: [-30, 0],
+                opacity: [0, 1],
+                duration: 1000,
+                easing: 'easeOutExpo',
+                delay: 200
+            });
+
+            anime({
+                targets: '.downloads-header p',
+                translateY: [20, 0],
+                opacity: [0, 1],
+                duration: 800,
+                easing: 'easeOutExpo',
+                delay: 400
+            });
+
+            // Mobile menu toggle
+            const hamburger = document.querySelector('.hamburger');
+            const navLinks = document.querySelector('.nav-links');
+
+            hamburger.addEventListener('click', () => {
+                navLinks.classList.toggle('active');
+                hamburger.classList.toggle('active');
+            });
+
+            // Fetch repositories
+            fetchRepositories();
+        });
+    </script>
+</body>
+</html>

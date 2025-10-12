@@ -31,7 +31,7 @@ body {
     position: fixed;
     top: 0;
     width: 100%;
-    background: rgba(26, 26, 26, 0.95);
+    background: rgba(0, 0, 0, 0.103);
     backdrop-filter: blur(15px);
     z-index: 1000;
     padding: 15px 50px;
