@@ -1,0 +1,934 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Store - MazecraftMC Network</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="icon" href="../resources/images/favicon.ico" type="image/x-icon">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+    <style>
+        /* Navbar transition */
+        .navbar {
+            transition: transform 0.3s ease;
+        }
+
+        /* GitBook-style Store Layout */
+        .store-container {
+            display: flex;
+            min-height: 100vh;
+            background: var(--primary-black);
+            padding-top: 70px;
+        }
+
+        /* Sidebar Navigation */
+        .store-sidebar {
+            width: 280px;
+            background: var(--secondary-black);
+            border-right: 1px solid rgba(255, 25, 0, 0.2);
+            padding: 30px 0;
+            position: fixed;
+            height: calc(100vh - 70px);
+            overflow-y: auto;
+            z-index: 100;
+            transition: transform 0.3s ease;
+        }
+
+        .store-sidebar::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        .store-sidebar::-webkit-scrollbar-track {
+            background: var(--primary-black);
+        }
+
+        .store-sidebar::-webkit-scrollbar-thumb {
+            background: var(--pastel-orange);
+            border-radius: 3px;
+        }
+
+        .sidebar-header {
+            padding: 0 25px 20px;
+            border-bottom: 1px solid rgba(255, 25, 0, 0.2);
+            margin-bottom: 20px;
+        }
+
+        .sidebar-header h2 {
+            color: var(--pastel-orange);
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin: 0;
+        }
+
+        .sidebar-nav {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .sidebar-nav li {
+            margin: 0;
+        }
+
+        .sidebar-nav a {
+            display: flex;
+            align-items: center;
+            padding: 12px 25px;
+            color: var(--light-gray);
+            text-decoration: none;
+            transition: all 0.2s ease;
+            border-left: 3px solid transparent;
+            font-size: 0.95rem;
+            font-weight: 400;
+        }
+
+        .sidebar-nav a:hover {
+            background: rgba(255, 25, 0, 0.1);
+            color: var(--pure-white);
+            border-left-color: var(--pastel-orange);
+        }
+
+        .sidebar-nav a.active {
+            background: rgba(255, 25, 0, 0.15);
+            color: var(--pastel-orange);
+            border-left-color: var(--pastel-orange);
+            font-weight: 600;
+        }
+
+        .sidebar-nav a svg {
+            width: 20px;
+            height: 20px;
+            margin-right: 12px;
+            fill: currentColor;
+        }
+
+        /* Main Content Area */
+        .store-content {
+            flex: 1;
+            margin-left: 280px;
+            padding: 40px 50px;
+            max-width: 1400px;
+        }
+
+        .store-header {
+            margin-bottom: 40px;
+        }
+
+        .store-header h1 {
+            font-size: 2.5rem;
+            color: var(--pastel-orange);
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .store-header p {
+            color: var(--light-gray);
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+
+        /* Breadcrumb */
+        .breadcrumb {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 20px;
+            font-size: 0.9rem;
+            color: var(--light-gray);
+        }
+
+        .breadcrumb a {
+            color: var(--pastel-orange);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .breadcrumb a:hover {
+            color: var(--pure-white);
+        }
+
+        .breadcrumb span {
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        /* Product Grid */
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 25px;
+            margin-bottom: 50px;
+        }
+
+        .product-card {
+            background: var(--secondary-black);
+            border: 1px solid rgba(255, 25, 0, 0.2);
+            border-radius: 12px;
+            padding: 25px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .product-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--pastel-orange), transparent);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--pastel-orange);
+            box-shadow: 0 10px 30px rgba(255, 25, 0, 0.2);
+        }
+
+        .product-card:hover::before {
+            opacity: 1;
+        }
+
+        .product-icon {
+            width: 60px;
+            height: 60px;
+            background: rgba(255, 25, 0, 0.1);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 15px;
+        }
+
+        .product-icon svg {
+            width: 32px;
+            height: 32px;
+            fill: var(--pastel-orange);
+        }
+
+        .product-card h3 {
+            color: var(--pure-white);
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .product-card p {
+            color: var(--light-gray);
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin-bottom: 20px;
+            min-height: 60px;
+        }
+
+        .product-price {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-top: auto;
+        }
+
+        .price {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--pastel-orange);
+        }
+
+        .buy-btn {
+            background: var(--pastel-orange);
+            color: var(--pure-white);
+            border: none;
+            padding: 10px 20px;
+            border-radius: 6px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: 'Outfit', sans-serif;
+        }
+
+        .buy-btn:hover {
+            background: #FF3D00;
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(255, 25, 0, 0.4);
+        }
+
+        /* Category Sections */
+        .category-section {
+            margin-bottom: 60px;
+            scroll-margin-top: 100px;
+        }
+
+        .category-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid rgba(255, 25, 0, 0.3);
+        }
+
+        .category-header svg {
+            width: 32px;
+            height: 32px;
+            fill: var(--pastel-orange);
+        }
+
+        .category-header h2 {
+            font-size: 2rem;
+            color: var(--pastel-orange);
+            margin: 0;
+            font-weight: 700;
+        }
+
+        /* Mobile Menu Toggle */
+        .sidebar-toggle {
+            display: none;
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 56px;
+            height: 56px;
+            background: var(--pastel-orange);
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            z-index: 1001;
+            box-shadow: 0 4px 12px rgba(255, 25, 0, 0.4);
+            transition: all 0.3s ease;
+        }
+
+        .sidebar-toggle:hover {
+            transform: scale(1.1);
+        }
+
+        .sidebar-toggle svg {
+            width: 24px;
+            height: 24px;
+            fill: white;
+        }
+
+        /* Badge */
+        .badge {
+            display: inline-block;
+            padding: 4px 10px;
+            background: rgba(255, 25, 0, 0.2);
+            color: var(--pastel-orange);
+            border-radius: 4px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+        }
+
+        .badge.popular {
+            background: rgba(255, 215, 0, 0.2);
+            color: var(--golden-border);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .store-sidebar {
+                transform: translateX(-100%);
+            }
+
+            .store-sidebar.active {
+                transform: translateX(0);
+            }
+
+            .store-content {
+                margin-left: 0;
+                padding: 30px 20px;
+            }
+
+            .sidebar-toggle {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .product-grid {
+                grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+                gap: 20px;
+            }
+
+            .store-header h1 {
+                font-size: 2rem;
+            }
+
+            .category-header h2 {
+                font-size: 1.6rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .product-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .store-content {
+                padding: 20px 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="../index.html" class="logo">
+                <img src="../resources/images/mazecraft.png" alt="MazecraftMC">
+            </a>
+            <ul class="nav-links">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="store.html" class="active">Store</a></li>
+                <li><a href="map.html">Map</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="forums.html">Forums</a></li>
+                <li><a href="docs.html">Docs</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Store Container -->
+    <div class="store-container">
+        <!-- Sidebar -->
+        <aside class="store-sidebar" id="storeSidebar">
+            <div class="sidebar-header">
+                <h2>Store</h2>
+            </div>
+            <ul class="sidebar-nav">
+                <li><a href="#all" class="active">
+                    <svg viewBox="0 0 24 24"><path d="M3 13h8V3H3v10zm0 8h8v-6H3v6zm10 0h8V11h-8v10zm0-18v6h8V3h-8z"/></svg>
+                    All Items
+                </a></li>
+                <li><a href="#ranks">
+                    <svg viewBox="0 0 24 24"><path d="M12 2L4 5v6.09c0 5.05 3.41 9.76 8 10.91 4.59-1.15 8-5.86 8-10.91V5l-8-3zm-1 16h2v-2h-2v2zm0-4h2V7h-2v7z"/></svg>
+                    Ranks
+                </a></li>
+                <li><a href="#ruby">
+                    <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+                    Ruby Currency
+                </a></li>
+                <li><a href="#skyblock">
+                    <svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM9 17H7v-7h2v7zm4 0h-2V7h2v10zm4 0h-2v-4h2v4z"/></svg>
+                    Skyblock Gems
+                </a></li>
+                <li><a href="#companions">
+                    <svg viewBox="0 0 24 24"><path d="M8.5 5c-1.84 0-3.53.5-5 1.35C4.34 5.52 5.96 5 8.5 5zm8 0c2.54 0 4.16.52 5 1.35C20.03 5.5 18.34 5 16.5 5zM8.5 7C6.57 7 5 8.57 5 10.5S6.57 14 8.5 14s3.5-1.57 3.5-3.5S10.43 7 8.5 7zm8 0c-1.93 0-3.5 1.57-3.5 3.5s1.57 3.5 3.5 3.5 3.5-1.57 3.5-3.5S18.43 7 16.5 7zM8.5 9c.83 0 1.5.67 1.5 1.5S9.33 12 8.5 12 7 11.33 7 10.5 7.67 9 8.5 9zm8 0c.83 0 1.5.67 1.5 1.5s-.67 1.5-1.5 1.5-1.5-.67-1.5-1.5.67-1.5 1.5-1.5zM12 14c-2.33 0-7 1.17-7 3.5V19h14v-1.5c0-2.33-4.67-3.5-7-3.5z"/></svg>
+                    Companions
+                </a></li>
+                <li><a href="#boosters">
+                    <svg viewBox="0 0 24 24"><path d="M7 2v11h3v9l7-12h-4l4-8z"/></svg>
+                    Boosters
+                </a></li>
+            </ul>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="store-content">
+            <div class="breadcrumb">
+                <a href="../index.html">Home</a>
+                <span>/</span>
+                <span>Store</span>
+            </div>
+
+            <div class="store-header">
+                <h1>MazecraftMC Store</h1>
+                <p>Purchase ranks, currency, and exclusive items to enhance your gameplay experience. All purchases support server development and help us create better content for the community!</p>
+            </div>
+
+            <!-- Ranks Section -->
+            <section id="ranks" class="category-section">
+                <div class="category-header">
+                    <svg viewBox="0 0 24 24"><path d="M12 2L4 5v6.09c0 5.05 3.41 9.76 8 10.91 4.59-1.15 8-5.86 8-10.91V5l-8-3zm-1 16h2v-2h-2v2zm0-4h2V7h-2v7z"/></svg>
+                    <h2>Server Ranks</h2>
+                </div>
+                <div class="product-grid">
+                    <div class="product-card">
+                        <div class="product-icon">
+                            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        </div>
+                        <h3>VIP Rank</h3>
+                        <p>Get access to exclusive perks including colored chat, join full server, and 2 sethomes.</p>
+                        <div class="product-price">
+                            <span class="price">$4.99</span>
+                            <button class="buy-btn">Purchase</button>
+                        </div>
+                    </div>
+
+                    <div class="product-card">
+                        <span class="badge popular">Popular</span>
+                        <div class="product-icon">
+                            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        </div>
+                        <h3>VIP+ Rank</h3>
+                        <p>Enhanced VIP perks with access to /fly in survival, 5 sethomes, and exclusive kits.</p>
+                        <div class="product-price">
+                            <span class="price">$9.99</span>
+                            <button class="buy-btn">Purchase</button>
+                        </div>
+                    </div>
+
+                    <div class="product-card">
+                        <span class="badge">Best Value</span>
+                        <div class="product-icon">
+                            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        </div>
+                        <h3>MVP Rank</h3>
+                        <p>Premium rank with creative mode access, 10 sethomes, custom particle effects, and more!</p>
+                        <div class="product-price">
+                            <span class="price">$19.99</span>
+                            <button class="buy-btn">Purchase</button>
+                        </div>
+                    </div>
+
+                    <div class="product-card">
+                        <span class="badge">Ultimate</span>
+                        <div class="product-icon">
+                            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        </div>
+                        <h3>MVP++ Rank</h3>
+                        <p>Ultimate rank with all perks, exclusive cosmetics, priority support, and unique title.</p>
+                        <div class="product-price">
+                            <span class="price">$34.99</span>
+                            <button class="buy-btn">Purchase</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Ruby Currency Section -->
+            <section id="ruby" class="category-section">
+                <div class="category-header">
+                    <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+                    <h2>Ruby Currency</h2>
+                </div>
+                <div class="product-grid">
+                    <div class="product-card">
+                        <div class="product-icon">
+                            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        </div>
+                        <h3>1,000 Rubies</h3>
+                        <p>Perfect starter pack to get you going with essential items and upgrades.</p>
+                        <div class="product-price">
+                            <span class="price">$2.99</span>
+                            <button class="buy-btn">Purchase</button>
+                        </div>
+                    </div>
+
+                    <div class="product-card">
+                        <div class="product-icon">
+                            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        </div>
+                        <h3>5,000 Rubies</h3>
+                        <p>Popular choice for players who want substantial purchasing power.</p>
+                        <div class="product-price">
+                            <span class="price">$12.99</span>
+                            <button class="buy-btn">Purchase</button>
+                        </div>
+                    </div>
+
+                    <div class="product-card">
+                        <span class="badge popular">Best Deal</span>
+                        <div class="product-icon">
+                            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        </div>
+                        <h3>15,000 Rubies</h3>
+                        <p>Maximum value pack with bonus rubies included. Save 20%!</p>
+                        <div class="product-price">
+                            <span class="price">$29.99</span>
+                            <button class="buy-btn">Purchase</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Skyblock Gems Section -->
+            <section id="skyblock" class="category-section">
+                <div class="category-header">
+                    <svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM9 17H7v-7h2v7zm4 0h-2V7h2v10zm4 0h-2v-4h2v4z"/></svg>
+                    <h2>Skyblock Gems</h2>
+                </div>
+                <div class="product-grid">
+                    <div class="product-card">
+                        <div class="product-icon">
+                            <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/></svg>
+                        </div>
+                        <h3>500 Gems</h3>
+                        <p>Essential gems for quick island upgrades and basic purchases.</p>
+                        <div class="product-price">
+                            <span class="price">$3.99</span>
+                            <button class="buy-btn">Purchase</button>
+                        </div>
+                    </div>
+
+                    <div class="product-card">
+                        <div class="product-icon">
+                            <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/></svg>
+                        </div>
+                        <h3>2,500 Gems</h3>
+                        <p>Great value pack for serious skyblock players.</p>
+                        <div class="product-price">
+                            <span class="price">$16.99</span>
+                            <button class="buy-btn">Purchase</button>
+                        </div>
+                    </div>
+
+                    <div class="product-card">
+                        <span class="badge">Premium</span>
+                        <div class="product-icon">
+                            <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/></svg>
+                        </div>
+                        <h3>10,000 Gems</h3>
+                        <p>Ultimate gem pack with 25% bonus gems. Best for island expansions!</p>
+                        <div class="product-price">
+                            <span class="price">$49.99</span>
+                            <button class="buy-btn">Purchase</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Companions Section -->
+            <section id="companions" class="category-section">
+                <div class="category-header">
+                    <svg viewBox="0 0 24 24"><path d="M8.5 5c-1.84 0-3.53.5-5 1.35C4.34 5.52 5.96 5 8.5 5zm8 0c2.54 0 4.16.52 5 1.35C20.03 5.5 18.34 5 16.5 5zM8.5 7C6.57 7 5 8.57 5 10.5S6.57 14 8.5 14s3.5-1.57 3.5-3.5S10.43 7 8.5 7zm8 0c-1.93 0-3.5 1.57-3.5 3.5s1.57 3.5 3.5 3.5 3.5-1.57 3.5-3.5S18.43 7 16.5 7zM8.5 9c.83 0 1.5.67 1.5 1.5S9.33 12 8.5 12 7 11.33 7 10.5 7.67 9 8.5 9zm8 0c.83 0 1.5.67 1.5 1.5s-.67 1.5-1.5 1.5-1.5-.67-1.5-1.5.67-1.5 1.5-1.5zM12 14c-2.33 0-7 1.17-7 3.5V19h14v-1.5c0-2.33-4.67-3.5-7-3.5z"/></svg>
+                    <h2>Companions</h2>
+                </div>
+                <div class="product-grid">
+                    <div class="product-card">
+                        <div class="product-icon">
+                            <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+                        </div>
+                        <h3>Wolf Companion</h3>
+                        <p>Loyal wolf that follows you and provides combat bonuses.</p>
+                        <div class="product-price">
+                            <span class="price">$6.99</span>
+                            <button class="buy-btn">Purchase</button>
+                        </div>
+                    </div>
+
+                    <div class="product-card">
+                        <div class="product-icon">
+                            <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+                        </div>
+                        <h3>Dragon Companion</h3>
+                        <p>Rare dragon companion with flight ability and special effects.</p>
+                        <div class="product-price">
+                            <span class="price">$14.99</span>
+                            <button class="buy-btn">Purchase</button>
+                        </div>
+                    </div>
+
+                    <div class="product-card">
+                        <span class="badge popular">Trending</span>
+                        <div class="product-icon">
+                            <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+                        </div>
+                        <h3>Phoenix Companion</h3>
+                        <p>Legendary phoenix with resurrection ability and fire aura effects.</p>
+                        <div class="product-price">
+                            <span class="price">$24.99</span>
+                            <button class="buy-btn">Purchase</button>
+                        </div>
+                    </div>
+
+                    <div class="product-card">
+                        <div class="product-icon">
+                            <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+                        </div>
+                        <h3>Unicorn Companion</h3>
+                        <p>Magical unicorn with speed boost and rainbow particle trail.</p>
+                        <div class="product-price">
+                            <span class="price">$19.99</span>
+                            <button class="buy-btn">Purchase</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Boosters Section -->
+            <section id="boosters" class="category-section">
+                <div class="category-header">
+                    <svg viewBox="0 0 24 24"><path d="M7 2v11h3v9l7-12h-4l4-8z"/></svg>
+                    <h2>Boosters</h2>
+                </div>
+                <div class="product-grid">
+                    <div class="product-card">
+                        <div class="product-icon">
+                            <svg viewBox="0 0 24 24"><path d="M7 2v11h3v9l7-12h-4l4-8z"/></svg>
+                        </div>
+                        <h3>XP Booster</h3>
+                        <p>2x XP gain for 1 hour. Stack with other boosters for maximum effect!</p>
+                        <div class="product-price">
+                            <span class="price">$1.99</span>
+                            <button class="buy-btn">Purchase</button>
+                        </div>
+                    </div>
+
+                    <div class="product-card">
+                        <div class="product-icon">
+                            <svg viewBox="0 0 24 24"><path d="M7 2v11h3v9l7-12h-4l4-8z"/></svg>
+                        </div>
+                        <h3>Mob Drop Booster</h3>
+                        <p>Double mob drops for 1 hour. Perfect for farming sessions.</p>
+                        <div class="product-price">
+                            <span class="price">$2.49</span>
+                            <button class="buy-btn">Purchase</button>
+                        </div>
+                    </div>
+
+                    <div class="product-card">
+                        <div class="product-icon">
+                            <svg viewBox="0 0 24 24"><path d="M7 2v11h3v9l7-12h-4l4-8z"/></svg>
+                        </div>
+                        <h3>Mining Booster</h3>
+                        <p>3x ore drops and faster mining speed for 1 hour.</p>
+                        <div class="product-price">
+                            <span class="price">$2.99</span>
+                            <button class="buy-btn">Purchase</button>
+                        </div>
+                    </div>
+
+                    <div class="product-card">
+                        <span class="badge popular">Best Value</span>
+                        <div class="product-icon">
+                            <svg viewBox="0 0 24 24"><path d="M7 2v11h3v9l7-12h-4l4-8z"/></svg>
+                        </div>
+                        <h3>Ultimate Booster Pack</h3>
+                        <p>All boosters active for 3 hours. Save 40% with this bundle!</p>
+                        <div class="product-price">
+                            <span class="price">$9.99</span>
+                            <button class="buy-btn">Purchase</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Mobile Sidebar Toggle -->
+    <button class="sidebar-toggle" id="sidebarToggle" aria-label="Toggle Sidebar">
+        <svg viewBox="0 0 24 24"><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/></svg>
+    </button>
+
+    <script>
+        // Page transition animation
+        document.addEventListener('DOMContentLoaded', () => {
+            anime({
+                targets: 'body',
+                opacity: [0, 1],
+                duration: 600,
+                easing: 'easeOutExpo'
+            });
+
+            // Animate store header
+            anime({
+                targets: '.store-header h1',
+                translateY: [-30, 0],
+                opacity: [0, 1],
+                duration: 800,
+                easing: 'easeOutExpo',
+                delay: 200
+            });
+
+            anime({
+                targets: '.store-header p',
+                translateY: [20, 0],
+                opacity: [0, 1],
+                duration: 700,
+                easing: 'easeOutExpo',
+                delay: 300
+            });
+
+            // Animate sidebar
+            anime({
+                targets: '.store-sidebar',
+                translateX: [-50, 0],
+                opacity: [0, 1],
+                duration: 600,
+                easing: 'easeOutExpo',
+                delay: 100
+            });
+
+            // Animate product cards
+            anime({
+                targets: '.product-card',
+                translateY: [40, 0],
+                opacity: [0, 1],
+                duration: 800,
+                easing: 'easeOutExpo',
+                delay: anime.stagger(50, {start: 400})
+            });
+        });
+
+        // Sidebar Navigation
+        const sidebarLinks = document.querySelectorAll('.sidebar-nav a');
+        const sections = document.querySelectorAll('.category-section');
+
+        // Update active link on scroll
+        window.addEventListener('scroll', () => {
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (pageYOffset >= (sectionTop - 150)) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            sidebarLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${current}`) {
+                    link.classList.add('active');
+                }
+            });
+        });
+
+        // Smooth scroll to sections
+        sidebarLinks.forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const targetId = link.getAttribute('href');
+                
+                if (targetId === '#all') {
+                    window.scrollTo({
+                        top: 0,
+                        behavior: 'smooth'
+                    });
+                } else {
+                    const targetSection = document.querySelector(targetId);
+                    if (targetSection) {
+                        const offset = 100;
+                        const targetPosition = targetSection.offsetTop - offset;
+                        window.scrollTo({
+                            top: targetPosition,
+                            behavior: 'smooth'
+                        });
+                    }
+                }
+
+                // Close sidebar on mobile
+                if (window.innerWidth <= 1024) {
+                    sidebar.classList.remove('active');
+                }
+            });
+        });
+
+        // Mobile sidebar toggle
+        const sidebarToggle = document.getElementById('sidebarToggle');
+        const sidebar = document.getElementById('storeSidebar');
+
+        sidebarToggle.addEventListener('click', () => {
+            sidebar.classList.toggle('active');
+            
+            anime({
+                targets: '.store-sidebar',
+                translateX: sidebar.classList.contains('active') ? ['-100%', '0%'] : ['0%', '-100%'],
+                duration: 300,
+                easing: 'easeOutExpo'
+            });
+        });
+
+        // Close sidebar when clicking outside
+        document.addEventListener('click', (e) => {
+            if (window.innerWidth <= 1024) {
+                if (!sidebar.contains(e.target) && !sidebarToggle.contains(e.target)) {
+                    sidebar.classList.remove('active');
+                }
+            }
+        });
+
+        // Product card hover animations
+        const productCards = document.querySelectorAll('.product-card');
+        productCards.forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                anime({
+                    targets: card.querySelector('.product-icon'),
+                    scale: [1, 1.1],
+                    rotate: [0, 5],
+                    duration: 300,
+                    easing: 'easeOutElastic(1, .6)'
+                });
+            });
+
+            card.addEventListener('mouseleave', () => {
+                anime({
+                    targets: card.querySelector('.product-icon'),
+                    scale: [1.1, 1],
+                    rotate: [5, 0],
+                    duration: 300,
+                    easing: 'easeOutElastic(1, .6)'
+                });
+            });
+        });
+
+        // Buy button click animation
+        const buyButtons = document.querySelectorAll('.buy-btn');
+        buyButtons.forEach(btn => {
+            btn.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const productCard = this.closest('.product-card');
+                const productName = productCard.querySelector('h3').textContent;
+                const productPrice = productCard.querySelector('.price').textContent;
+
+                // Button click animation
+                anime({
+                    targets: this,
+                    scale: [1, 0.95, 1],
+                    duration: 300,
+                    easing: 'easeOutElastic(1, .8)'
+                });
+
+                // Show purchase confirmation (simple alert for now)
+                setTimeout(() => {
+                    alert(`Thank you for your interest in ${productName}!\n\nPrice: ${productPrice}\n\nPayment integration coming soon. For now, please contact admin@mazecraftmc.fun to complete your purchase.`);
+                }, 300);
+            });
+        });
+
+        // Hamburger menu functionality
+        const hamburger = document.querySelector('.hamburger');
+        const navLinks = document.querySelector('.nav-links');
+
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navLinks.classList.toggle('active');
+        });
+
+        // Close mobile nav when clicking on a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('active');
+                navLinks.classList.remove('active');
+            });
+        });
+
+        // Navbar scroll effect
+        let lastScroll = 0;
+        const navbar = document.querySelector('.navbar');
+
+        window.addEventListener('scroll', () => {
+            const currentScroll = window.pageYOffset;
+            
+            if (currentScroll > lastScroll && currentScroll > 100) {
+                navbar.style.transform = 'translateY(-100%)';
+            } else {
+                navbar.style.transform = 'translateY(0)';
+            }
+            
+            lastScroll = currentScroll;
+        });
+    </script>
+</body>
+</html>
