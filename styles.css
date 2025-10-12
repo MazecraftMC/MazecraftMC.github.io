@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap');
 
 :root {
     --primary-black: #1a1a1a;
@@ -18,7 +18,7 @@
 }
 
 body {
-    font-family: 'Merriweather', serif;
+    font-family: 'Outfit', sans-serif;
     background-color: var(--primary-black);
     color: var(--pure-white);
     line-height: 1.6;
@@ -47,7 +47,7 @@ body {
 }
 
 .logo {
-    height: 40px;
+    height: 25px;
     transition: transform 0.3s ease;
 }
 
@@ -245,7 +245,7 @@ body {
     color: var(--pure-white);
     border: 1px solid var(--golden-border);
     padding: 15px 30px;
-    font-family: 'Merriweather', serif;
+    font-family: 'Outfit', sans-serif;
     font-weight: 400;
     font-size: 1rem;
     border-radius: 8px;
@@ -371,15 +371,15 @@ body {
     padding: 30px;
     border-radius: 15px;
     text-align: center;
-    border: 2px solid rgba(255, 25, 0, 0.3);
+    border: 2px solid rgba(216, 175, 170, 0.3);
     transition: all 0.3s ease;
     position: relative;
     overflow: hidden;
 }
 
 .team-avatar {
-    width: 80px;
-    height: 80px;
+    width: 300px;
+    height: 300px;
     border-radius: 12px;
     margin: 0 auto 20px;
     border: 3px solid var(--pastel-orange);
@@ -389,7 +389,7 @@ body {
 .team-card:hover {
     transform: translateY(-10px);
     border-color: var(--golden-border);
-    box-shadow: 0 10px 30px rgba(255, 25, 0, 0.2);
+    box-shadow: 0 10px 30px rgba(255, 255, 255, 0.2);
 }
 
 .team-card::before {
