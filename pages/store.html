@@ -14,6 +14,9 @@
 </head>
 <body data-page="store">
   
+  <!-- Toast Container -->
+  <div class="toast-container" id="toastContainer"></div>
+  
   <div class="preloader">
     <div class="preloader-logo"></div>
   </div>
@@ -25,11 +28,13 @@
       </a>
       <ul class="navbar-menu">
         <li><a href="../">Home</a></li>
+        <li><a href="./rules.html">Rules</a></li>
         <li><a href="./store.html" class="active">Store</a></li>
         <li><a href="./maps.html">Maps</a></li>
+        <li><a href="./players.html">Players</a></li>
         <li><a href="./forums.html">Forums</a></li>
         <li><a href="./docs.html">Docs</a></li>
-        <li><a href="./players.html">Players</a></li>
+        <li><a href="./status.html">Status</a></li>
       </ul>
       <button class="navbar-toggle">
         <span></span>
@@ -42,6 +47,12 @@
   <div class="store-layout">
     <!-- Sidebar -->
     <aside class="store-sidebar">
+      <button class="sidebar-toggle" aria-label="Toggle Sidebar">
+        <svg viewBox="0 0 24 24" fill="currentColor">
+          <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+        </svg>
+      </button>
+      
       <h2 class="sidebar-title">Categories</h2>
       
       <div class="sidebar-category">
@@ -447,6 +458,29 @@
   <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js"></script>
   <script src="../js/main.js"></script>
   <script>
+    // Toast Notification System
+    function showToast(message, type = 'success', duration = 3000) {
+      const container = document.getElementById('toastContainer');
+      if (!container) return;
+      
+      const toast = document.createElement('div');
+      toast.className = `toast toast-${type}`;
+      
+      const iconSvg = '<svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>';
+      
+      toast.innerHTML = `
+        <div class="toast-icon">${iconSvg}</div>
+        <div class="toast-message">${message}</div>
+      `;
+      
+      container.appendChild(toast);
+      
+      setTimeout(() => {
+        toast.classList.add('removing');
+        setTimeout(() => toast.remove(), 300);
+      }, duration);
+    }
+    
     // Store page functionality
     document.addEventListener('DOMContentLoaded', function() {
       const sidebar = document.querySelector('.store-sidebar');
@@ -466,12 +500,16 @@
           if (sidebar.classList.contains('active')) {
             const overlay = document.createElement('div');
             overlay.className = 'sidebar-overlay';
+            overlay.style.cssText = 'position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.7); z-index: 998;';
             document.body.appendChild(overlay);
             
             overlay.addEventListener('click', function() {
               sidebar.classList.remove('active');
               overlay.remove();
             });
+          } else {
+            const overlay = document.querySelector('.sidebar-overlay');
+            if (overlay) overlay.remove();
           }
         });
       }

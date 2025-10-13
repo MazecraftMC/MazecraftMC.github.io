@@ -14,6 +14,9 @@
 </head>
 <body data-page="maps">
   
+  <!-- Toast Container -->
+  <div class="toast-container" id="toastContainer"></div>
+  
   <div class="preloader">
     <div class="preloader-logo"></div>
   </div>
@@ -25,11 +28,13 @@
       </a>
       <ul class="navbar-menu">
         <li><a href="../">Home</a></li>
+        <li><a href="./rules.html">Rules</a></li>
         <li><a href="./store.html">Store</a></li>
         <li><a href="./maps.html" class="active">Maps</a></li>
+        <li><a href="./players.html">Players</a></li>
         <li><a href="./forums.html">Forums</a></li>
         <li><a href="./docs.html">Docs</a></li>
-        <li><a href="./players.html">Players</a></li>
+        <li><a href="./status.html">Status</a></li>
       </ul>
       <button class="navbar-toggle">
         <span></span>
@@ -206,12 +211,45 @@
       <symbol id="icon-github" viewBox="0 0 24 24">
         <path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/>
       </symbol>
+      
+      <!-- Check Icon for Toast -->
+      <symbol id="icon-check" viewBox="0 0 24 24">
+        <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+      </symbol>
+      
+      <!-- Close Icon for Toast -->
+      <symbol id="icon-close" viewBox="0 0 24 24">
+        <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/>
+      </symbol>
     </defs>
   </svg>
 
   <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js"></script>
   <script src="../js/main.js"></script>
   <script>
+    // Toast Notification System
+    function showToast(message, type = 'success', duration = 3000) {
+      const container = document.getElementById('toastContainer');
+      if (!container) return;
+      
+      const toast = document.createElement('div');
+      toast.className = `toast toast-${type}`;
+      
+      const iconSvg = '<svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>';
+      
+      toast.innerHTML = `
+        <div class="toast-icon">${iconSvg}</div>
+        <div class="toast-message">${message}</div>
+      `;
+      
+      container.appendChild(toast);
+      
+      setTimeout(() => {
+        toast.classList.add('removing');
+        setTimeout(() => toast.remove(), 300);
+      }, duration);
+    }
+    
     // Maps page interactivity
     document.addEventListener('DOMContentLoaded', function() {
       const mapItems = document.querySelectorAll('.map-item');
@@ -228,7 +266,7 @@
           
           // Show coming soon message for non-vanilla maps
           if (mapType !== 'vanilla') {
-            alert(`${this.querySelector('h4').textContent} is coming soon! Stay tuned for updates.`);
+            showToast(`${this.querySelector('h4').textContent} is coming soon! Stay tuned for updates.`, 'info');
           }
         });
       });

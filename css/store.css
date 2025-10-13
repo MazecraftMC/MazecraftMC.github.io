@@ -467,16 +467,19 @@ html {
 
 @media (max-width: 768px) {
   .store-sidebar {
-    transform: translateX(-100%);
-    width: 280px;
-    z-index: 1000;
+    position: fixed;
+    left: -100%;
     top: var(--navbar-height);
+    width: 280px;
     height: calc(100vh - var(--navbar-height));
+    max-height: none;
+    z-index: 999;
+    box-shadow: 4px 0 10px rgba(0, 0, 0, 0.5);
+    transition: left 0.3s ease;
   }
   
   .store-sidebar.active {
-    transform: translateX(0);
-    box-shadow: 4px 0 20px rgba(0, 0, 0, 0.8);
+    left: 0;
   }
   
   .store-content {
@@ -486,6 +489,8 @@ html {
   
   .sidebar-toggle {
     display: flex;
+    align-items: center;
+    justify-content: center;
   }
   
   .products-grid {

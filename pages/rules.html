@@ -14,6 +14,9 @@
 </head>
 <body data-page="rules">
   
+  <!-- Toast Container -->
+  <div class="toast-container" id="toastContainer"></div>
+  
   <div class="preloader">
     <div class="preloader-logo"></div>
   </div>
@@ -25,11 +28,13 @@
       </a>
       <ul class="navbar-menu">
         <li><a href="../">Home</a></li>
+        <li><a href="./rules.html" class="active">Rules</a></li>
         <li><a href="./store.html">Store</a></li>
         <li><a href="./maps.html">Maps</a></li>
+        <li><a href="./players.html">Players</a></li>
         <li><a href="./forums.html">Forums</a></li>
         <li><a href="./docs.html">Docs</a></li>
-        <li><a href="./players.html">Players</a></li>
+        <li><a href="./status.html">Status</a></li>
       </ul>
       <button class="navbar-toggle">
         <span></span>
@@ -115,5 +120,29 @@
 
   <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js"></script>
   <script src="../js/main.js"></script>
+  <script>
+    // Toast Notification System
+    function showToast(message, type = 'success', duration = 3000) {
+      const container = document.getElementById('toastContainer');
+      if (!container) return;
+      
+      const toast = document.createElement('div');
+      toast.className = `toast toast-${type}`;
+      
+      const iconSvg = '<svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>';
+      
+      toast.innerHTML = `
+        <div class="toast-icon">${iconSvg}</div>
+        <div class="toast-message">${message}</div>
+      `;
+      
+      container.appendChild(toast);
+      
+      setTimeout(() => {
+        toast.classList.add('removing');
+        setTimeout(() => toast.remove(), 300);
+      }, duration);
+    }
+  </script>
 </body>
 </html>
