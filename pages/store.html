@@ -229,6 +229,36 @@
             </div>
           </div>
         </div>
+
+        <div class="product-card scale-in" data-category="ranks">
+          <div class="product-image">
+            <span class="product-badge" style="background: linear-gradient(135deg, #FF0000, #CC0000);">Creator</span>
+          </div>
+          <div class="product-info">
+            <h3 class="product-title">YouTube Rank</h3>
+            <p class="product-description">Exclusive rank for content creators with custom cosmetics, priority access, and special perks.</p>
+            <div class="product-price">$29.99</div>
+            <div class="product-actions">
+              <button class="product-btn btn-buy">Buy Now</button>
+              <button class="product-btn btn-details">Details</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card scale-in" data-category="ranks">
+          <div class="product-image">
+            <span class="product-badge" style="background: linear-gradient(135deg, #9146FF, #6441A5);">Streamer</span>
+          </div>
+          <div class="product-info">
+            <h3 class="product-title">Twitch Rank</h3>
+            <p class="product-description">Special rank for Twitch streamers with live streaming features and exclusive content.</p>
+            <div class="product-price">$29.99</div>
+            <div class="product-actions">
+              <button class="product-btn btn-buy">Buy Now</button>
+              <button class="product-btn btn-details">Details</button>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -416,5 +446,182 @@
 
   <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js"></script>
   <script src="../js/main.js"></script>
+  <script>
+    // Store page functionality
+    document.addEventListener('DOMContentLoaded', function() {
+      const sidebar = document.querySelector('.store-sidebar');
+      const sidebarToggle = document.querySelector('.sidebar-toggle');
+      const categoryTitles = document.querySelectorAll('.category-title');
+      const productCards = document.querySelectorAll('.product-card');
+      const searchInput = document.querySelector('.search-box input');
+      const filterSelect = document.querySelector('.filter-select');
+      const storeSections = document.querySelectorAll('.store-section');
+      
+      // Toggle sidebar on mobile
+      if (sidebarToggle) {
+        sidebarToggle.addEventListener('click', function() {
+          sidebar.classList.toggle('active');
+          
+          // Add overlay when sidebar is open
+          if (sidebar.classList.contains('active')) {
+            const overlay = document.createElement('div');
+            overlay.className = 'sidebar-overlay';
+            document.body.appendChild(overlay);
+            
+            overlay.addEventListener('click', function() {
+              sidebar.classList.remove('active');
+              overlay.remove();
+            });
+          }
+        });
+      }
+      
+      // Category filter functionality
+      categoryTitles.forEach(title => {
+        title.addEventListener('click', function() {
+          const category = this.dataset.category;
+          
+          // Update active state
+          categoryTitles.forEach(t => t.classList.remove('active'));
+          this.classList.add('active');
+          
+          // Filter products
+          filterProducts(category);
+          
+          // Update filter select
+          filterSelect.value = category;
+          
+          // Scroll to top of content
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+          
+          // Close sidebar on mobile
+          if (window.innerWidth <= 768) {
+            sidebar.classList.remove('active');
+            const overlay = document.querySelector('.sidebar-overlay');
+            if (overlay) overlay.remove();
+          }
+        });
+      });
+      
+      // Filter select functionality
+      filterSelect.addEventListener('change', function() {
+        const category = this.value;
+        
+        // Update sidebar active state
+        categoryTitles.forEach(title => {
+          if (category === 'all') {
+            title.classList.remove('active');
+          } else if (title.dataset.category === category) {
+            categoryTitles.forEach(t => t.classList.remove('active'));
+            title.classList.add('active');
+          }
+        });
+        
+        // Filter products
+        if (category === 'all') {
+          showAllProducts();
+        } else {
+          filterProducts(category);
+        }
+      });
+      
+      // Search functionality
+      searchInput.addEventListener('input', function() {
+        const searchTerm = this.value.toLowerCase();
+        
+        productCards.forEach(card => {
+          const title = card.querySelector('.product-title').textContent.toLowerCase();
+          const description = card.querySelector('.product-description').textContent.toLowerCase();
+          
+          if (title.includes(searchTerm) || description.includes(searchTerm)) {
+            card.style.display = 'block';
+          } else {
+            card.style.display = 'none';
+          }
+        });
+        
+        // Show/hide sections based on visible products
+        storeSections.forEach(section => {
+          const visibleCards = section.querySelectorAll('.product-card[style="display: block;"], .product-card:not([style*="display"])');
+          section.style.display = visibleCards.length > 0 ? 'block' : 'none';
+        });
+      });
+      
+      // Filter products by category
+      function filterProducts(category) {
+        storeSections.forEach(section => {
+          section.style.display = 'none';
+        });
+        
+        productCards.forEach(card => {
+          if (card.dataset.category === category) {
+            card.style.display = 'block';
+            // Show parent section
+            const parentSection = card.closest('.store-section');
+            if (parentSection) {
+              parentSection.style.display = 'block';
+            }
+          } else {
+            card.style.display = 'none';
+          }
+        });
+      }
+      
+      // Show all products
+      function showAllProducts() {
+        productCards.forEach(card => {
+          card.style.display = 'block';
+        });
+        storeSections.forEach(section => {
+          section.style.display = 'block';
+        });
+      }
+      
+      // Buy button functionality (placeholder)
+      document.querySelectorAll('.btn-buy').forEach(button => {
+        button.addEventListener('click', function(e) {
+          e.stopPropagation();
+          const productCard = this.closest('.product-card');
+          const productTitle = productCard.querySelector('.product-title').textContent;
+          alert(`Adding ${productTitle} to cart...\n\nNote: Payment system is not yet implemented.`);
+        });
+      });
+      
+      // Details button functionality
+      document.querySelectorAll('.btn-details').forEach(button => {
+        button.addEventListener('click', function(e) {
+          e.stopPropagation();
+          const productCard = this.closest('.product-card');
+          const productTitle = productCard.querySelector('.product-title').textContent;
+          const productDesc = productCard.querySelector('.product-description').textContent;
+          const productPrice = productCard.querySelector('.product-price').textContent;
+          
+          alert(`${productTitle}\n\nPrice: ${productPrice}\n\nDescription:\n${productDesc}\n\n[Detailed information coming soon!]`);
+        });
+      });
+      
+      // Animate cards on scroll
+      const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+      };
+      
+      const observer = new IntersectionObserver(function(entries) {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.style.opacity = '1';
+            entry.target.style.transform = 'translateY(0)';
+          }
+        });
+      }, observerOptions);
+      
+      productCards.forEach(card => {
+        card.style.opacity = '0';
+        card.style.transform = 'translateY(20px)';
+        card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+        observer.observe(card);
+      });
+    });
+  </script>
 </body>
 </html>

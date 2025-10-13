@@ -2,6 +2,10 @@
    STORE PAGE STYLES
    =================================== */
 
+html {
+  scroll-behavior: smooth;
+}
+
 .store-layout {
   display: flex;
   min-height: calc(100vh - var(--navbar-height));
@@ -58,16 +62,41 @@
   padding: var(--spacing-xs);
   border-radius: var(--radius-sm);
   transition: var(--transition-fast);
+  position: relative;
+  overflow: hidden;
+}
+
+.category-title::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 3px;
+  background: var(--color-orange);
+  transform: scaleY(0);
+  transition: transform 0.3s ease;
 }
 
 .category-title:hover {
   background: rgba(255, 34, 0, 0.1);
   color: var(--color-orange);
+  padding-left: 12px;
+}
+
+.category-title:hover::before {
+  transform: scaleY(1);
 }
 
 .category-title.active {
   color: var(--color-orange);
   background: rgba(255, 34, 0, 0.15);
+  padding-left: 12px;
+  font-weight: 700;
+}
+
+.category-title.active::before {
+  transform: scaleY(1);
 }
 
 .category-items {
@@ -399,6 +428,28 @@
   margin-bottom: var(--spacing-sm);
 }
 
+/* === SIDEBAR OVERLAY === */
+.sidebar-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 999;
+  backdrop-filter: blur(4px);
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
 /* === RESPONSIVE === */
 @media (max-width: 1024px) {
   .store-sidebar {
@@ -419,11 +470,13 @@
     transform: translateX(-100%);
     width: 280px;
     z-index: 1000;
+    top: var(--navbar-height);
+    height: calc(100vh - var(--navbar-height));
   }
   
   .store-sidebar.active {
     transform: translateX(0);
-    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.5);
+    box-shadow: 4px 0 20px rgba(0, 0, 0, 0.8);
   }
   
   .store-content {
@@ -436,7 +489,8 @@
   }
   
   .products-grid {
-    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: var(--spacing-sm);
   }
   
   .store-title {
@@ -456,7 +510,7 @@
   }
   
   .product-card {
-    padding: var(--spacing-md);
+    padding: var(--spacing-sm);
   }
   
   .product-title {
@@ -468,13 +522,25 @@
   }
   
   .product-price {
-    font-size: 1.6rem;
+    font-size: 1.5rem;
+  }
+  
+  /* Improve touch targets */
+  .category-title {
+    padding: var(--spacing-sm);
+    min-height: 44px;
+  }
+  
+  .product-btn {
+    padding: 12px;
+    font-size: 0.95rem;
   }
 }
 
 @media (max-width: 480px) {
   .store-sidebar {
-    width: 100%;
+    width: 85%;
+    max-width: 320px;
   }
   
   .store-controls {
@@ -487,80 +553,92 @@
   }
   
   .search-box input {
-    font-size: 0.9rem;
-    padding: var(--spacing-xs) var(--spacing-sm);
+    font-size: 0.95rem;
+    padding: 12px 40px 12px 14px;
   }
   
   .filter-select {
     width: 100%;
-    font-size: 0.9rem;
-    padding: var(--spacing-xs) var(--spacing-sm);
-    padding-right: 35px;
+    font-size: 0.95rem;
+    padding: 12px var(--spacing-sm);
+    padding-right: 40px;
   }
   
   .products-grid {
     grid-template-columns: 1fr;
-    gap: var(--spacing-sm);
+    gap: var(--spacing-md);
   }
   
   .product-card {
-    padding: var(--spacing-sm);
+    padding: var(--spacing-md);
   }
   
   .product-image {
-    height: 150px;
+    height: 180px;
   }
   
   .product-title {
-    font-size: 1.1rem;
+    font-size: 1.15rem;
   }
   
   .product-description {
-    font-size: 0.85rem;
+    font-size: 0.9rem;
+    line-height: 1.5;
   }
   
   .product-price {
-    font-size: 1.4rem;
+    font-size: 1.5rem;
   }
   
   .product-actions {
-    flex-direction: column;
-    gap: var(--spacing-xs);
+    gap: var(--spacing-sm);
   }
   
   .product-btn {
-    width: 100%;
-    padding: var(--spacing-xs) var(--spacing-sm);
-    font-size: 0.9rem;
+    padding: 12px 16px;
+    font-size: 0.95rem;
   }
   
   .store-title {
-    font-size: 1.6rem;
+    font-size: 1.75rem;
   }
   
   .store-subtitle {
-    font-size: 0.9rem;
+    font-size: 0.95rem;
   }
   
   .section-header-store h2 {
-    font-size: 1.4rem;
+    font-size: 1.5rem;
   }
   
   .section-header-store p {
-    font-size: 0.9rem;
+    font-size: 0.95rem;
   }
   
   .product-badge {
-    font-size: 0.7rem;
-    padding: 4px 8px;
+    font-size: 0.75rem;
+    padding: 5px 10px;
   }
   
   .sidebar-title {
-    font-size: 1.3rem;
+    font-size: 1.4rem;
   }
   
   .category-title {
-    font-size: 0.95rem;
+    font-size: 1rem;
+    padding: var(--spacing-sm);
+  }
+  
+  .sidebar-toggle {
+    bottom: 20px;
+    left: 20px;
+    width: 60px;
+    height: 60px;
+  }
+  
+  .sidebar-toggle svg {
+    width: 28px;
+    height: 28px;
   }
 }
 

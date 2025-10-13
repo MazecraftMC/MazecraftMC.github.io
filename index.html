@@ -36,6 +36,9 @@
 </head>
 <body data-page="home">
   
+  <!-- Toast Container -->
+  <div class="toast-container" id="toastContainer"></div>
+  
   <!-- Preloader -->
   <div class="preloader">
     <div class="preloader-logo"></div>
@@ -77,9 +80,14 @@
       
       <div class="hero-ip-box">
         <div class="hero-ip-address">
+          <div class="status-indicator" id="serverStatus" title="Server Online"></div>
           <span class="hero-ip-text">play.mazecraftmc.fun</span>
-          <button class="copy-btn" data-copy="play.mazecraftmc.fun" aria-label="Copy Server IP">Copy</button>
         </div>
+        <button class="copy-btn" id="copyBtn" aria-label="Copy Server IP">
+          <svg viewBox="0 0 24 24">
+            <path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/>
+          </svg>
+        </button>
       </div>
     </div>
   </section>
@@ -371,8 +379,8 @@
         <ul>
           <li><a href="./pages/forums.html">Forums</a></li>
           <li><a href="./pages/docs.html">Documentation</a></li>
-          <li><a href="#">Rules</a></li>
-          <li><a href="#">Support</a></li>
+          <li><a href="./pages/rules.html">Rules</a></li>
+          <li><a href="./pages/status.html">Status</a></li>
         </ul>
       </div>
       
@@ -418,11 +426,70 @@
       <symbol id="icon-email" viewBox="0 0 24 24">
         <path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
       </symbol>
+      
+      <!-- Check Icon for Toast -->
+      <symbol id="icon-check" viewBox="0 0 24 24">
+        <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+      </symbol>
+      
+      <!-- Close Icon for Toast -->
+      <symbol id="icon-close" viewBox="0 0 24 24">
+        <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/>
+      </symbol>
     </defs>
   </svg>
 
   <!-- Scripts -->
   <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js"></script>
   <script src="./js/main.js"></script>
+  <script>
+    // Toast Notification System
+    function showToast(message, type = 'success', duration = 3000) {
+      const container = document.getElementById('toastContainer');
+      const toast = document.createElement('div');
+      toast.className = `toast toast-${type}`;
+      
+      const iconSvg = type === 'success' 
+        ? '<svg viewBox="0 0 24 24"><use href="#icon-check"></use></svg>'
+        : '<svg viewBox="0 0 24 24"><use href="#icon-close"></use></svg>';
+      
+      toast.innerHTML = `
+        <div class="toast-icon">${iconSvg}</div>
+        <div class="toast-message">${message}</div>
+        <button class="toast-close" onclick="this.parentElement.remove()">
+          <svg viewBox="0 0 24 24"><use href="#icon-close"></use></svg>
+        </button>
+      `;
+      
+      container.appendChild(toast);
+      
+      setTimeout(() => {
+        toast.classList.add('removing');
+        setTimeout(() => toast.remove(), 300);
+      }, duration);
+    }
+    
+    // Copy IP Functionality
+    document.addEventListener('DOMContentLoaded', function() {
+      const copyBtn = document.getElementById('copyBtn');
+      const serverIP = 'play.mazecraftmc.fun';
+      
+      if (copyBtn) {
+        copyBtn.addEventListener('click', function() {
+          navigator.clipboard.writeText(serverIP).then(() => {
+            showToast('Server IP copied to clipboard!', 'success');
+          }).catch(() => {
+            showToast('Failed to copy IP', 'error');
+          });
+        });
+      }
+      
+      // Simulate server status check (in real scenario, this would be an API call)
+      const statusIndicator = document.getElementById('serverStatus');
+      // For now, assume server is online
+      // You can implement actual server status checking later
+      statusIndicator.classList.remove('offline');
+    });
+  </script>
 </body>
 </html>
