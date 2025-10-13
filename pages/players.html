@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Mazecraft Community Forums - Coming Soon">
-  <title>Mazecraft - Forums</title>
+  <meta name="description" content="Mazecraft Player Search & Management">
+  <title>Mazecraft - Players</title>
   <link rel="icon" type="image/svg+xml" href="../resources/images/icon.svg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -12,7 +12,7 @@
   <link rel="stylesheet" href="../css/global.css">
   <link rel="stylesheet" href="../css/pages.css">
 </head>
-<body data-page="forums">
+<body data-page="players">
   
   <div class="preloader">
     <div class="preloader-logo"></div>
@@ -28,9 +28,9 @@
         <li><a href="./store.html">Store</a></li>
         <li><a href="./maps.html">Maps</a></li>
         <li><a href="./projects.html">Projects</a></li>
-        <li><a href="./forums.html" class="active">Forums</a></li>
+        <li><a href="./forums.html">Forums</a></li>
         <li><a href="./docs.html">Docs</a></li>
-        <li><a href="./players.html">Players</a></li>
+        <li><a href="./players.html" class="active">Players</a></li>
       </ul>
       <button class="navbar-toggle">
         <span></span>
@@ -40,17 +40,119 @@
     </div>
   </nav>
 
-  <div class="page-container forums-container">
-    <div class="forums-content">
-      <div class="forums-icon">
-        <svg viewBox="0 0 24 24" fill="currentColor">
-          <path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 14H6l-2 2V4h16v12z"/>
-          <path d="M7 9h2v2H7zm4 0h2v2h-2zm4 0h2v2h-2z"/>
-        </svg>
-      </div>
-      <h1>Coming Soon ;)</h1>
-      <p>Our community forums are under development. Join our Discord for now!</p>
-      <a href="../" class="btn btn-primary">Back to Home</a>
+  <div class="page-container">
+    <div class="page-hero fade-in">
+      <h1>Player Management</h1>
+      <p>Search players, view profiles, reports, and bans</p>
+    </div>
+
+    <div class="container">
+      <!-- Player Search Section -->
+      <section class="players-section">
+        <div class="players-search-container fade-in">
+          <h2>Search Players</h2>
+          <div class="search-box-large">
+            <input type="text" id="player-search" placeholder="Enter player username..." aria-label="Search players">
+            <button class="search-btn">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
+              </svg>
+            </button>
+          </div>
+          <p class="search-status">Search for player profiles to view stats, history, and more.</p>
+        </div>
+
+        <!-- Coming Soon Notice -->
+        <div class="coming-soon-box fade-in">
+          <svg class="coming-soon-icon" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+          </svg>
+          <h3>Player Profiles Coming Soon</h3>
+          <p>We're working on an advanced player profile system with detailed statistics and history tracking.</p>
+        </div>
+      </section>
+
+      <!-- Quick Links Section -->
+      <section class="players-links-section">
+        <h2 class="section-title fade-in">Player Management</h2>
+        
+        <div class="players-links-grid">
+          <!-- Report Player -->
+          <div class="link-card fade-in">
+            <div class="link-icon">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path d="M1 21h22L12 2 1 21zm12-3h-2v-2h2v2zm0-4h-2v-4h2v4z"/>
+              </svg>
+            </div>
+            <h3>Report Player</h3>
+            <p>Report rule violations and help keep our community safe.</p>
+            <a href="#" class="link-btn">Submit Report</a>
+          </div>
+
+          <!-- View Bans -->
+          <div class="link-card fade-in">
+            <div class="link-icon">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zM4 12c0-4.42 3.58-8 8-8 1.85 0 3.55.63 4.9 1.69L5.69 16.9C4.63 15.55 4 13.85 4 12zm8 8c-1.85 0-3.55-.63-4.9-1.69L18.31 7.1C19.37 8.45 20 10.15 20 12c0 4.42-3.58 8-8 8z"/>
+              </svg>
+            </div>
+            <h3>Ban List</h3>
+            <p>View currently banned players and ban duration.</p>
+            <a href="#" class="link-btn">View Bans</a>
+          </div>
+
+          <!-- Appeal Ban -->
+          <div class="link-card fade-in">
+            <div class="link-icon">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"/>
+              </svg>
+            </div>
+            <h3>Ban Appeal</h3>
+            <p>Think your ban was unfair? Submit an appeal for review.</p>
+            <a href="#" class="link-btn">Appeal Ban</a>
+          </div>
+
+          <!-- Staff Applications -->
+          <div class="link-card fade-in">
+            <div class="link-icon">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/>
+              </svg>
+            </div>
+            <h3>Staff Team</h3>
+            <p>Meet our moderation team and learn how to apply.</p>
+            <a href="#" class="link-btn">View Staff</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Stats Preview -->
+      <section class="stats-preview-section">
+        <h2 class="section-title fade-in">Server Statistics</h2>
+        
+        <div class="stats-grid fade-in">
+          <div class="stat-card">
+            <div class="stat-value">4</div>
+            <div class="stat-label">Total Players</div>
+          </div>
+          
+          <div class="stat-card">
+            <div class="stat-value">N/A</div>
+            <div class="stat-label">Online Now</div>
+          </div>
+          
+          <div class="stat-card">
+            <div class="stat-value">N/A</div>
+            <div class="stat-label">Active Bans</div>
+          </div>
+          
+          <div class="stat-card">
+            <div class="stat-value">N/A</div>
+            <div class="stat-label">Reports Handled</div>
+          </div>
+        </div>
+      </section>
     </div>
   </div>
 

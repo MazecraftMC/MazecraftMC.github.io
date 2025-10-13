@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Mazecraft Plugin Documentation">
+  <title>Mazecraft - Documentation</title>
+  <link rel="icon" type="image/svg+xml" href="../resources/images/icon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/global.css">
+  <link rel="stylesheet" href="../css/pages.css">
+</head>
+<body data-page="docs">
+  
+  <div class="preloader">
+    <div class="preloader-logo"></div>
+  </div>
+
+  <nav class="navbar">
+    <div class="navbar-container">
+      <a href="../" class="navbar-logo">
+        <img src="../resources/images/mazecraft.png" alt="Mazecraft Logo">
+      </a>
+      <ul class="navbar-menu">
+        <li><a href="../">Home</a></li>
+        <li><a href="./store.html">Store</a></li>
+        <li><a href="./maps.html">Maps</a></li>
+        <li><a href="./projects.html">Projects</a></li>
+        <li><a href="./forums.html">Forums</a></li>
+        <li><a href="./docs.html" class="active">Docs</a></li>
+        <li><a href="./players.html">Players</a></li>
+      </ul>
+      <button class="navbar-toggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+
+  <div class="page-container">
+    <div class="page-hero fade-in">
+      <h1>📚 Plugin Documentation</h1>
+      <p>Comprehensive guides and API reference for Mazecraft plugins</p>
+    </div>
+
+    <div class="container docs-container">
+      <!-- Quick Navigation -->
+      <div class="docs-quick-nav fade-in">
+        <h3>⚡ Quick Links</h3>
+        <div class="quick-nav-grid">
+          <a href="#mazepay" class="quick-nav-item">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1.41 16.09V20h-2.67v-1.93c-1.71-.36-3.16-1.46-3.27-3.4h1.96c.1 1.05.82 1.87 2.65 1.87 1.96 0 2.4-.98 2.4-1.59 0-.83-.44-1.61-2.67-2.14-2.48-.6-4.18-1.62-4.18-3.67 0-1.72 1.39-2.84 3.11-3.21V4h2.67v1.95c1.86.45 2.79 1.86 2.85 3.39H14.3c-.05-1.11-.64-1.87-2.22-1.87-1.5 0-2.4.68-2.4 1.64 0 .84.65 1.39 2.67 1.91s4.18 1.39 4.18 3.91c-.01 1.83-1.38 2.83-3.12 3.16z"/></svg>
+            <span>MazePay</span>
+          </a>
+          <a href="#mazeshop" class="quick-nav-item">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20 6h-2.18c.11-.31.18-.65.18-1a2.996 2.996 0 0 0-5.5-1.65l-.5.67-.5-.68C10.96 2.54 10.05 2 9 2 7.34 2 6 3.34 6 5c0 .35.07.69.18 1H4c-1.11 0-1.99.89-1.99 2L2 19c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V8c0-1.11-.89-2-2-2zm-5-2c.55 0 1 .45 1 1s-.45 1-1 1-1-.45-1-1 .45-1 1-1zM9 4c.55 0 1 .45 1 1s-.45 1-1 1-1-.45-1-1 .45-1 1-1zm11 15H4v-2h16v2zm0-5H4V8h5.08L7 10.83 8.62 12 11 8.76l1-1.36 1 1.36L15.38 12 17 10.83 14.92 8H20v6z"/></svg>
+            <span>MazeShop</span>
+          </a>
+          <a href="#parties" class="quick-nav-item">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg>
+            <span>Parties & Friends</span>
+          </a>
+          <a href="https://poggit.pmmp.io/ci/PixelMCN" target="_blank" rel="noopener noreferrer" class="quick-nav-item">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .3a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1-.7.1-.7.1-.7 1.2 0 1.9 1.2 1.9 1.2 1 1.8 2.8 1.3 3.5 1 0-.8.4-1.3.7-1.6-2.7-.3-5.5-1.3-5.5-6 0-1.2.5-2.3 1.3-3.1-.1-.4-.6-1.6.1-3.2 0 0 1-.3 3.4 1.2a11.5 11.5 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.6 1.6.2 2.8.1 3.2.8.8 1.3 1.9 1.3 3.2 0 4.6-2.8 5.6-5.5 5.9.5.4.9 1 .9 2.2v3.3c0 .3.1.7.8.6A12 12 0 0 0 12 .3"/></svg>
+            <span>View on GitHub</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- MazePay Documentation -->
+      <section class="docs-section" id="mazepay">
+        <div class="section-header-docs fade-in">
+          <div class="section-header-content">
+            <h2>💰 MazePay</h2>
+            <p>Lightweight economy plugin with dual account system, bank interest, and comprehensive API</p>
+          </div>
+          <div class="section-header-links">
+            <a href="https://github.com/PixelMCN/MazePay" target="_blank" rel="noopener noreferrer" class="btn-doc-link">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .3a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1-.7.1-.7.1-.7 1.2 0 1.9 1.2 1.9 1.2 1 1.8 2.8 1.3 3.5 1 0-.8.4-1.3.7-1.6-2.7-.3-5.5-1.3-5.5-6 0-1.2.5-2.3 1.3-3.1-.1-.4-.6-1.6.1-3.2 0 0 1-.3 3.4 1.2a11.5 11.5 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.6 1.6.2 2.8.1 3.2.8.8 1.3 1.9 1.3 3.2 0 4.6-2.8 5.6-5.5 5.9.5.4.9 1 .9 2.2v3.3c0 .3.1.7.8.6A12 12 0 0 0 12 .3"/></svg>
+              GitHub
+            </a>
+            <a href="https://poggit.pmmp.io/p/MazePay" target="_blank" rel="noopener noreferrer" class="btn-doc-link btn-doc-poggit">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.35 10.04C18.67 6.59 15.64 4 12 4 9.11 4 6.6 5.64 5.35 8.04 2.34 8.36 0 10.91 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96zM14 13v4h-4v-4H7l5-5 5 5h-3z"/></svg>
+              Poggit
+            </a>
+          </div>
+        </div>
+
+        <div class="docs-content scale-in">
+          <!-- Features -->
+          <div class="doc-subsection">
+            <h3>✨ Features</h3>
+            <ul class="feature-list">
+              <li><strong>Dual Account System</strong> - Separate wallet and bank accounts</li>
+              <li><strong>Bank Interest</strong> - Configurable interest rate on deposits</li>
+              <li><strong>Custom Forms</strong> - Beautiful UI with customizable images</li>
+              <li><strong>Multi-Database</strong> - SQLite, MySQL, JSON support</li>
+              <li><strong>High Performance</strong> - Built-in caching and async operations</li>
+              <li><strong>Developer API</strong> - Complete API with cancellable events</li>
+              <li><strong>Fully Customizable</strong> - Messages, forms, economy settings</li>
+            </ul>
+          </div>
+
+          <!-- Installation -->
+          <div class="doc-subsection">
+            <h3>📦 Installation</h3>
+            <ol class="step-list">
+              <li>Download the latest release from <a href="https://github.com/PixelMCN/MazePay/releases" target="_blank">GitHub Releases</a> or <a href="https://poggit.pmmp.io/p/MazePay" target="_blank">Poggit</a></li>
+              <li>Place the <code>.phar</code> file in your <code>plugins/</code> folder</li>
+              <li>Restart your server</li>
+              <li>Customize <code>plugin_data/MazePay/config.yml</code> and <code>messages.yml</code></li>
+            </ol>
+          </div>
+
+          <!-- Commands -->
+          <div class="doc-subsection">
+            <h3>📋 Commands</h3>
+            <div class="command-grid">
+              <div class="command-item">
+                <code>/balance [player]</code>
+                <p>View your or another player's balance</p>
+              </div>
+              <div class="command-item">
+                <code>/pay &lt;player&gt; &lt;amount&gt;</code>
+                <p>Transfer money to another player</p>
+              </div>
+              <div class="command-item">
+                <code>/bank</code>
+                <p>Open the interactive bank menu</p>
+              </div>
+              <div class="command-item">
+                <code>/deposit &lt;amount&gt;</code>
+                <p>Deposit money from wallet to bank</p>
+              </div>
+              <div class="command-item">
+                <code>/withdraw &lt;amount&gt;</code>
+                <p>Withdraw money from bank to wallet</p>
+              </div>
+              <div class="command-item">
+                <code>/rich [10|20|30]</code>
+                <p>View top richest players</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Configuration -->
+          <div class="doc-subsection">
+            <h3>⚙️ Configuration</h3>
+            <div class="code-block">
+              <pre><code>economy:
+  currency-symbol: "$"
+  starting-balance:
+    wallet: 1000
+    bank: 0
+  interest-rate: 0.5
+  minimum-transaction: 1
+  max-wallet: -1  # -1 = unlimited
+  max-bank: -1</code></pre>
+            </div>
+          </div>
+
+          <!-- API Quick Start -->
+          <div class="doc-subsection">
+            <h3>🔌 API Quick Start</h3>
+            <div class="code-block">
+              <pre><code>use PixelMCN\MazePay\MazePay;
+
+$economy = MazePay::getInstance()->getEconomyManager();
+
+// Get account
+$account = $economy->getAccount("PlayerName");
+$wallet = $account->getWallet();
+$bank = $account->getBank();
+
+// Add/Remove money
+$economy->addMoney("PlayerName", 100.0, "wallet");
+$economy->removeMoney("PlayerName", 50.0, "bank");
+
+// Transfer between players
+$economy->transfer("Sender", "Receiver", 100.0);</code></pre>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- MazeShop Documentation -->
+      <section class="docs-section" id="mazeshop">
+        <div class="section-header-docs fade-in">
+          <div class="section-header-content">
+            <h2>🛒 MazeShop</h2>
+            <p>Advanced shop & auction system with multi-level categories and native Bedrock UI</p>
+          </div>
+          <div class="section-header-links">
+            <a href="https://github.com/PixelMCN/MazeShop" target="_blank" rel="noopener noreferrer" class="btn-doc-link">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .3a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1-.7.1-.7.1-.7 1.2 0 1.9 1.2 1.9 1.2 1 1.8 2.8 1.3 3.5 1 0-.8.4-1.3.7-1.6-2.7-.3-5.5-1.3-5.5-6 0-1.2.5-2.3 1.3-3.1-.1-.4-.6-1.6.1-3.2 0 0 1-.3 3.4 1.2a11.5 11.5 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.6 1.6.2 2.8.1 3.2.8.8 1.3 1.9 1.3 3.2 0 4.6-2.8 5.6-5.5 5.9.5.4.9 1 .9 2.2v3.3c0 .3.1.7.8.6A12 12 0 0 0 12 .3"/></svg>
+              GitHub
+            </a>
+            <a href="https://poggit.pmmp.io/p/MazeShop" target="_blank" rel="noopener noreferrer" class="btn-doc-link btn-doc-poggit">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.35 10.04C18.67 6.59 15.64 4 12 4 9.11 4 6.6 5.64 5.35 8.04 2.34 8.36 0 10.91 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96zM14 13v4h-4v-4H7l5-5 5 5h-3z"/></svg>
+              Poggit
+            </a>
+          </div>
+        </div>
+
+        <div class="docs-content scale-in">
+          <!-- Features -->
+          <div class="doc-subsection">
+            <h3>✨ Features</h3>
+            <div class="feature-grid">
+              <div class="feature-box">
+                <h4>🏪 Shop System</h4>
+                <ul>
+                  <li>Multi-level category structure</li>
+                  <li>Native Bedrock UI (ChestUI)</li>
+                  <li>Buy & sell items</li>
+                  <li>188+ pre-configured items</li>
+                  <li>Custom block support</li>
+                </ul>
+              </div>
+              <div class="feature-box">
+                <h4>⚖️ Auction House</h4>
+                <ul>
+                  <li>Player-to-player trading</li>
+                  <li>Real-time bidding system</li>
+                  <li>Auto-refund for outbid players</li>
+                  <li>Configurable fees & limits</li>
+                  <li>Optional (can be disabled)</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Installation -->
+          <div class="doc-subsection">
+            <h3>📦 Installation & Requirements</h3>
+            <div class="info-box">
+              <p><strong>⚠️ Required:</strong> MazePay or BedrockEconomy plugin</p>
+            </div>
+            <ol class="step-list">
+              <li>Download from <a href="https://github.com/PixelMCN/MazeShop/releases" target="_blank">GitHub</a> or <a href="https://poggit.pmmp.io/p/MazeShop" target="_blank">Poggit</a></li>
+              <li>Install either MazePay or BedrockEconomy</li>
+              <li>Place <code>MazeShop.phar</code> in <code>plugins/</code> folder</li>
+              <li>Restart server</li>
+              <li>Configure <code>config.yml</code>, <code>shop.yml</code>, and <code>messages.yml</code></li>
+            </ol>
+          </div>
+
+          <!-- Commands -->
+          <div class="doc-subsection">
+            <h3>📋 Commands</h3>
+            <div class="command-grid">
+              <div class="command-item">
+                <code>/shop</code>
+                <p>Open the shop menu</p>
+              </div>
+              <div class="command-item">
+                <code>/shop &lt;category&gt;</code>
+                <p>Open specific category</p>
+              </div>
+              <div class="command-item">
+                <code>/sell [amount|all]</code>
+                <p>Quick sell items</p>
+              </div>
+              <div class="command-item">
+                <code>/auction</code>
+                <p>Open auction house</p>
+              </div>
+              <div class="command-item">
+                <code>/auction create &lt;bid&gt; &lt;duration&gt;</code>
+                <p>Create new auction</p>
+              </div>
+              <div class="command-item">
+                <code>/auction bid &lt;id&gt; &lt;amount&gt;</code>
+                <p>Place a bid</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Configuration -->
+          <div class="doc-subsection">
+            <h3>⚙️ Configuration Example</h3>
+            <div class="code-block">
+              <pre><code>auction:
+  enabled: true
+  min-duration: 300  # 5 minutes
+  max-duration: 86400  # 24 hours
+  min-starting-bid: 1
+  auction-fee: 5  # 5% fee
+  max-auctions-per-player: 5
+
+shop:
+  items-per-page: 45
+  allow-custom-blocks: true</code></pre>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Parties & Friends Documentation -->
+      <section class="docs-section" id="parties">
+        <div class="section-header-docs fade-in">
+          <div class="section-header-content">
+            <h2>👥 Parties & Friends</h2>
+            <p>Modern party and friend system with multi-database support and cross-server synchronization</p>
+          </div>
+          <div class="section-header-links">
+            <a href="https://github.com/PixelMCN/PartiesAndFriends" target="_blank" rel="noopener noreferrer" class="btn-doc-link">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .3a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1-.7.1-.7.1-.7 1.2 0 1.9 1.2 1.9 1.2 1 1.8 2.8 1.3 3.5 1 0-.8.4-1.3.7-1.6-2.7-.3-5.5-1.3-5.5-6 0-1.2.5-2.3 1.3-3.1-.1-.4-.6-1.6.1-3.2 0 0 1-.3 3.4 1.2a11.5 11.5 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.6 1.6.2 2.8.1 3.2.8.8 1.3 1.9 1.3 3.2 0 4.6-2.8 5.6-5.5 5.9.5.4.9 1 .9 2.2v3.3c0 .3.1.7.8.6A12 12 0 0 0 12 .3"/></svg>
+              GitHub
+            </a>
+            <a href="https://poggit.pmmp.io/p/PartiesAndFriends" target="_blank" rel="noopener noreferrer" class="btn-doc-link btn-doc-poggit">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.35 10.04C18.67 6.59 15.64 4 12 4 9.11 4 6.6 5.64 5.35 8.04 2.34 8.36 0 10.91 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96zM14 13v4h-4v-4H7l5-5 5 5h-3z"/></svg>
+              Poggit
+            </a>
+          </div>
+        </div>
+
+        <div class="docs-content scale-in">
+          <!-- Features -->
+          <div class="doc-subsection">
+            <h3>✨ Features</h3>
+            <div class="feature-grid">
+              <div class="feature-box">
+                <h4>🎉 Party System</h4>
+                <ul>
+                  <li>Create and manage parties</li>
+                  <li>Configurable member limits</li>
+                  <li>Invite/remove players</li>
+                  <li>Dedicated party chat</li>
+                  <li>Leadership transfer</li>
+                  <li>Cross-server persistence</li>
+                </ul>
+              </div>
+              <div class="feature-box">
+                <h4>🤝 Friend System</h4>
+                <ul>
+                  <li>Send/manage friend requests</li>
+                  <li>Online/offline status tracking</li>
+                  <li>Cross-server synchronization</li>
+                  <li>Maximum friends limit</li>
+                  <li>Private messaging</li>
+                  <li>Request expiration</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Installation -->
+          <div class="doc-subsection">
+            <h3>📦 Installation</h3>
+            <ol class="step-list">
+              <li>Download from <a href="https://github.com/PixelMCN/PartiesAndFriends/releases" target="_blank">GitHub</a> or <a href="https://poggit.pmmp.io/p/PartiesAndFriends" target="_blank">Poggit</a></li>
+              <li>Place the <code>.phar</code> file in <code>plugins/</code> folder</li>
+              <li>Restart your server</li>
+              <li>Configure <code>plugins/PartiesAndFriends/config.yml</code></li>
+              <li>Customize messages in <code>messages.yml</code></li>
+            </ol>
+          </div>
+
+          <!-- Commands -->
+          <div class="doc-subsection">
+            <h3>📋 Commands</h3>
+            <div class="command-grid">
+              <div class="command-item">
+                <code>/party</code>
+                <p>Open party menu</p>
+              </div>
+              <div class="command-item">
+                <code>/party invite &lt;player&gt;</code>
+                <p>Invite a player to party</p>
+              </div>
+              <div class="command-item">
+                <code>/party kick &lt;player&gt;</code>
+                <p>Kick a member (leader only)</p>
+              </div>
+              <div class="command-item">
+                <code>/friend</code>
+                <p>Open friends menu</p>
+              </div>
+              <div class="command-item">
+                <code>/friend add &lt;player&gt;</code>
+                <p>Send friend request</p>
+              </div>
+              <div class="command-item">
+                <code>/friend list</code>
+                <p>View friends list</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Multi-Server Setup -->
+          <div class="doc-subsection">
+            <h3>🌐 Multi-Server Setup</h3>
+            <div class="code-block">
+              <pre><code>database:
+  type: "mysql"  # or "sqlite" for single server
+  mysql:
+    host: "your-db-host"
+    port: 3306
+    username: "pfuser"
+    password: "your_password"
+    database: "partiesandfriends"
+
+sync:
+  enabled: true
+  interval: 5
+  server-id: "unique-server-name"
+
+party:
+  max-members: 8
+  auto-transfer-leadership: true
+
+friends:
+  max-friends: 50
+  request-expiration: 300</code></pre>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-section">
+        <h3>Mazecraft</h3>
+        <p>The ultimate Minecraft survival experience.</p>
+        <div class="footer-socials">
+          <a href="#" class="footer-social-icon"><svg viewBox="0 0 24 24"><use href="#icon-discord"></use></svg></a>
+          <a href="#" class="footer-social-icon"><svg viewBox="0 0 24 24"><use href="#icon-bluesky"></use></svg></a>
+          <a href="#" class="footer-social-icon"><svg viewBox="0 0 24 24"><use href="#icon-youtube"></use></svg></a>
+          <a href="#" class="footer-social-icon"><svg viewBox="0 0 24 24"><use href="#icon-github"></use></svg></a>
+        </div>
+      </div>
+      <div class="footer-section">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="../">Home</a></li>
+          <li><a href="./store.html">Store</a></li>
+          <li><a href="./maps.html">Maps</a></li>
+          <li><a href="./projects.html">Projects</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h3>Community</h3>
+        <ul>
+          <li><a href="./forums.html">Forums</a></li>
+          <li><a href="./docs.html">Documentation</a></li>
+          <li><a href="#">Rules</a></li>
+          <li><a href="#">Support</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h3>Legal</h3>
+        <ul>
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Terms of Service</a></li>
+          <li><a href="#">EULA</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 Mazecraft. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <svg style="display: none;">
+    <defs>
+      <symbol id="icon-discord" viewBox="0 0 24 24">
+        <path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515a.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0a12.64 12.64 0 0 0-.617-1.25a.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057a19.9 19.9 0 0 0 5.993 3.03a.078.078 0 0 0 .084-.028a14.09 14.09 0 0 0 1.226-1.994a.076.076 0 0 0-.041-.106a13.107 13.107 0 0 1-1.872-.892a.077.077 0 0 1-.008-.128a10.2 10.2 0 0 0 .372-.292a.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127a12.299 12.299 0 0 1-1.873.892a.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028a19.839 19.839 0 0 0 6.002-3.03a.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419c0-1.333.956-2.419 2.157-2.419c1.21 0 2.176 1.096 2.157 2.42c0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419c0-1.333.955-2.419 2.157-2.419c1.21 0 2.176 1.096 2.157 2.42c0 1.333-.946 2.418-2.157 2.418z"/>
+      </symbol>
+      <symbol id="icon-bluesky" viewBox="0 0 24 24">
+        <path d="M12 10.8c-1.087-2.114-4.046-6.053-6.798-7.995C2.566.944 1.561 1.266.902 1.565.139 1.908 0 3.08 0 3.768c0 .69.378 5.65.624 6.479.815 2.736 3.713 3.66 6.383 3.364.136-.02.275-.039.415-.056-.138.022-.276.04-.415.056-3.912.58-7.387 2.005-2.83 7.078 5.013 5.19 6.87-1.113 7.823-4.308.953 3.195 2.05 9.271 7.733 4.308 4.267-4.308 1.172-6.498-2.74-7.078a8.741 8.741 0 0 1-.415-.056c.14.017.279.036.415.056 2.67.297 5.568-.628 6.383-3.364.246-.828.624-5.79.624-6.478 0-.69-.139-1.861-.902-2.206-.659-.298-1.664-.62-4.3 1.24C16.046 4.748 13.087 8.687 12 10.8z"/>
+      </symbol>
+      <symbol id="icon-youtube" viewBox="0 0 24 24">
+        <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+      </symbol>
+      <symbol id="icon-github" viewBox="0 0 24 24">
+        <path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/>
+      </symbol>
+    </defs>
+  </svg>
+
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js"></script>
+  <script src="../js/main.js"></script>
+</body>
+</html>
