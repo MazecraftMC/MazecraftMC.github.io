@@ -165,6 +165,153 @@
   fill: currentColor;
 }
 
+/* Hero Actions */
+.hero-actions {
+  display: flex;
+  gap: var(--spacing-md);
+  margin-top: var(--spacing-lg);
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+  padding: var(--spacing-sm) var(--spacing-lg);
+  font-size: 1.1rem;
+  font-weight: 600;
+  border-radius: var(--radius-md);
+  text-decoration: none;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+  cursor: pointer;
+}
+
+.btn svg {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+}
+
+.btn-primary {
+  background: var(--gradient-orange);
+  color: var(--color-white);
+  box-shadow: 0 4px 15px rgba(255, 34, 0, 0.3);
+}
+
+.btn-primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 25px rgba(255, 34, 0, 0.5);
+}
+
+.btn-secondary {
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--color-white);
+  border-color: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+}
+
+.btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.15);
+  border-color: var(--color-orange);
+  transform: translateY(-3px);
+}
+
+.btn-discord {
+  background: #5865F2;
+  color: var(--color-white);
+  box-shadow: 0 4px 15px rgba(88, 101, 242, 0.3);
+  font-size: 1.1rem;
+}
+
+.btn-discord:hover {
+  background: #4752C4;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 25px rgba(88, 101, 242, 0.5);
+}
+
+/* === FEATURES SECTION === */
+.features-section {
+  padding: var(--spacing-xl) 0;
+  background: linear-gradient(180deg, #000000 0%, #0a0a0a 50%, #000000 100%);
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: var(--spacing-lg);
+  margin-top: var(--spacing-lg);
+}
+
+.feature-card {
+  background: rgba(255, 255, 255, 0.05);
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-lg);
+  text-align: center;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.feature-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 34, 0, 0.1), transparent);
+  transition: left 0.5s ease;
+}
+
+.feature-card:hover::before {
+  left: 100%;
+}
+
+.feature-card:hover {
+  border-color: var(--color-orange);
+  transform: translateY(-10px);
+  box-shadow: 0 10px 40px rgba(255, 34, 0, 0.3);
+}
+
+.feature-icon {
+  width: 70px;
+  height: 70px;
+  margin: 0 auto var(--spacing-md);
+  background: var(--gradient-orange);
+  border-radius: var(--radius-lg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 20px rgba(255, 34, 0, 0.4);
+  transition: all 0.3s ease;
+}
+
+.feature-card:hover .feature-icon {
+  transform: scale(1.1) rotate(5deg);
+  box-shadow: 0 6px 30px rgba(255, 34, 0, 0.6);
+}
+
+.feature-icon svg {
+  width: 35px;
+  height: 35px;
+  fill: var(--color-white);
+}
+
+.feature-card h3 {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--color-white);
+  margin-bottom: var(--spacing-xs);
+}
+
+.feature-card p {
+  color: rgba(255, 255, 255, 0.7);
+  line-height: 1.6;
+}
+
 /* === ABOUT SECTION === */
 .about-section {
   padding: var(--spacing-xl) 0;
@@ -336,11 +483,34 @@
     flex-direction: column;
     gap: var(--spacing-sm);
     width: 100%;
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
   }
   
   .hero-actions .btn {
     width: 100%;
     justify-content: center;
+    padding: var(--spacing-sm) var(--spacing-md);
+  }
+  
+  .features-grid {
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: var(--spacing-md);
+  }
+  
+  .feature-icon {
+    width: 60px;
+    height: 60px;
+  }
+  
+  .feature-icon svg {
+    width: 30px;
+    height: 30px;
+  }
+  
+  .feature-card h3 {
+    font-size: 1.2rem;
   }
   
   .about-text h2 {
@@ -386,26 +556,39 @@
   .hero {
     min-height: 100vh;
     height: 100vh;
+    padding-top: var(--navbar-height);
+  }
+  
+  .hero-content {
+    padding: 10px var(--spacing-sm);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 12px;
   }
   
   .hero-logo {
-    width: 95vw;
-    max-width: 350px;
+    width: 80vw;
+    max-width: 280px;
+    margin: 0 auto;
   }
   
   .hero-subtitle {
-    font-size: 1rem;
+    font-size: 0.9rem;
+    margin: 0;
+    line-height: 1.4;
   }
   
   .hero-ip-box {
-    padding: 4px;
+    padding: 3px;
     width: 95%;
     border-radius: 10px;
+    margin: 0 auto;
   }
   
   .hero-ip-address {
-    padding: 10px 14px;
-    gap: 8px;
+    padding: 10px 12px;
+    gap: 6px;
     border-radius: 7px;
   }
   
@@ -414,8 +597,88 @@
   }
   
   .hero-ip-text {
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     letter-spacing: 0.3px;
+  }
+  
+  .hero-actions {
+    margin: 0;
+    gap: 8px;
+  }
+  
+  .hero-actions .btn {
+    font-size: 0.9rem;
+    padding: 9px var(--spacing-md);
+  }
+  
+  .hero-actions .btn svg {
+    width: 18px;
+    height: 18px;
+  }
+  
+  .features-grid {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-md);
+  }
+  
+  .feature-card {
+    padding: var(--spacing-md);
+  }
+  
+  .feature-icon {
+    width: 55px;
+    height: 55px;
+  }
+  
+  .feature-icon svg {
+    width: 28px;
+    height: 28px;
+  }
+  
+  .feature-card h3 {
+    font-size: 1.1rem;
+  }
+  
+  .feature-card p {
+    font-size: 0.95rem;
+  }
+  
+  .section {
+    padding: var(--spacing-lg) 0;
+  }
+  
+  .section-title {
+    font-size: 1.8rem;
+    margin-bottom: var(--spacing-md);
+  }
+  
+  .about-block {
+    gap: var(--spacing-md);
+    margin-bottom: var(--spacing-md);
+  }
+  
+  .about-text h2 {
+    font-size: 1.5rem;
+  }
+  
+  .about-text p {
+    font-size: 0.9rem;
+  }
+  
+  .community-container {
+    gap: var(--spacing-md);
+  }
+  
+  .community-content h2 {
+    font-size: 1.5rem;
+  }
+  
+  .community-content p {
+    font-size: 0.9rem;
+  }
+  
+  .community-widget iframe {
+    height: 400px;
   }
   
   .status-indicator {
