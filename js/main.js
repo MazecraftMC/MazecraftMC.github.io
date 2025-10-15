@@ -217,10 +217,7 @@ function initCopyToClipboard() {
       const textToCopy = btn.dataset.copy || btn.previousElementSibling?.textContent;
       
       navigator.clipboard.writeText(textToCopy).then(() => {
-        // Visual feedback
-        const originalText = btn.textContent;
-        btn.textContent = 'Copied!';
-        btn.classList.add('copied');
+
         
         // Animate button
         anime({
@@ -229,12 +226,6 @@ function initCopyToClipboard() {
           duration: 300,
           easing: 'easeInOutQuad'
         });
-        
-        // Reset after 2 seconds
-        setTimeout(() => {
-          btn.textContent = originalText;
-          btn.classList.remove('copied');
-        }, 2000);
       }).catch(err => {
         console.error('Failed to copy:', err);
         btn.textContent = 'Failed!';
