@@ -5,7 +5,6 @@
 
 // === INITIALIZATION ===
 document.addEventListener('DOMContentLoaded', () => {
-  initPreloader();
   initNavbar();
   initScrollAnimations();
   initLazyLoading();
@@ -19,54 +18,14 @@ document.addEventListener('DOMContentLoaded', () => {
     case 'home':
       initHomePage();
       break;
-    case 'store':
-      initStorePage();
-      break;
     case 'maps':
       initMapsPage();
-      break;
-    case 'projects':
-      initProjectsPage();
       break;
     case 'docs':
       initDocsPage();
       break;
-    case 'forums':
-      initForumsPage();
-      break;
   }
 });
-
-// === PRELOADER ===
-function initPreloader() {
-  const preloader = document.querySelector('.preloader');
-  if (!preloader) return;
-  
-  // Anime.js animation for preloader logo
-  anime({
-    targets: '.preloader-logo',
-    scale: [0.8, 1.1, 1],
-    opacity: [0, 1],
-    duration: 1500,
-    easing: 'easeInOutQuad'
-  });
-  
-  // Hide preloader after page load
-  window.addEventListener('load', () => {
-    setTimeout(() => {
-      anime({
-        targets: '.preloader',
-        opacity: 0,
-        duration: 500,
-        easing: 'easeOutQuad',
-        complete: () => {
-          preloader.classList.add('hidden');
-          preloader.style.display = 'none';
-        }
-      });
-    }, 500);
-  });
-}
 
 // === NAVBAR ===
 function initNavbar() {
@@ -297,128 +256,6 @@ function initHomePage() {
   });
 }
 
-// === STORE PAGE ===
-function initStorePage() {
-  const sidebar = document.querySelector('.store-sidebar');
-  const sidebarToggle = document.querySelector('.sidebar-toggle');
-  const productCards = document.querySelectorAll('.product-card');
-  const searchInput = document.querySelector('.search-box input');
-  const filterSelect = document.querySelector('.filter-select');
-  
-  // Sidebar toggle for mobile
-  if (sidebarToggle) {
-    sidebarToggle.addEventListener('click', () => {
-      sidebar?.classList.toggle('active');
-    });
-  }
-  
-  // Product cards animation
-  anime({
-    targets: productCards,
-    opacity: [0, 1],
-    translateY: [30, 0],
-    delay: anime.stagger(100),
-    duration: 600,
-    easing: 'easeOutQuad'
-  });
-  
-  // Search functionality
-  if (searchInput) {
-    searchInput.addEventListener('input', (e) => {
-      const searchTerm = e.target.value.toLowerCase();
-      filterProducts(searchTerm);
-    });
-  }
-  
-  // Filter functionality
-  if (filterSelect) {
-    filterSelect.addEventListener('change', (e) => {
-      const category = e.target.value;
-      filterByCategory(category);
-    });
-  }
-  
-  // Category navigation
-  document.querySelectorAll('.category-title').forEach(title => {
-    title.addEventListener('click', () => {
-      title.classList.toggle('active');
-      const items = title.nextElementSibling;
-      
-      if (items) {
-        const isExpanded = title.classList.contains('active');
-        anime({
-          targets: items,
-          height: isExpanded ? [0, items.scrollHeight] : [items.scrollHeight, 0],
-          opacity: isExpanded ? [0, 1] : [1, 0],
-          duration: 300,
-          easing: 'easeInOutQuad'
-        });
-      }
-    });
-  });
-}
-
-function filterProducts(searchTerm) {
-  const products = document.querySelectorAll('.product-card');
-  
-  products.forEach(product => {
-    const title = product.querySelector('.product-title')?.textContent.toLowerCase() || '';
-    const description = product.querySelector('.product-description')?.textContent.toLowerCase() || '';
-    
-    if (title.includes(searchTerm) || description.includes(searchTerm)) {
-      product.style.display = 'block';
-      anime({
-        targets: product,
-        opacity: [0, 1],
-        scale: [0.9, 1],
-        duration: 300,
-        easing: 'easeOutQuad'
-      });
-    } else {
-      anime({
-        targets: product,
-        opacity: 0,
-        scale: 0.9,
-        duration: 300,
-        easing: 'easeOutQuad',
-        complete: () => {
-          product.style.display = 'none';
-        }
-      });
-    }
-  });
-}
-
-function filterByCategory(category) {
-  const products = document.querySelectorAll('.product-card');
-  
-  products.forEach(product => {
-    const productCategory = product.dataset.category;
-    
-    if (category === 'all' || productCategory === category) {
-      product.style.display = 'block';
-      anime({
-        targets: product,
-        opacity: [0, 1],
-        translateY: [20, 0],
-        duration: 400,
-        easing: 'easeOutQuad'
-      });
-    } else {
-      anime({
-        targets: product,
-        opacity: 0,
-        translateY: 20,
-        duration: 300,
-        easing: 'easeOutQuad',
-        complete: () => {
-          product.style.display = 'none';
-        }
-      });
-    }
-  });
-}
-
 // === MAPS PAGE ===
 function initMapsPage() {
   const mapItems = document.querySelectorAll('.map-item');
@@ -454,34 +291,6 @@ function initMapsPage() {
   });
 }
 
-// === PROJECTS PAGE ===
-function initProjectsPage() {
-  // Animate project cards
-  anime({
-    targets: '.project-card',
-    opacity: [0, 1],
-    translateY: [30, 0],
-    delay: anime.stagger(100, {start: 200}),
-    duration: 600,
-    easing: 'easeOutQuad'
-  });
-  
-  // Fetch GitHub repos (example - replace with actual API call)
-  // fetchGitHubRepos();
-}
-
-async function fetchGitHubRepos() {
-  // Example function - implement based on your GitHub username/organization
-  try {
-    const response = await fetch('https://api.github.com/users/YOUR_USERNAME/repos');
-    const repos = await response.json();
-    // Process and display repos
-    console.log(repos);
-  } catch (error) {
-    console.error('Error fetching GitHub repos:', error);
-  }
-}
-
 // === DOCS PAGE ===
 function initDocsPage() {
   const docCards = document.querySelectorAll('.doc-card');
@@ -495,127 +304,6 @@ function initDocsPage() {
     duration: 600,
     easing: 'easeOutQuad'
   });
-  
-  // Doc card click handler
-  docCards.forEach(card => {
-    card.addEventListener('click', () => {
-      const docName = card.querySelector('h3')?.textContent || 'Documentation';
-      
-      // Animate click feedback
-      anime({
-        targets: card,
-        scale: [1, 0.95, 1],
-        duration: 300,
-        easing: 'easeInOutQuad'
-      });
-      
-      // Show coming soon message or navigate to docs
-      showComingSoonModal(docName);
-    });
-  });
-}
-
-function showComingSoonModal(title) {
-  // Create a simple modal for coming soon
-  const modal = document.createElement('div');
-  modal.className = 'modal-overlay';
-  modal.innerHTML = `
-    <div class="modal-content">
-      <h2>${title}</h2>
-      <p>Documentation coming soon...</p>
-      <button class="btn btn-primary modal-close">Close</button>
-    </div>
-  `;
-  
-  modal.style.cssText = `
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.9);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 10000;
-  `;
-  
-  const content = modal.querySelector('.modal-content');
-  content.style.cssText = `
-    background: #0a0a0a;
-    padding: 2rem;
-    border-radius: 12px;
-    border: 2px solid #FF2200;
-    text-align: center;
-    max-width: 500px;
-  `;
-  
-  document.body.appendChild(modal);
-  
-  // Animate modal
-  anime({
-    targets: modal,
-    opacity: [0, 1],
-    duration: 300,
-    easing: 'easeOutQuad'
-  });
-  
-  anime({
-    targets: content,
-    scale: [0.8, 1],
-    duration: 400,
-    easing: 'easeOutElastic'
-  });
-  
-  // Close modal
-  modal.querySelector('.modal-close').addEventListener('click', () => {
-    anime({
-      targets: modal,
-      opacity: 0,
-      duration: 300,
-      easing: 'easeOutQuad',
-      complete: () => modal.remove()
-    });
-  });
-  
-  modal.addEventListener('click', (e) => {
-    if (e.target === modal) {
-      modal.querySelector('.modal-close').click();
-    }
-  });
-}
-
-// === FORUMS PAGE ===
-function initForumsPage() {
-  // Animate coming soon content
-  anime.timeline({
-    easing: 'easeOutQuad'
-  })
-  .add({
-    targets: '.forums-icon',
-    opacity: [0, 1],
-    scale: [0.5, 1],
-    rotate: [180, 0],
-    duration: 1000
-  })
-  .add({
-    targets: '.forums-content h1',
-    opacity: [0, 1],
-    translateY: [30, 0],
-    duration: 800
-  }, '-=500')
-  .add({
-    targets: '.forums-content p',
-    opacity: [0, 1],
-    translateY: [20, 0],
-    duration: 600
-  }, '-=400')
-  .add({
-    targets: '.forums-content .btn',
-    opacity: [0, 1],
-    scale: [0.8, 1],
-    duration: 500
-  }, '-=200');
 }
 
 // === UTILITY FUNCTIONS ===
@@ -646,10 +334,3 @@ function throttle(func, limit) {
     }
   };
 }
-
-// Export functions for external use
-window.MazecraftJS = {
-  filterProducts,
-  filterByCategory,
-  showComingSoonModal
-};
