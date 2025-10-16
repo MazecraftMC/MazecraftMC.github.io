@@ -4,7 +4,7 @@
   
   /* Primary Colors */
   --color-black: #000000;
-  --color-orange: #FF2200;
+  --color-orange: #FF1900;
   --color-yellow: #D9FF00;
   --color-white: #FFFFFF;
   
@@ -569,6 +569,11 @@ select:focus {
     border-color: var(--color-orange);
     color: var(--color-white);
     box-shadow: 0 4px 20px rgba(255, 34, 0, 0.4);
+  }
+  
+  /* Remove underline on mobile menu */
+  .navbar-menu a::after {
+    display: none;
   }
   
   .navbar-toggle {
