@@ -90,6 +90,16 @@
             </a>
           </div>
 
+          <!-- Graves System -->
+          <div class="docs-nav-section">
+            <a href="#graves-system" class="docs-nav-item" data-section="graves-system">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 2C8.13 2 5 5.13 5 9c0 3.04 2.12 5.61 5 6.32V20H7v2h10v-2h-3v-4.68c2.88-.71 5-3.28 5-6.32 0-3.87-3.13-7-7-7zm0 10c-1.65 0-3-1.35-3-3s1.35-3 3-3 3 1.35 3 3-1.35 3-3 3z"/>
+              </svg>
+              <span>Graves System</span>
+            </a>
+          </div>
+
           <!-- Creator Ranks -->
           <div class="docs-nav-section">
             <a href="#creator-ranks" class="docs-nav-item" data-section="creator-ranks">
@@ -134,7 +144,7 @@
             <li>Click on "Play"</li>
             <li>Click "Add Server"</li>
             <li>Enter the server address: <code>play.mazecraftmc.fun</code></li>
-            <li>Enter the server port: <code>25569</code></li>
+            <li>Enter the server port: <code>25571</code></li>
             <li>Click "Done" and join the server!</li>
           </ol>
 
@@ -147,13 +157,13 @@
               <p>We support Minecraft Java Edition & Minecraft Bedrock Edtion 1.21.x and above.</p>
             </div>
           </div>
-
           <h2>First Steps</h2>
           <p>Once you've joined the server, here's what you should do first:</p>
           <ul>
-            <li><strong>Find a Location:</strong> Use <code>/rtp</code> to teleport to a random location</li>
-            <li><strong>Create a Claim:</strong> Protect your builds with <code>/claim</code></li>
-            <li><strong>Join Discord:</strong> Connect with the community</li>
+            <li><strong>Login:</strong> Use <code>/register "password" "password" </code> to register yourself in the server, for the first time.</li>
+            <li><strong>Login:</strong> Use <code>/login "password" "password" </code> to login to your account.</li>
+            <li><strong>Note: </strong> Passwords are case sensitive. Make sure to remember your password. You will need this every time you join the server.</li>
+            
           </ul>
 
           <h2>Basic Commands</h2>
@@ -168,7 +178,7 @@
               <tbody>
                 <tr>
                   <td><code>/spawn</code></td>
-                  <td>Teleport to spawn</td>
+                  <td>Teleport to world spawn</td>
                 </tr>
                 <tr>
                   <td><code>/sethome [name]</code></td>
@@ -182,6 +192,10 @@
                 <tr>
                   <td><code>/tpa [player]</code></td>
                   <td>Request to teleport to a player</td>
+                </tr>
+                <tr>
+                  <td><code>/tpahere [player]</code></td>
+                  <td>Request to teleport a player to you</td>
                 </tr>
                 <tr>
                   <td><code>/tpaccept [player]</code></td>
@@ -290,6 +304,36 @@
           </div>
         </section>
 
+        <!-- Graves System-->
+        <section id="graves-system" class="docs-section">
+          <h1>Graves System</h1>
+          <p class="docs-lead">When you die, your inventory and your xp is saved in a grave.</p>
+          <p>Click on the grave to pick up your inventory and xp.</p>
+          <h2>Grave Command</h2>
+          <div class="docs-table-wrapper">
+            <table class="docs-table">
+              <thead>
+                <tr>
+                  <th>Command</th>
+                  <th>Description</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><code>/graves list</code></td>
+                  <td>To see your graves</td>
+                </tr>
+                <tr>
+                  <td><code>/graves tp </code></td>
+                  <td>To teleport to your grave</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          
+          
+        </section>
+
         <!-- Claim System Section -->
         <section id="claim-system" class="docs-section">
           <h1>Claim System</h1>
@@ -316,6 +360,10 @@
               </thead>
               <tbody>
                 <tr>
+                  <td><code>/claim</code></td>
+                  <td>Claim one chunk</td>
+                </tr>
+                <tr>
                   <td><code>/unclaim</code></td>
                   <td>Delete the claim you're standing in</td>
                 </tr>
@@ -335,12 +383,10 @@
             </table>
           </div>
 
-          <h2>Claim Blocks</h2>
-          <p>Every player receives claim blocks over time. The more you play, the more area you can protect!</p>
-          <ul>
-            <li><strong>Initial Blocks:</strong> 10 chunks blocks when you join</li>
-            <li><strong>Maximum:</strong> 40 claim chunks</li>
-          </ul>
+          <h2>Claim Chunks</h2>
+          <p>Maximum number of claims every player has is 8</p>
+          <p>Maximum Chunks per claim: 12 chunks</p>
+          <p>Maximum Chunks Total: 26 chunks</p>
 
           <div class="docs-callout docs-callout-success">
             <svg viewBox="0 0 24 24" fill="currentColor">
@@ -348,7 +394,7 @@
             </svg>
             <div>
               <strong>Pro Tip</strong>
-              <p>Use <code>/claimchunks</code> to check how many claim blocks you have available.</p>
+              <p>Use <code>/claimchunks</code> to check how many claim chunks you have available.</p>
             </div>
           </div>
         </section>
