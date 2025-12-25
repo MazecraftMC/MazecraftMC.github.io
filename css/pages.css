@@ -265,52 +265,6 @@
 }
 
 
-/* === FORUMS PAGE === */
-.forums-container {
-  min-height: calc(100vh - var(--navbar-height));
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: var(--spacing-lg);
-}
-
-.forums-content {
-  text-align: center;
-  max-width: 700px;
-}
-
-.forums-content h1 {
-  font-size: 3.5rem;
-  background: var(--gradient-orange);
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  margin-bottom: var(--spacing-md);
-}
-
-.forums-content > p {
-  font-size: 1.2rem;
-  color: rgba(255, 255, 255, 0.75);
-  margin-bottom: var(--spacing-xl);
-  line-height: 1.6;
-}
-
-.forums-icon {
-  width: 150px;
-  height: 150px;
-  margin: 0 auto var(--spacing-lg);
-  animation: float 3s ease-in-out infinite;
-}
-
-@keyframes float {
-  0%, 100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-10px);
-  }
-}
-
 /* === TEAM PAGE === */
 
 .team-intro p {

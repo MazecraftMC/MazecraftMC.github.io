@@ -140,32 +140,32 @@
     }
     
     // Team data
+    // You can add an optional `image` property (relative path) for each member.
+    // Example: image: '../resources/images/staff/pixelis.png'
     const teamMembers = [
-      { name: 'Pixelis0P', role: 'Owner & Developer', ign: 'Pixelis0P', discord: '#', twitter: '#', youtube: '#' },
-      { name: 'Alex', role: 'Admin & Moderator', ign: 'Alex_Craft', discord: '#', twitter: '#', youtube: '#' }
+      { name: 'Pixelis0P', role: 'Developer', ign: 'Pixelis0P', discord: '#', twitter: '#', youtube: '#', image: '../resources/staff/pixelis0p-head.png' },
+      { name: 'Siddharthz', role: 'Admin', ign: 'Siddharthz', discord: '#', twitter: '#', youtube: '#', image: '../resources/staff/Siddharthz-head.png' }
     ];
     
     // Render team cards
     function renderTeamCards() {
       const grid = document.getElementById('teamGrid');
       if (!grid) return;
-      
+
+      const defaultImage = '../resources/images/team.png';
+
       teamMembers.forEach((member, index) => {
+        const imageSrc = member.image ? member.image : defaultImage;
+
         const card = document.createElement('div');
         card.className = 'team-card fade-in';
         card.innerHTML = `
           <div class="team-card-image">
-            <img src="../resources/images/team.png" alt="${member.name}">
+            <img src="${imageSrc}" alt="${member.name}" loading="lazy">
             <div class="team-card-overlay">
               <div class="team-socials">
                 <a href="${member.discord}" class="team-social-link" aria-label="Discord">
                   <svg viewBox="0 0 24 24" fill="currentColor"><use href="#icon-discord"></use></svg>
-                </a>
-                <a href="${member.twitter}" class="team-social-link" aria-label="Twitter">
-                  <svg viewBox="0 0 24 24" fill="currentColor"><use href="#icon-twitter"></use></svg>
-                </a>
-                <a href="${member.youtube}" class="team-social-link" aria-label="YouTube">
-                  <svg viewBox="0 0 24 24" fill="currentColor"><use href="#icon-youtube"></use></svg>
                 </a>
               </div>
             </div>
@@ -182,7 +182,7 @@
           </div>
         `;
         grid.appendChild(card);
-        
+
         // Animate cards
         anime({
           targets: card,
