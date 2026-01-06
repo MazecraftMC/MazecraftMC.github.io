@@ -2,6 +2,7 @@
 .hero {
   position: relative;
   min-height: 100vh;
+  min-height: 100dvh; /* Mobile viewport fix */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -443,7 +444,9 @@
 @media (max-width: 768px) {
   .hero {
     min-height: 100vh;
+    min-height: 100dvh; /* Mobile viewport fix */
     height: 100vh;
+    height: -webkit-fill-available; /* iOS Safari fallback */
   }
 
   .hero-subtitle {

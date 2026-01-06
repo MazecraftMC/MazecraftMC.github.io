@@ -1,6 +1,7 @@
 /* === MAPS PAGE === */
 .maps {
   min-height: 100vh;
+  min-height: 100dvh; /* Mobile viewport fix */
 }
 
 /* === SIMPLIFIED MAPS LAYOUT === */
@@ -10,11 +11,13 @@
   align-items: center;
   justify-content: center;
   min-height: calc(100vh - var(--navbar-height));
+  min-height: calc(100dvh - var(--navbar-height)); /* Mobile viewport fix */
   height: calc(100vh - var(--navbar-height));
   padding: var(--spacing-md) var(--spacing-lg);
   gap: var(--spacing-sm);
   text-align: center;
   overflow-y: auto;
+  -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
 }
 
 .map-icon-container {

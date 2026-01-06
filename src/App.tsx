@@ -7,7 +7,6 @@ import Footer from './components/Footer'
 import Home from './pages/Home'
 import Maps from './pages/Maps'
 import Players from './pages/Players'
-import Team from './pages/Team'
 import Docs from './pages/Docs'
 
 function AppContent() {
@@ -28,7 +27,6 @@ function AppContent() {
           <Route path="/" element={<Home />} />
           <Route path="/maps" element={<Maps />} />
           <Route path="/players" element={<Players />} />
-          <Route path="/team" element={<Team />} />
           <Route path="/docs" element={<Docs />} />
         </Routes>
       </main>
