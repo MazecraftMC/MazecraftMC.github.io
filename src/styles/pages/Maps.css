@@ -102,10 +102,6 @@
   justify-content: center;
   margin-top: var(--spacing-sm);
 }
-  flex-wrap: wrap;
-  justify-content: center;
-  margin-top: var(--spacing-sm);
-}
 
 /* === RESPONSIVE === */
 @media (max-width: 768px) {
