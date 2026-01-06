@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Mazecraft - Mostly Vanilla Survival Minecraft Server. Join our community and experience the best Minecraft gameplay!">
+  <meta name="keywords" content="Minecraft, Mazecraft, Survival, Multiplayer, Gaming, Community">
+  <meta name="author" content="Mazecraft Team">
+  
+  <!-- Open Graph Meta Tags -->
+  <meta property="og:title" content="MazecraftMC Network">
+  <meta property="og:description" content="Join Mazecraft - The ultimate Minecraft survival experience!">
+  <meta property="og:image" content="./resources/images/mazecraft.png">
+  <meta property="og:url" content="https://mazecraftmc.github.io">
+  <meta property="og:type" content="website">
+  
+  <!-- Twitter Card Meta Tags -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="MazecraftMC Network">
+  <meta name="twitter:description" content="Join Mazecraft - The ultimate Minecraft survival experience!">
+  <meta name="twitter:image" content="./resources/images/mazecraft.png">
+  
+  <title>MazecraftMC - Home</title>
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="./resources/images/mazecraft-icon.png">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="./css/global.css">
+  <link rel="stylesheet" href="./css/home.css">
+</head>
+<body data-page="home">
+  
+  <!-- Toast Container -->
+  <div class="toast-container" id="toastContainer"></div>
+
+  <!-- Navbar -->
+  <nav class="navbar" role="navigation" aria-label="Main Navigation">
+    <div class="navbar-container">
+      <a href="./" class="navbar-logo" aria-label="Mazecraft Home">
+        <img src="./resources/images/mazecraft.png" alt="Mazecraft Logo">
+      </a>
+      
+      <ul class="navbar-menu">
+        <li><a href="./" class="active">Home</a></li>
+        <li><a href="./pages/maps.html">Maps</a></li>
+        <li><a href="./pages/players.html">Players</a></li>
+        <li><a href="./pages/team.html">Team</a></li>
+        <li><a href="./pages/docs.html">Docs</a></li>
+      </ul>
+      
+      <button class="navbar-toggle" aria-label="Toggle Navigation Menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero" aria-label="Hero Section">
+    <div class="hero-background">
+      <img src="./resources/images/test-bg2.webp" alt="Minecraft Background" loading="lazy">
+    </div>
+    
+    <div class="hero-content">
+      <img src="./resources/images/mazecraft.png" alt="Mazecraft Logo" class="hero-logo">
+      <p class="hero-subtitle">The Ultimate Minecraft Survival Experience</p>
+      
+      <div class="hero-ip-box">
+        <div class="hero-ip-address">
+          <div class="hero-ip-content">
+            <div class="status-indicator" id="serverStatus" title="Server Online"></div>
+            <span class="hero-ip-text">play.mazecraftmc.fun</span>
+          </div>
+          <button class="copy-btn" id="copyBtn" aria-label="Copy Server IP">
+            <svg viewBox="0 0 24 24">
+              <path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+      
+      <div class="hero-actions">
+        <a href="#community" class="btn btn-primary">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515a.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0a12.64 12.64 0 0 0-.617-1.25a.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057a19.9 19.9 0 0 0 5.993 3.03a.078.078 0 0 0 .084-.028a14.09 14.09 0 0 0 1.226-1.994a.076.076 0 0 0-.041-.106a13.107 13.107 0 0 1-1.872-.892a.077.077 0 0 1-.008-.128a10.2 10.2 0 0 0 .372-.292a.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127a12.299 12.299 0 0 1-1.873.892a.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028a19.839 19.839 0 0 0 6.002-3.03a.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419c0-1.333.956-2.419 2.157-2.419c1.21 0 2.176 1.096 2.157 2.42c0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419c0-1.333.955-2.419 2.157-2.419c1.21 0 2.176 1.096 2.157 2.42c0 1.333-.946 2.418-2.157 2.418z"/>
+          </svg>
+          Join Discord
+        </a>
+        <a href="#about" class="btn btn-secondary">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/>
+          </svg>
+          Learn More
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section class="features-section section" aria-label="Features">
+    <div class="container">
+      <h2 class="section-title fade-in">Why Choose Mazecraft?</h2>
+      <div class="features-grid">
+        <div class="feature-card fade-in">
+          <div class="feature-icon">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+            </svg>
+          </div>
+          <h3>Mostly Vanilla</h3>
+          <p>Vanilla Minecraft experience with quality-of-life improvements</p>
+        </div>
+        <div class="feature-card fade-in">
+          <div class="feature-icon">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/>
+            </svg>
+          </div>
+          <h3>Active Community</h3>
+          <p>Join a small but active community of players and make new friends</p>
+        </div>
+        <div class="feature-card fade-in">
+          <div class="feature-icon">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm0 10.99h7c-.53 4.12-3.28 7.79-7 8.94V12H5V6.3l7-3.11v8.8z"/>
+            </svg>
+          </div>
+          <h3>24/7 Uptime</h3>
+          <p>Servers based in India provide reliable 24/7 uptime</p>
+        </div>
+        <div class="feature-card fade-in">
+          <div class="feature-icon">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path d="M9 11H7v2h2v-2zm4 0h-2v2h2v-2zm4 0h-2v2h2v-2zm2-7h-1V2h-2v2H8V2H6v2H5c-1.11 0-1.99.9-1.99 2L3 20c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V9h14v11z"/>
+            </svg>
+          </div>
+          <h3>Regular Events</h3>
+          <p>Weekly events, competitions, and exclusive rewards coming soon</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Us Section -->
+  <section id="about" class="about-section section" aria-label="About Us">
+    <div class="container">
+      <h2 class="section-title fade-in">About Mazecraft</h2>
+      
+      <!-- About Block 1 -->
+      <div class="about-block fade-in">
+        <div class="about-text">
+          <h2>Mostly Vanilla Survival</h2>
+          <p>Experience Minecraft the way it was meant to be played. Our server offers a mostly vanilla survival experience with carefully selected enhancements that improve gameplay without compromising the core Minecraft feel.</p>
+          <p>Build, explore, and thrive in a friendly community where creativity meets adventure. Join thousands of players who have made Mazecraft their home!</p>
+        </div>
+        <div class="about-image">
+          <img src="./resources/images/mostly-vanilla.webp" alt="Minecraft Gameplay" loading="lazy">
+        </div>
+      </div>
+      
+      <!-- About Block 2 -->
+      <div class="about-block reverse fade-in">
+        <div class="about-text">
+          <h2>Coming Soon</h2>
+          <p>Working on a new gamemode, join our community discord to find out more!</p>
+        </div>
+        <div class="about-image">
+          <img src="./resources/images/soon.webp" alt="Coming Soon" loading="lazy">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Mazecraft News Section -->
+  <section class="news-section section" aria-label="Mazecraft News">
+    <div class="container">
+      <h2 class="section-title fade-in">Mazecraft News</h2>
+      
+      <div class="news-container fade-in">
+        <div class="news-content">
+          <svg class="news-icon" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/>
+          </svg>
+          <h3>Coming Soon</h3>
+          <p>Stay tuned for the latest updates and announcements!</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Our Community Section -->
+  <section id="community" class="community-section section" aria-label="Community">
+    <div class="container">
+      <h2 class="section-title fade-in">Join Our Community</h2>
+      
+      <div class="community-container">
+        <div class="community-widget fade-in">
+          <iframe src="https://discord.com/widget?id=1414475115269193831&theme=dark" allowtransparency="true" frameborder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
+        </div>
+        
+        <div class="community-content fade-in">
+          <h2>Connect With Players</h2>
+          <p>Join our vibrant Discord community with active members. Get support, share your builds, participate in events, and make new friends!</p>
+          <p>Stay updated with server announcements, patch notes, and exclusive community events.</p>
+          <a href="https://discord.gg/HrRdV5jmua" class="btn btn-discord" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515a.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0a12.64 12.64 0 0 0-.617-1.25a.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057a19.9 19.9 0 0 0 5.993 3.03a.078.078 0 0 0 .084-.028a14.09 14.09 0 0 0 1.226-1.994a.076.076 0 0 0-.041-.106a13.107 13.107 0 0 1-1.872-.892a.077.077 0 0 1-.008-.128a10.2 10.2 0 0 0 .372-.292a.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127a12.299 12.299 0 0 1-1.873.892a.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028a19.839 19.839 0 0 0 6.002-3.03a.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419c0-1.333.956-2.419 2.157-2.419c1.21 0 2.176 1.096 2.157 2.42c0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419c0-1.333.955-2.419 2.157-2.419c1.21 0 2.176 1.096 2.157 2.42c0 1.333-.946 2.418-2.157 2.418z"/>
+            </svg>
+            Join Discord Server
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer" role="contentinfo">
+    <div class="footer-container">
+      <div class="footer-section">
+        <h3>Mazecraft</h3>
+        <p>The ultimate Minecraft survival experience. Join thousands of players in our community!</p>
+        <div class="footer-socials">
+          <a href="https://discord.com/invite/HrRdV5jmua" class="footer-social-icon" aria-label="Discord" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24"><use href="#icon-discord"></use></svg>
+          </a>
+          <a href="https://bsky.app/profile/mazecraftmc.bsky.social" class="footer-social-icon" aria-label="Bluesky" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24"><use href="#icon-bluesky"></use></svg>
+          </a>
+          <a href="https://www.youtube.com/@MazecraftNetwork" class="footer-social-icon" aria-label="YouTube" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24"><use href="#icon-youtube"></use></svg>
+          </a>
+          <a href="https://github.com/soon" class="footer-social-icon" aria-label="GitHub" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24"><use href="#icon-github"></use></svg>
+          </a>
+        </div>
+      </div>
+      
+      <div class="footer-section">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="./">Home</a></li>
+          <li><a href="./pages/maps.html">Maps</a></li>
+          <li><a href="./pages/players.html">Players</a></li>
+        </ul>
+      </div>
+      
+      <div class="footer-section">
+        <h3>Community</h3>
+        <ul>
+          <li><a href="./pages/team.html">Team</a></li>
+          <li><a href="./pages/docs.html">Documentation</a></li>
+        </ul>
+      </div>
+      
+      <div class="footer-section">
+        <h3>Legal</h3>
+        <ul>
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Terms of Service</a></li>
+          <li><a href="#">EULA</a></li>
+        </ul>
+      </div>
+    </div>
+    
+    <div class="footer-bottom">
+      <p>&copy; 2025 MazecraftMC Network. All rights reserved. Not affiliated with Mojang or Microsoft.</p>
+    </div>
+  </footer>
+
+  <!-- SVG Sprite Icons -->
+  <svg style="display: none;">
+    <defs>
+      <!-- Discord Icon -->
+      <symbol id="icon-discord" viewBox="0 0 24 24">
+        <path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515a.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0a12.64 12.64 0 0 0-.617-1.25a.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057a19.9 19.9 0 0 0 5.993 3.03a.078.078 0 0 0 .084-.028a14.09 14.09 0 0 0 1.226-1.994a.076.076 0 0 0-.041-.106a13.107 13.107 0 0 1-1.872-.892a.077.077 0 0 1-.008-.128a10.2 10.2 0 0 0 .372-.292a.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127a12.299 12.299 0 0 1-1.873.892a.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028a19.839 19.839 0 0 0 6.002-3.03a.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419c0-1.333.956-2.419 2.157-2.419c1.21 0 2.176 1.096 2.157 2.42c0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419c0-1.333.955-2.419 2.157-2.419c1.21 0 2.176 1.096 2.157 2.42c0 1.333-.946 2.418-2.157 2.418z"/>
+      </symbol>
+      
+      <!-- Bluesky Icon -->
+      <symbol id="icon-bluesky" viewBox="0 0 24 24">
+        <path d="M12 10.8c-1.087-2.114-4.046-6.053-6.798-7.995C2.566.944 1.561 1.266.902 1.565.139 1.908 0 3.08 0 3.768c0 .69.378 5.65.624 6.479.815 2.736 3.713 3.66 6.383 3.364.136-.02.275-.039.415-.056-.138.022-.276.04-.415.056-3.912.58-7.387 2.005-2.83 7.078 5.013 5.19 6.87-1.113 7.823-4.308.953 3.195 2.05 9.271 7.733 4.308 4.267-4.308 1.172-6.498-2.74-7.078a8.741 8.741 0 0 1-.415-.056c.14.017.279.036.415.056 2.67.297 5.568-.628 6.383-3.364.246-.828.624-5.79.624-6.478 0-.69-.139-1.861-.902-2.206-.659-.298-1.664-.62-4.3 1.24C16.046 4.748 13.087 8.687 12 10.8z"/>
+      </symbol>
+      
+      <!-- YouTube Icon -->
+      <symbol id="icon-youtube" viewBox="0 0 24 24">
+        <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+      </symbol>
+      
+      <!-- GitHub Icon -->
+      <symbol id="icon-github" viewBox="0 0 24 24">
+        <path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/>
+      </symbol>
+      
+      <!-- Email Icon -->
+      <symbol id="icon-email" viewBox="0 0 24 24">
+        <path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+      </symbol>
+      
+      <!-- Check Icon for Toast -->
+      <symbol id="icon-check" viewBox="0 0 24 24">
+        <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+      </symbol>
+      
+      <!-- Close Icon for Toast -->
+      <symbol id="icon-close" viewBox="0 0 24 24">
+        <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/>
+      </symbol>
+      
+      <!-- Info Icon -->
+      <symbol id="icon-info" viewBox="0 0 24 24">
+        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/>
+      </symbol>
+    </defs>
+  </svg>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js"></script>
+  <script src="./js/main.js"></script>
+  <script>
+    // Toast Notification System
+    function showToast(message, type = 'success', duration = 3000) {
+      const container = document.getElementById('toastContainer');
+      const toast = document.createElement('div');
+      toast.className = `toast toast-${type}`;
+      
+      const iconSvg = '<svg viewBox="0 0 24 24"><use href="#icon-check"></use></svg>';
+      
+      toast.innerHTML = `
+        <div class="toast-icon">${iconSvg}</div>
+        <div class="toast-message">${message}</div>
+      `;
+      
+      container.appendChild(toast);
+      
+      setTimeout(() => {
+        toast.classList.add('removing');
+        setTimeout(() => toast.remove(), 300);
+      }, duration);
+    }
+    
+    // Server Status Check using MCSRVSTAT API
+    async function checkServerStatus() {
+      const statusIndicator = document.getElementById('serverStatus');
+      const serverIP = 'play.mazecraftmc.fun';
+      
+      try {
+        const response = await fetch(`https://api.mcsrvstat.us/3/${serverIP}`);
+        const data = await response.json();
+        
+        if (data.online) {
+          statusIndicator.classList.remove('offline');
+          statusIndicator.classList.add('online');
+          statusIndicator.title = `Server Online - ${data.players?.online || 0}/${data.players?.max || 0} players`;
+        } else {
+          statusIndicator.classList.add('offline');
+          statusIndicator.classList.remove('online');
+          statusIndicator.title = 'Server Offline';
+        }
+      } catch (error) {
+        console.error('Failed to fetch server status:', error);
+        statusIndicator.classList.add('offline');
+        statusIndicator.classList.remove('online');
+        statusIndicator.title = 'Status Unknown';
+      }
+    }
+    
+    // Copy IP Functionality
+    document.addEventListener('DOMContentLoaded', function() {
+      const copyBtn = document.getElementById('copyBtn');
+      const serverIP = 'play.mazecraftmc.fun';
+      
+      if (copyBtn) {
+        copyBtn.addEventListener('click', function() {
+          navigator.clipboard.writeText(serverIP).then(() => {
+            showToast('Server IP copied to clipboard!', 'success');
+          }).catch(() => {
+            showToast('Failed to copy IP', 'error');
+          });
+        });
+      }
+      
+      // Check server status on page load
+      checkServerStatus();
+      
+      // Refresh server status every 30 seconds
+      setInterval(checkServerStatus, 30000);
+    });
+  </script>
+</body>
+</html>
