@@ -8,6 +8,7 @@ import Home from './pages/Home'
 import Maps from './pages/Maps'
 import Players from './pages/Players'
 import Docs from './pages/Docs'
+import Vote from './pages/Vote'
 
 function AppContent() {
   const location = useLocation()
@@ -27,6 +28,7 @@ function AppContent() {
           <Route path="/" element={<Home />} />
           <Route path="/maps" element={<Maps />} />
           <Route path="/players" element={<Players />} />
+          <Route path="/vote" element={<Vote />} />
           <Route path="/docs" element={<Docs />} />
         </Routes>
       </main>

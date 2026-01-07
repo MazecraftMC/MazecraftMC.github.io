@@ -1,0 +1,417 @@
+/* === VOTE PAGE === */
+.vote {
+  min-height: 100vh;
+  min-height: 100dvh;
+  background: var(--color-black);
+  position: relative;
+}
+
+/* Subtle background pattern */
+.vote::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    radial-gradient(circle at 20% 30%, rgba(255, 25, 0, 0.03) 0%, transparent 50%),
+    radial-gradient(circle at 80% 70%, rgba(217, 255, 0, 0.02) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.vote-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: var(--spacing-xl) var(--spacing-lg);
+  padding-top: calc(var(--navbar-height) + var(--spacing-xl));
+  position: relative;
+  z-index: 1;
+}
+
+/* === HEADER === */
+.vote-header {
+  text-align: center;
+  margin-bottom: calc(var(--spacing-xl) + var(--spacing-md));
+}
+
+.vote-title {
+  font-size: 3rem;
+  font-weight: 800;
+  color: var(--color-white);
+  margin-bottom: var(--spacing-md);
+  letter-spacing: -1px;
+  line-height: 1.1;
+  text-shadow: 0 2px 10px rgba(255, 25, 0, 0.15);
+}
+
+.vote-title::after {
+  content: '';
+  display: block;
+  width: 80px;
+  height: 4px;
+  background: var(--gradient-orange);
+  margin: var(--spacing-md) auto 0;
+  border-radius: var(--radius-sm);
+  box-shadow: 0 2px 8px rgba(255, 25, 0, 0.4);
+}
+
+.vote-subtitle {
+  font-size: 1.15rem;
+  color: rgba(255, 255, 255, 0.7);
+  max-width: 700px;
+  margin: var(--spacing-md) auto 0;
+  line-height: 1.7;
+}
+
+/* === VOTING SITES GRID === */
+.vote-sites-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(280px, 1fr));
+  gap: var(--spacing-md);
+  margin-bottom: var(--spacing-xl);
+  width: 100%;
+  max-width: 1400px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Base card style */
+.vote-card {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-md);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  min-height: 200px;
+  z-index: 1;
+}
+
+/* Subtle glow on hover */
+.vote-card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at center, rgba(255, 25, 0, 0.08), transparent 70%);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+}
+
+.vote-card:hover {
+  transform: translateY(-8px);
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.2);
+  box-shadow: 
+    0 12px 40px rgba(0, 0, 0, 0.4),
+    0 0 0 1px rgba(255, 255, 255, 0.05);
+}
+
+.vote-card:hover::before {
+  transform: scaleX(1);
+}
+
+.vote-card:hover::after {
+  opacity: 1;
+}
+
+/* Card header */
+.vote-card-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: var(--spacing-sm);
+  position: relative;
+  z-index: 2;
+}
+
+.vote-card-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--color-white);
+  margin: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  letter-spacing: -0.3px;
+}
+
+/* Card description */
+.vote-card-description {
+  color: rgba(255, 255, 255, 0.65);
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin-bottom: var(--spacing-md);
+  flex-grow: 1;
+  min-height: 45px;
+  position: relative;
+  z-index: 2;
+}
+
+/* Rewards section */
+.vote-rewards {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: var(--spacing-md);
+  padding: 12px;
+  background: rgba(255, 255, 255, 0.04);
+  border-radius: var(--radius-sm);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  position: relative;
+  z-index: 2;
+  transition: all 0.3s ease;
+}
+
+.vote-card:hover .vote-rewards {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(255, 255, 255, 0.15);
+}
+
+.vote-reward-label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.vote-reward {
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+  color: var(--color-orange);
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+/* Button */
+.vote-button {
+  width: 100%;
+  padding: 12px var(--spacing-sm);
+  color: var(--color-white);
+  border: none;
+  border-radius: var(--radius-sm);
+  font-size: 0.95rem;
+  font-weight: 700;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+  white-space: nowrap;
+  z-index: 10;
+  pointer-events: auto;
+  letter-spacing: 0.3px;
+}
+
+.vote-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.6s ease;
+}
+
+.vote-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.vote-button:active {
+  transform: translateY(0);
+  transition: transform 0.1s ease;
+}
+
+.vote-button:hover::before {
+  left: 100%;
+}
+
+.vote-arrow {
+  font-size: 1rem;
+  font-weight: 300;
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.vote-button:hover .vote-arrow {
+  transform: translateX(4px);
+}
+
+/* === ACCENT THEME === */
+.vote-card-accent .vote-rewards {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(255, 255, 255, 0.15);
+}
+
+.vote-card-accent:hover .vote-rewards {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.vote-button-accent {
+  background: linear-gradient(135deg, #4a4a4a 0%, #2a2a2a 100%);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.vote-button-accent:hover {
+  background: linear-gradient(135deg, #5a5a5a 0%, #3a3a3a 100%);
+  border-color: rgba(255, 255, 255, 0.35);
+  box-shadow: 0 4px 16px rgba(255, 255, 255, 0.1);
+}
+
+/* === VOTE NOTICE === */
+.vote-notice {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-lg);
+  max-width: 800px;
+  margin: 0 auto;
+  position: relative;
+  overflow: hidden;
+}
+
+.vote-notice::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background: var(--gradient-orange);
+}
+
+.vote-notice h4 {
+  color: var(--color-white);
+  font-size: 1.2rem;
+  margin-bottom: var(--spacing-md);
+  font-weight: 700;
+  letter-spacing: -0.3px;
+}
+
+.vote-notice ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+}
+
+.vote-notice li {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.95rem;
+  padding-left: var(--spacing-md);
+  position: relative;
+  line-height: 1.6;
+}
+
+.vote-notice li::before {
+  content: '•';
+  position: absolute;
+  left: 0;
+  color: var(--color-orange);
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+/* === RESPONSIVE DESIGN === */
+@media (max-width: 1400px) {
+  .vote-sites-grid {
+    grid-template-columns: repeat(4, minmax(250px, 1fr));
+    gap: var(--spacing-sm);
+  }
+}
+
+@media (max-width: 1200px) {
+  .vote-sites-grid {
+    grid-template-columns: repeat(3, minmax(280px, 1fr));
+  }
+}
+
+@media (max-width: 900px) {
+  .vote-sites-grid {
+    grid-template-columns: repeat(2, minmax(280px, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .vote-container {
+    padding: var(--spacing-lg) var(--spacing-md);
+    padding-top: calc(var(--navbar-height) + var(--spacing-lg));
+  }
+
+  .vote-title {
+    font-size: 2.2rem;
+  }
+
+  .vote-subtitle {
+    font-size: 1.05rem;
+  }
+
+  .vote-sites-grid {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-md);
+  }
+
+  .vote-card {
+    padding: var(--spacing-md);
+  }
+
+  .vote-card-title {
+    font-size: 1.15rem;
+  }
+
+  .vote-card-description {
+    font-size: 0.95rem;
+  }
+
+  .vote-notice {
+    padding: var(--spacing-md);
+  }
+
+  .vote-notice ul {
+    gap: 10px;
+  }
+
+  .vote-notice li {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .vote-title {
+    font-size: 1.8rem;
+  }
+
+  .vote-title::after {
+    width: 60px;
+  }
+
+  .vote-card-title {
+    font-size: 1.1rem;
+  }
+
+  .vote-card-description {
+    font-size: 0.9rem;
+    min-height: 40px;
+  }
+
+  .vote-reward {
+    font-size: 0.95rem;
+  }
+
+  .vote-button {
+    font-size: 0.9rem;
+    padding: 10px var(--spacing-sm);
+  }
+}
