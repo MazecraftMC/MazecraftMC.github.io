@@ -15,7 +15,7 @@
   font-weight: 800;
   color: var(--color-black);
   margin-bottom: 2.5rem;
-  text-shadow: 4px 4px 0px var(--color-gold);
+  text-shadow: none;
   text-align: center;
   letter-spacing: -1px;
   text-transform: uppercase;
@@ -419,7 +419,7 @@
   .leaderboard-title {
     font-size: 1.8rem;
     margin-bottom: 1.5rem;
-    text-shadow: 3px 3px 0px var(--color-gold);
+    text-shadow: none;
   }
 
   .leaderboard-title::after {

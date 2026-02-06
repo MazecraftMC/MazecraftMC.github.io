@@ -18,25 +18,25 @@ const Vote = () => {
       name: 'Minecraft.Buzz',
       url: 'https://minecraft.buzz/vote/18471',
       description: 'Vote once every 24 hours and unlock exclusive rewards!',
-      rewards: '+250 Coins'
+      rewards: '+250 Money'
     },
     {
       name: 'MinecraftServers.org',
       url: 'https://minecraftservers.org/vote/682202',
       description: 'Help us grow with your daily vote and earn coins!',
-      rewards: '+250 Coins'
+      rewards: '+250 Money'
     },
     {
       name: 'Minecraft-Server-List',
       url: 'https://minecraft-server-list.com/server/517103/vote',
       description: 'Support us with your vote and get rewarded instantly!',
-      rewards: '+250 Coins'
+      rewards: '+250 Money'
     },
     {
       name: 'Minecraft-MP',
       url: 'https://minecraft-mp.com/server/352767/vote',
       description: 'Climb the ranks with your vote and earn top rewards!',
-      rewards: '+250 Coins'
+      rewards: '+250 Money'
     }
   ]
 

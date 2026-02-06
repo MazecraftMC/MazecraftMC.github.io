@@ -54,6 +54,19 @@
   --navbar-height: 70px;
   --max-width: 1400px;
   --sidebar-width: 280px;
+
+  /* Minecraft 3D Bevel Colors */
+  --mc-bevel-light: #c6c6c6;
+  --mc-bevel-dark: #373737;
+  --mc-bevel-mid: #8b8b8b;
+  --mc-slot-bg: #8b8b8b;
+  --mc-slot-inner: #6b6b6b;
+
+  /* Minecraft Panel Colors */
+  --mc-panel-bg: #c6c6c6;
+  --mc-panel-dark: #555555;
+  --mc-panel-darker: #373737;
+  --mc-panel-light: #ffffff;
 }
 
 /* === BASE STYLES === */
@@ -586,4 +599,215 @@ button:focus-visible {
       min-height: -webkit-fill-available;
     }
   }
+}
+
+/* === MINECRAFT UI COMPONENTS === */
+
+/* Minecraft Inventory Slot - The classic 3D beveled look */
+.mc-slot {
+  background: linear-gradient(145deg, var(--mc-slot-bg) 0%, var(--mc-slot-inner) 100%);
+  border: 2px solid;
+  border-color: var(--mc-bevel-dark) var(--mc-bevel-light) var(--mc-bevel-light) var(--mc-bevel-dark);
+  box-shadow: inset 1px 1px 0 rgba(0, 0, 0, 0.3), inset -1px -1px 0 rgba(255, 255, 255, 0.1);
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
+}
+
+.mc-slot:hover {
+  background: linear-gradient(145deg, #9b9b9b 0%, #7b7b7b 100%);
+}
+
+/* Minecraft Panel - Like inventory/chest background */
+.mc-panel {
+  background: var(--mc-panel-bg);
+  border: 4px solid;
+  border-color: var(--mc-panel-light) var(--mc-panel-darker) var(--mc-panel-darker) var(--mc-panel-light);
+  box-shadow:
+    inset 2px 2px 0 rgba(255, 255, 255, 0.3),
+    inset -2px -2px 0 rgba(0, 0, 0, 0.2),
+    4px 4px 0 rgba(0, 0, 0, 0.4);
+  padding: 8px;
+}
+
+/* Minecraft Button - 3D raised button */
+.mc-btn {
+  background: linear-gradient(180deg, #a0a0a0 0%, #888888 50%, #707070 100%);
+  border: 3px solid;
+  border-color: var(--mc-bevel-light) var(--mc-bevel-dark) var(--mc-bevel-dark) var(--mc-bevel-light);
+  color: var(--color-black);
+  font-weight: 700;
+  padding: 8px 16px;
+  cursor: pointer;
+  text-shadow: 1px 1px 0 rgba(255, 255, 255, 0.3);
+  transition: all 0.1s ease;
+  position: relative;
+}
+
+.mc-btn:hover {
+  background: linear-gradient(180deg, #b8b8b8 0%, #9b9b9b 50%, #858585 100%);
+  border-color: #e0e0e0 var(--mc-bevel-dark) var(--mc-bevel-dark) #e0e0e0;
+}
+
+.mc-btn:active {
+  background: linear-gradient(180deg, #707070 0%, #888888 50%, #a0a0a0 100%);
+  border-color: var(--mc-bevel-dark) var(--mc-bevel-light) var(--mc-bevel-light) var(--mc-bevel-dark);
+  transform: translateY(1px);
+}
+
+/* Minecraft Button Disabled */
+.mc-btn:disabled {
+  background: linear-gradient(180deg, #606060 0%, #505050 50%, #404040 100%);
+  border-color: #707070 #303030 #303030 #707070;
+  color: #a0a0a0;
+  cursor: not-allowed;
+  text-shadow: none;
+}
+
+/* Minecraft Green Button (like "Done" button) */
+.mc-btn-green {
+  background: linear-gradient(180deg, #59b359 0%, #3d9b3d 50%, #2a8a2a 100%);
+  border-color: #7ed17e var(--mc-bevel-dark) var(--mc-bevel-dark) #7ed17e;
+  color: white;
+  text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.4);
+}
+
+.mc-btn-green:hover {
+  background: linear-gradient(180deg, #6ec56e 0%, #4dab4d 50%, #3a9a3a 100%);
+}
+
+/* Minecraft Red Button (like "Cancel" button) */
+.mc-btn-red {
+  background: linear-gradient(180deg, #c94444 0%, #b33030 50%, #9a2020 100%);
+  border-color: #e86c6c var(--mc-bevel-dark) var(--mc-bevel-dark) #e86c6c;
+  color: white;
+  text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.4);
+}
+
+.mc-btn-red:hover {
+  background: linear-gradient(180deg, #d95555 0%, #c34040 50%, #aa3030 100%);
+}
+
+/* Minecraft Inset Panel - Like item description area */
+.mc-panel-inset {
+  background: #000000;
+  border: 2px solid;
+  border-color: var(--mc-bevel-dark) var(--mc-bevel-light) var(--mc-bevel-light) var(--mc-bevel-dark);
+  box-shadow: inset 2px 2px 4px rgba(0, 0, 0, 0.5);
+  padding: 8px 12px;
+}
+
+/* Minecraft Tab - Raised tab style */
+.mc-tab {
+  background: linear-gradient(180deg, #8b8b8b 0%, #6b6b6b 100%);
+  border: 2px solid;
+  border-color: var(--mc-bevel-light) var(--mc-bevel-dark) transparent var(--mc-bevel-light);
+  border-bottom: none;
+  padding: 6px 12px;
+  cursor: pointer;
+  position: relative;
+  top: 2px;
+}
+
+.mc-tab.active {
+  background: var(--mc-panel-bg);
+  border-bottom: 2px solid var(--mc-panel-bg);
+  top: 0;
+}
+
+/* Minecraft Tooltip - Purple gradient like in-game */
+.mc-tooltip {
+  background: linear-gradient(180deg, #100010 0%, #1a001a 100%);
+  border: 2px solid #5000aa;
+  padding: 6px 10px;
+  color: white;
+  font-size: 0.85rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+/* Minecraft Progress Bar */
+.mc-progress {
+  background: var(--mc-bevel-dark);
+  border: 2px solid;
+  border-color: var(--mc-bevel-dark) var(--mc-bevel-light) var(--mc-bevel-light) var(--mc-bevel-dark);
+  height: 16px;
+  padding: 2px;
+}
+
+.mc-progress-bar {
+  background: linear-gradient(180deg, #55ff55 0%, #00aa00 50%, #007700 100%);
+  height: 100%;
+  transition: width 0.3s ease;
+}
+
+/* Minecraft Input Field */
+.mc-input {
+  background: #000000;
+  border: 2px solid;
+  border-color: var(--mc-bevel-dark) var(--mc-bevel-light) var(--mc-bevel-light) var(--mc-bevel-dark);
+  color: #e0e0e0;
+  padding: 8px 12px;
+  font-family: inherit;
+  caret-color: #e0e0e0;
+}
+
+.mc-input:focus {
+  outline: none;
+  border-color: #5555ff var(--mc-bevel-light) var(--mc-bevel-light) #5555ff;
+}
+
+.mc-input::placeholder {
+  color: #606060;
+}
+
+/* Minecraft Checkbox */
+.mc-checkbox {
+  width: 20px;
+  height: 20px;
+  background: var(--mc-slot-inner);
+  border: 2px solid;
+  border-color: var(--mc-bevel-dark) var(--mc-bevel-light) var(--mc-bevel-light) var(--mc-bevel-dark);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mc-checkbox.checked {
+  background: linear-gradient(145deg, #55aa55 0%, #338833 100%);
+}
+
+.mc-checkbox.checked::after {
+  content: '✓';
+  color: white;
+  font-weight: bold;
+  text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.5);
+}
+
+/* Minecraft Card - Like a sign or book */
+.mc-card {
+  background: linear-gradient(180deg, #d2b48c 0%, #c4a67c 50%, #b8986c 100%);
+  border: 4px solid;
+  border-color: #e8d4b8 #6b4423 #6b4423 #e8d4b8;
+  box-shadow:
+    inset 2px 2px 0 rgba(255, 255, 255, 0.2),
+    inset -2px -2px 0 rgba(0, 0, 0, 0.1),
+    4px 4px 0 rgba(0, 0, 0, 0.3);
+  padding: 16px;
+}
+
+/* Minecraft Divider */
+.mc-divider {
+  height: 4px;
+  background: linear-gradient(90deg,
+      transparent 0%,
+      var(--mc-bevel-dark) 10%,
+      var(--mc-bevel-dark) 90%,
+      transparent 100%);
+  margin: 16px 0;
+}
+
+/* Pixelated image rendering for Minecraft items */
+.mc-pixelated {
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
 }

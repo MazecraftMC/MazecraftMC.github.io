@@ -54,7 +54,7 @@
   letter-spacing: -1px;
   line-height: 1.1;
   text-transform: uppercase;
-  text-shadow: 4px 4px 0px var(--color-gold);
+  text-shadow: none;
 }
 
 .coming-soon-desc {

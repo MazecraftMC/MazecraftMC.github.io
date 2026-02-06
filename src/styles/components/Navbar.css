@@ -50,7 +50,7 @@
 }
 
 .navbar-menu a {
-  color: var(--color-white);
+  color: var(--color-black);
   font-weight: 700;
   font-size: 0.95rem;
   padding: 10px 16px;
@@ -58,22 +58,44 @@
   display: block;
   text-transform: uppercase;
   letter-spacing: 1px;
-  background: var(--color-stone);
-  border: var(--border-brutal-sm);
-  box-shadow: var(--shadow-brutal-sm);
+  /* Minecraft Panel Style (like feature cards) */
+  background: var(--mc-panel-bg);
+  border: 4px solid;
+  border-color: var(--mc-panel-light) var(--mc-panel-darker) var(--mc-panel-darker) var(--mc-panel-light);
+  box-shadow:
+    inset 2px 2px 0 rgba(255, 255, 255, 0.3),
+    inset -2px -2px 0 rgba(0, 0, 0, 0.2),
+    3px 3px 0 rgba(0, 0, 0, 0.4);
   transition: all 0.15s ease;
 }
 
 .navbar-menu a:hover {
   transform: translate(-2px, -2px);
-  box-shadow: var(--shadow-brutal);
-  background: var(--color-gold);
+  box-shadow:
+    inset 2px 2px 0 rgba(255, 255, 255, 0.3),
+    inset -2px -2px 0 rgba(0, 0, 0, 0.2),
+    5px 5px 0 rgba(0, 0, 0, 0.4);
+  background: #d6d6d6;
   color: var(--color-black);
 }
 
+.navbar-menu a:active {
+  transform: translate(1px, 1px);
+  box-shadow:
+    inset 2px 2px 0 rgba(0, 0, 0, 0.2),
+    inset -2px -2px 0 rgba(255, 255, 255, 0.1),
+    1px 1px 0 rgba(0, 0, 0, 0.4);
+}
+
 .navbar-menu a.active {
-  background: var(--color-yellow);
-  color: var(--color-black);
+  background: linear-gradient(180deg, #59b359 0%, #3d9b3d 50%, #2a8a2a 100%);
+  border-color: #7ed17e var(--mc-panel-darker) var(--mc-panel-darker) #7ed17e;
+  color: white;
+  text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.4);
+  box-shadow:
+    inset 2px 2px 0 rgba(255, 255, 255, 0.2),
+    inset -2px -2px 0 rgba(0, 0, 0, 0.2),
+    3px 3px 0 rgba(0, 0, 0, 0.4);
 }
 
 /* Hamburger Menu */
@@ -81,12 +103,13 @@
   display: none;
   flex-direction: column;
   gap: 5px;
-  background: var(--color-stone);
-  border: var(--border-brutal-sm);
-  box-shadow: var(--shadow-brutal-sm);
+  /* Minecraft 3D Button Style */
+  background: linear-gradient(180deg, #a0a0a0 0%, #888888 50%, #707070 100%);
+  border: 3px solid;
+  border-color: var(--mc-bevel-light) var(--mc-bevel-dark) var(--mc-bevel-dark) var(--mc-bevel-light);
   cursor: pointer;
   padding: 12px;
-  transition: all 0.15s ease;
+  transition: all 0.1s ease;
   align-items: center;
   justify-content: center;
   position: relative;
@@ -94,14 +117,13 @@
 }
 
 .navbar-toggle:hover {
-  transform: translate(-2px, -2px);
-  box-shadow: var(--shadow-brutal);
-  background: var(--color-gold);
+  background: linear-gradient(180deg, #b8b8b8 0%, #9b9b9b 50%, #858585 100%);
+  border-color: #e0e0e0 var(--mc-bevel-dark) var(--mc-bevel-dark) #e0e0e0;
 }
 
 .navbar-toggle:active {
-  transform: translate(2px, 2px);
-  box-shadow: none;
+  background: linear-gradient(180deg, #707070 0%, #888888 50%, #a0a0a0 100%);
+  border-color: var(--mc-bevel-dark) var(--mc-bevel-light) var(--mc-bevel-light) var(--mc-bevel-dark);
 }
 
 .navbar-toggle span {
@@ -177,18 +199,31 @@
     padding: var(--spacing-sm) var(--spacing-md);
     width: 100%;
     text-align: center;
-    background: var(--color-stone);
-    box-shadow: var(--shadow-brutal);
+    /* Keep Minecraft Panel Style on mobile */
+    background: var(--mc-panel-bg);
+    border: 4px solid;
+    border-color: var(--mc-panel-light) var(--mc-panel-darker) var(--mc-panel-darker) var(--mc-panel-light);
+    box-shadow:
+      inset 2px 2px 0 rgba(255, 255, 255, 0.3),
+      inset -2px -2px 0 rgba(0, 0, 0, 0.2),
+      4px 4px 0 rgba(0, 0, 0, 0.4);
+    color: var(--color-black);
   }
 
   .navbar-menu a:hover {
-    transform: translate(-3px, -3px);
-    box-shadow: var(--shadow-brutal-lg);
+    transform: translate(-2px, -2px);
+    box-shadow:
+      inset 2px 2px 0 rgba(255, 255, 255, 0.3),
+      inset -2px -2px 0 rgba(0, 0, 0, 0.2),
+      6px 6px 0 rgba(0, 0, 0, 0.4);
+    background: #d6d6d6;
   }
 
   .navbar-menu a.active {
-    background: var(--color-yellow);
-    color: var(--color-black);
+    background: linear-gradient(180deg, #59b359 0%, #3d9b3d 50%, #2a8a2a 100%);
+    border-color: #7ed17e var(--mc-panel-darker) var(--mc-panel-darker) #7ed17e;
+    color: white;
+    text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.4);
   }
 
   .navbar-toggle {
