@@ -207,9 +207,6 @@ const Leaderboard = () => {
           className={`season-btn ${activeSeason === 1 ? 'active' : ''}`}
           onClick={() => handleSeasonChange(1)}
         >
-          <svg viewBox="0 0 24 24" fill="currentColor">
-            <path d="M12,3L2,12H5V20H19V12H22L12,3M12,8.75A2.25,2.25 0 0,1 14.25,11A2.25,2.25 0 0,1 12,13.25A2.25,2.25 0 0,1 9.75,11A2.25,2.25 0 0,1 12,8.75Z" />
-          </svg>
           Season 1
           <span className="season-badge archived">Archived</span>
         </button>
@@ -217,9 +214,6 @@ const Leaderboard = () => {
           className={`season-btn ${activeSeason === 2 ? 'active' : ''}`}
           onClick={() => handleSeasonChange(2)}
         >
-          <svg viewBox="0 0 24 24" fill="currentColor">
-            <path d="M12,3L2,12H5V20H19V12H22L12,3M12,8.75A2.25,2.25 0 0,1 14.25,11A2.25,2.25 0 0,1 12,13.25A2.25,2.25 0 0,1 9.75,11A2.25,2.25 0 0,1 12,8.75Z" />
-          </svg>
           Season 2
           <span className="season-badge current">Current</span>
         </button>
