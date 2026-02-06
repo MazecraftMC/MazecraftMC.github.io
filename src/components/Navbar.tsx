@@ -39,9 +39,8 @@ const Navbar: React.FC = () => {
         <ul className={`navbar-menu ${isMenuOpen ? 'active' : ''}`}>
           <li><Link to="/" className={location.pathname === '/' ? 'active' : ''} onClick={closeMenu}>Home</Link></li>
           <li><Link to="/maps" className={location.pathname === '/maps' ? 'active' : ''} onClick={closeMenu}>Maps</Link></li>
-          <li><Link to="/players" className={location.pathname === '/players' ? 'active' : ''} onClick={closeMenu}>Players</Link></li>
+          <li><Link to="/leaderboard" className={location.pathname === '/leaderboard' ? 'active' : ''} onClick={closeMenu}>Leaderboard</Link></li>
           <li><Link to="/vote" className={location.pathname === '/vote' ? 'active' : ''} onClick={closeMenu}>Vote</Link></li>
-          <li><Link to="/docs" className={location.pathname === '/docs' ? 'active' : ''} onClick={closeMenu}>Docs</Link></li>
         </ul>
 
         <button className={`navbar-toggle ${isMenuOpen ? 'active' : ''}`} onClick={toggleMenu} aria-label="Toggle Navigation Menu">

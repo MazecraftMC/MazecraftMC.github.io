@@ -1,9 +1,9 @@
-/* === FOOTER === */
+/* === NEO-BRUTALIST FOOTER === */
 .footer {
-  background-color: #0a0a0a;
+  background-color: var(--color-dark);
   padding: var(--spacing-lg) var(--spacing-md);
   margin-top: var(--spacing-xl);
-  border-top: 2px solid var(--color-orange);
+  border-top: var(--border-brutal-lg);
   margin-left: 0;
   transition: margin-left 0.3s ease;
 }
@@ -29,9 +29,19 @@
 }
 
 .footer-section h3 {
-  color: var(--color-orange);
+  color: var(--color-yellow);
   margin-bottom: var(--spacing-sm);
   font-size: 1.2rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.footer-section p {
+  color: var(--color-white);
+  font-size: 0.95rem;
+  line-height: 1.6;
+  font-weight: 500;
 }
 
 .footer-section ul {
@@ -45,11 +55,11 @@
 .footer-section a {
   color: var(--color-white);
   transition: var(--transition-fast);
+  font-weight: 600;
 }
 
 .footer-section a:hover {
-  color: var(--color-yellow);
-  text-shadow: var(--glow-yellow);
+  color: var(--color-gold);
   padding-left: 5px;
 }
 
@@ -60,14 +70,15 @@
 }
 
 .footer-social-icon {
-  width: 32px;
-  height: 32px;
+  width: 40px;
+  height: 40px;
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: rgba(255, 255, 255, 0.1);
-  border-radius: 50%;
-  transition: var(--transition-normal);
+  background-color: var(--color-stone);
+  border: var(--border-brutal-sm);
+  box-shadow: var(--shadow-brutal-sm);
+  transition: all 0.15s ease;
 }
 
 .footer-social-icon svg {
@@ -78,23 +89,32 @@
 }
 
 .footer-social-icon:hover {
-  background-color: var(--color-orange);
-  box-shadow: var(--glow-orange);
-  transform: translateY(-3px);
+  transform: translate(-2px, -2px);
+  box-shadow: var(--shadow-brutal);
+  background-color: var(--color-gold);
+}
+
+.footer-social-icon.discord {
+  background: #5865F2;
+}
+
+.footer-social-icon.discord:hover {
+  background: #4752C4;
 }
 
 .footer-social-icon:hover svg {
-  fill: var(--color-white);
+  fill: var(--color-black);
 }
 
 .footer-bottom {
   max-width: var(--max-width);
   margin: var(--spacing-md) auto 0;
   padding-top: var(--spacing-md);
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  border-top: var(--border-brutal-sm);
   text-align: center;
-  color: rgba(255, 255, 255, 0.6);
+  color: var(--color-white);
   font-size: 0.9rem;
+  font-weight: 600;
 }
 
 /* === RESPONSIVE === */
@@ -118,8 +138,8 @@
   }
 
   .footer-social-icon {
-    width: 35px;
-    height: 35px;
+    width: 42px;
+    height: 42px;
   }
 }
 

@@ -6,30 +6,27 @@ import Navbar from './components/Navbar'
 import Footer from './components/Footer'
 import Home from './pages/Home'
 import Maps from './pages/Maps'
-import Players from './pages/Players'
-import Docs from './pages/Docs'
 import Vote from './pages/Vote'
+import Leaderboard from './pages/Leaderboard'
 
 function AppContent() {
   const location = useLocation()
-  const isDocsPage = location.pathname === '/docs'
   //HELOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO
   // Reset scroll position when route changes
   useEffect(() => {
     window.scrollTo(0, 0)
   }, [location])
-  
+
   return (
-    <div className={`app ${isDocsPage ? 'docs-route' : ''}`}>
+    <div className="app">
       <ToastContainer />
       <Navbar />
       <main>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/maps" element={<Maps />} />
-          <Route path="/players" element={<Players />} />
           <Route path="/vote" element={<Vote />} />
-          <Route path="/docs" element={<Docs />} />
+          <Route path="/leaderboard" element={<Leaderboard />} />
         </Routes>
       </main>
       <Footer />
