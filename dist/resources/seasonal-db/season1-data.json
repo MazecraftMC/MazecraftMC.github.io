@@ -1,0 +1,1546 @@
+{
+  "season": 1,
+  "generatedAt": "2026-02-06T08:38:56.189Z",
+  "players": [
+    {
+      "name": "Pixelis0P",
+      "uuid": "6d3f1714-0d79-325f-b082-bbf0c626459a",
+      "playtime": 509597970,
+      "votes": 65,
+      "kills": 3,
+      "mobKills": 3133,
+      "deaths": 43,
+      "balance": 80805.90319499999
+    },
+    {
+      "name": "Zell",
+      "uuid": "564f99a4-d4af-3ac7-a20a-e13199c2e615",
+      "playtime": 479803291,
+      "votes": 54,
+      "kills": 46,
+      "mobKills": 7814,
+      "deaths": 81,
+      "balance": 210259.96993999998
+    },
+    {
+      "name": "ninjayina",
+      "uuid": "2bbe404b-9bde-3d00-9b59-ab8d83d4623f",
+      "playtime": 158638037,
+      "votes": 2,
+      "kills": 0,
+      "mobKills": 855,
+      "deaths": 70,
+      "balance": 3658.1
+    },
+    {
+      "name": "Maxx_tern",
+      "uuid": "c5ec4568-6591-3c3d-8b23-248fa0e85667",
+      "playtime": 134116874,
+      "votes": 0,
+      "kills": 25,
+      "mobKills": 1943,
+      "deaths": 48,
+      "balance": 18028.7371
+    },
+    {
+      "name": "DrNekoMori",
+      "uuid": "853f03cb-b01e-3c02-a09e-31c8da29ca67",
+      "playtime": 129373470,
+      "votes": 3,
+      "kills": 40,
+      "mobKills": 3389,
+      "deaths": 64,
+      "balance": 76967.97004999999
+    },
+    {
+      "name": "PrimeeX",
+      "uuid": "996c3e6e-d86b-38ab-bf63-eb3b3cb0bc23",
+      "playtime": 125745796,
+      "votes": 11,
+      "kills": 23,
+      "mobKills": 4918,
+      "deaths": 56,
+      "balance": 73655.88345
+    },
+    {
+      "name": "babyoilpuff",
+      "uuid": "d8aa9867-2483-3c20-81ac-caf6b0ad3a20",
+      "playtime": 91454540,
+      "votes": 0,
+      "kills": 4,
+      "mobKills": 1835,
+      "deaths": 38,
+      "balance": 1998
+    },
+    {
+      "name": "MedoSweity",
+      "uuid": "49abf24a-aa3f-3ab7-b3b0-2f6330baee68",
+      "playtime": 86551112,
+      "votes": 6,
+      "kills": 1,
+      "mobKills": 2549,
+      "deaths": 8,
+      "balance": 480
+    },
+    {
+      "name": "NOTKNIGHT2",
+      "uuid": "a6757cc5-5be1-316e-ae7e-5e49fa80f7bb",
+      "playtime": 62089173,
+      "votes": 0,
+      "kills": 1,
+      "mobKills": 17,
+      "deaths": 33,
+      "balance": 1000
+    },
+    {
+      "name": "chasepoole",
+      "uuid": "4243dde4-3a45-3b4c-a994-7588e25792ea",
+      "playtime": 57053500,
+      "votes": 0,
+      "kills": 3,
+      "mobKills": 243,
+      "deaths": 58,
+      "balance": 3000
+    },
+    {
+      "name": "ELIXIR77",
+      "uuid": "d4bca9f2-7a13-35b0-93ee-129495514072",
+      "playtime": 50620689,
+      "votes": 0,
+      "kills": 0,
+      "mobKills": 5128,
+      "deaths": 50,
+      "balance": 66102.01299999999
+    },
+    {
+      "name": "NotKnight",
+      "uuid": "c872712e-c2f9-3557-a414-7f3af85d8068",
+      "playtime": 50122552,
+      "votes": 0,
+      "kills": 1,
+      "mobKills": 78,
+      "deaths": 53,
+      "balance": 0
+    },
+    {
+      "name": "Goku",
+      "uuid": "6d538fd6-ea7f-3ca8-8184-1cbfeecc6787",
+      "playtime": 44291595,
+      "votes": 3,
+      "kills": 7,
+      "mobKills": 547,
+      "deaths": 11,
+      "balance": 3750
+    },
+    {
+      "name": "Raj_10",
+      "uuid": "5dfccbe5-b8b7-34c7-b64f-b95c580e65c3",
+      "playtime": 41175558,
+      "votes": 0,
+      "kills": 0,
+      "mobKills": 130,
+      "deaths": 26,
+      "balance": 0
+    },
+    {
+      "name": "OneKoolSky",
+      "uuid": "688db946-641e-35c7-9044-70d3839010b1",
+      "playtime": 39698399,
+      "votes": 1,
+      "kills": 2,
+      "mobKills": 3403,
+      "deaths": 3,
+      "balance": 12609.798999999999
+    },
+    {
+      "name": "SauravPro",
+      "uuid": "b32bcf6b-5c01-3333-adf8-f0ce98222708",
+      "playtime": 34530100,
+      "votes": 0,
+      "kills": 3,
+      "mobKills": 2398,
+      "deaths": 10,
+      "balance": 43169.15149999999
+    },
+    {
+      "name": "Alexinda",
+      "uuid": "b0cc848d-2a44-3ca6-bc1b-21ab8614aebc",
+      "playtime": 34122882,
+      "votes": 0,
+      "kills": 0,
+      "mobKills": 215,
+      "deaths": 25,
+      "balance": 1000
+    },
+    {
+      "name": "ItzNotNever1",
+      "uuid": "dc1630d0-1845-312d-93b9-5cb0746fa71e",
+      "playtime": 29279420,
+      "votes": 0,
+      "kills": 2,
+      "mobKills": 124,
+      "deaths": 48,
+      "balance": 4200
+    },
+    {
+      "name": "jobobettejunior",
+      "uuid": "98ba8c54-4c94-3646-8337-0fa92d3db058",
+      "playtime": 26085154,
+      "votes": 0,
+      "kills": 1,
+      "mobKills": 78,
+      "deaths": 29,
+      "balance": 3000
+    },
+    {
+      "name": ".Arceeyyy",
+      "uuid": "00000000-0000-0000-0009-01f554c70571",
+      "playtime": 18370956,
+      "votes": 0,
+      "kills": 1,
+      "mobKills": 41,
+      "deaths": 4,
+      "balance": 0
+    },
+    {
+      "name": "why",
+      "uuid": "76c81825-3509-33e6-adc8-0c216b6a36f7",
+      "playtime": 15691818,
+      "votes": 3,
+      "kills": 0,
+      "mobKills": 1501,
+      "deaths": 1,
+      "balance": 1000
+    },
+    {
+      "name": "Mascot",
+      "uuid": "af514419-2fcf-308f-917d-1ad6edd5749b",
+      "playtime": 13349289,
+      "votes": 0,
+      "kills": 0,
+      "mobKills": 10,
+      "deaths": 2,
+      "balance": 3000
+    },
+    {
+      "name": ".DragonForgeMC",
+      "uuid": "00000000-0000-0000-0009-01fec934c091",
+      "playtime": 12158275,
+      "votes": 0,
+      "kills": 0,
+      "mobKills": 0,
+      "deaths": 0,
+      "balance": 3000
+    },
+    {
+      "name": "Willraba",
+      "uuid": "b6101695-5b3c-3143-80bb-92b0bd22d188",
+      "playtime": 11023407,
+      "votes": 0,
+      "kills": 0,
+      "mobKills": 3270,
+      "deaths": 2,
+      "balance": 1820
+    },
+    {
+      "name": ".Pixelis0P",
+      "uuid": "00000000-0000-0000-0009-01fd262dd9b7",
+      "playtime": 10129458,
+      "votes": 0,
+      "kills": 0,
+      "mobKills": 0,
+      "deaths": 0,
+      "balance": 980
+    },
+    {
+      "name": ".SonGoku30809",
+      "uuid": "00000000-0000-0000-0009-01f9ea1cd153",
+      "playtime": 10108191,
+      "votes": 0,
+      "kills": 0,
+      "mobKills": 0,
+      "deaths": 3,
+      "balance": 3000
+    },
+    {
+      "name": "knightthereal12",
+      "uuid": "4556547c-2acc-326e-948b-f98e3e5f2edc",
+      "playtime": 9718352,
+      "votes": 0,
+      "kills": 2,
+      "mobKills": 0,
+      "deaths": 6,
+      "balance": 3000
+    },
+    {
+      "name": "Abemo_murry",
+      "uuid": "4a7e6869-9146-3c5a-9f38-9ebd0fb11989",
+      "playtime": 8555370,
+      "votes": 0,
+      "kills": 0,
+      "mobKills": 48,
+      "deaths": 10,
+      "balance": 1000
+    },
+    {
+      "name": "MazecraftMC",
+      "uuid": "9dc9e381-e0c4-38ee-879c-11acade5e7aa",
+      "playtime": 8548000,
+      "votes": 0,
+      "kills": 0,
+      "mobKills": 0,
+      "deaths": 1,
+      "balance": 0
+    },
+    {
+      "name": "Ganerz",
+      "uuid": "2cc4051a-2cee-3314-8c6a-af47011ec397",
+      "playtime": 7108403,
+      "votes": 0,
+      "kills": 6,
+      "mobKills": 21,
+      "deaths": 2,
+      "balance": 1000
+    },
+    {
+      "name": "Junrick123",
+      "uuid": "71edef1a-56a4-3a85-b128-a59dee79b004",
+      "playtime": 6710338,
+      "votes": 0,
+      "kills": 0,
+      "mobKills": 0,
+      "deaths": 0,
+      "balance": 3000
+    },
+    {
+      "name": "Yatesman",
+      "uuid": "3d2b81b0-af6b-37ff-b279-08c3fd00abaa",
+      "playtime": 5717200,
+      "votes": 0,
+      "kills": 0,
+      "mobKills": 29,
+      "deaths": 0,
+      "balance": 1000
+    },
+    {
+      "name": "Fen3xta",
+      "uuid": "d65dd1ac-3a01-3851-bd9a-bfc706ac92fd",
+      "playtime": 5308736,
+      "votes": 0,
+      "kills": 0,
+      "mobKills": 22,
+      "deaths": 2,
+      "balance": 3000
+    },
+    {
+      "name": ".eleeyz",
+      "uuid": "00000000-0000-0000-0009-01f77a8c7bd1",
+      "playtime": 4467139,
+      "votes": 0,
+      "kills": 0,
+      "mobKills": 14,
+      "deaths": 0,
+      "balance": 3000
+    },
+    {
+      "name": "Vashisht_megaOP",
+      "uuid": "92cc897e-e36b-3cc2-aabf-2525a34dee6a",
+      "playtime": 4361283,
+      "votes": 0,
+      "kills": 2,
+      "mobKills": 1,
+      "deaths": 10,
+      "balance": 3000
+    },
+    {
+      "name": "Boar",
+      "uuid": "42ed5b74-3f71-3e2d-907a-576c2939d046",
+      "playtime": 4230958,
+      "votes": 0,
+      "kills": 0,
+      "mobKills": 2,
+      "deaths": 3,
+      "balance": 3000
+    },
+    {
+      "name": "Raj_20",
+      "uuid": "4701ef5f-6fac-360f-bd5c-5b6fc9d57c1a",
+      "playtime": 4188907,
+      "votes": 0,
+      "kills": 0,
+      "mobKills": 9,
+      "deaths": 1,
+      "balance": 1500
+    },
+    {
+      "name": "saiyoyo",
+      "uuid": "cc6495b3-78ff-3ba5-ae24-cdead0a855f6",
+      "playtime": 4134710,
+      "votes": 0,
+      "kills": 0,
+      "mobKills": 3,
+      "deaths": 3,
+      "balance": 0
+    },
+    {
+      "name": "shaurry",
+      "uuid": "c72e6ccb-d95b-3fb5-b24b-1573c179403c",
+      "playtime": 4085228,
+      "votes": 0,
+      "kills": 0,
+      "mobKills": 2,
+      "deaths": 6,
+      "balance": 3000
+    },
+    {
+      "name": "AARIF01",
+      "uuid": "9626486f-ed78-3095-91f2-b441fd54f25b",
+      "playtime": 4081905,
+      "votes": 0,
+      "kills": 0,
+      "mobKills": 28,
+      "deaths": 2,
+      "balance": 0
+    },
+    {
+      "name": "eldrikx",
+      "uuid": "cbd77ee0-6f24-3d04-a881-9f0e0ffe3561",
+      "playtime": 4064921,
+      "votes": 2,
+      "kills": 0,
+      "mobKills": 3,
+      "deaths": 1,
+      "balance": 3000
+    },
+    {
+      "name": "xtzk",
+      "uuid": "57003fcd-fadb-3e2a-a032-3602f54a0df5",
+      "playtime": 3687023,
+      "votes": 0,
+      "kills": 0,
+      "mobKills": 15,
+      "deaths": 13,
+      "balance": 3000
+    },
+    {
+      "name": "FOSPLAYZ",
+      "uuid": "baef479a-c1bf-368b-8de0-7db86895b7a7",
+      "playtime": 3491222,
+      "votes": 0,
+      "kills": 0,
+      "mobKills": 22,
+      "deaths": 2,
+      "balance": 3000
+    },
+    {
+      "name": "mojo",
+      "uuid": "f356b432-6eae-371b-bc29-11eb67299096",
+      "playtime": 3468799,
+      "votes": 0,
+      "kills": 0,
+      "mobKills": 12,
+      "deaths": 1,
+      "balance": 3000
+    },
+    {
+      "name": "senpaispeed",
+      "uuid": "2005692d-d6e1-3721-b2e1-a21c136471c6",
+      "playtime": 3465525,
+      "votes": 0,
+      "kills": 1,
+      "mobKills": 14,
+      "deaths": 4,
+      "balance": 3000
+    },
+    {
+      "name": ".Vayron_D_Law",
+      "uuid": "00000000-0000-0000-0009-01f17888c9f2",
+      "playtime": 3228550,
+      "votes": 0,
+      "kills": 0,
+      "mobKills": 0,
+      "deaths": 6,
+      "balance": 1000
+    },
+    {
+      "name": ".NightCamera2315",
+      "uuid": "00000000-0000-0000-0009-01fac74bac6e",
+      "playtime": 3197420,
+      "votes": 0,
+      "kills": 0,
+      "mobKills": 5,
+      "deaths": 8,
+      "balance": 3000
+    },
+    {
+      "name": "Siddharthz",
+      "uuid": "58f0bbdc-68bb-3a28-8e54-118f8d6210c6",
+      "playtime": 3115833,
+      "votes": 2,
+      "kills": 0,
+      "mobKills": 9,
+      "deaths": 11,
+      "balance": 1000
+    },
+    {
+      "name": ".Ali08279",
+      "uuid": "00000000-0000-0000-0009-01f6a425da20",
+      "playtime": 3014920,
+      "votes": 0,
+      "kills": 0,
+      "mobKills": 2,
+      "deaths": 3,
+      "balance": 3000
+    },
+    {
+      "name": "GIDDY",
+      "uuid": "6f5a6607-496a-3066-8b84-8697a59a4a9f",
+      "playtime": 2826127,
+      "votes": 0,
+      "kills": 0,
+      "mobKills": 74,
+      "deaths": 1,
+      "balance": 1000
+    },
+    {
+      "name": ".D33P5175",
+      "uuid": "00000000-0000-0000-0009-01f2f60b72e9",
+      "playtime": 2824770,
+      "votes": 0,
+      "kills": 0,
+      "mobKills": 10,
+      "deaths": 1,
+      "balance": 0
+    },
+    {
+      "name": "SexyAmol",
+      "uuid": "c625994c-f7c0-307f-a164-c7bbec2dc759",
+      "playtime": 2585077,
+      "votes": 0,
+      "kills": 0,
+      "mobKills": 3,
+      "deaths": 5,
+      "balance": 3000
+    },
+    {
+      "name": "Tamim009",
+      "uuid": "e100daee-618e-360c-a2aa-a6200fe324af",
+      "playtime": 2520212,
+      "votes": 0,
+      "kills": 0,
+      "mobKills": 0,
+      "deaths": 7,
+      "balance": 3000
+    },
+    {
+      "name": "D33P5175",
+      "uuid": "c7ee4879-a09a-384c-979c-d87ac16f8578",
+      "playtime": 2487307,
+      "votes": 0,
+      "kills": 0,
+      "mobKills": 8,
+      "deaths": 1,
+      "balance": 0
+    },
+    {
+      "name": "Von_Bex0958",
+      "uuid": "5d5f29bd-0f94-34b1-b764-4c97c15d8eb9",
+      "playtime": 2372035,
+      "votes": 0,
+      "kills": 0,
+      "mobKills": 15,
+      "deaths": 2,
+      "balance": 0
+    },
+    {
+      "name": "R4vetiLP",
+      "uuid": "73fb4e79-92a5-3d6c-a4fd-7dfb73ad3a03",
+      "playtime": 2107430,
+      "votes": 0,
+      "kills": 0,
+      "mobKills": 7,
+      "deaths": 3,
+      "balance": 3000
+    },
+    {
+      "name": "AquaBlue",
+      "uuid": "dc3811a3-ca2e-3324-9fea-3dc5ca3c6300",
+      "playtime": 1743640,
+      "votes": 0,
+      "kills": 0,
+      "mobKills": 28,
+      "deaths": 0,
+      "balance": 3000
+    },
+    {
+      "name": "GAMEKNIGHT36900",
+      "uuid": "bbaa5e09-8cee-3bb5-939e-e27d816f0cdb",
+      "playtime": 1637145,
+      "votes": 0,
+      "kills": 0,
+      "mobKills": 23,
+      "deaths": 0,
+      "balance": 3000
+    },
+    {
+      "name": ".Prisme4",
+      "uuid": "00000000-0000-0000-0009-01f4888c5454",
+      "playtime": 1503931,
+      "votes": 0,
+      "kills": 0,
+      "mobKills": 0,
+      "deaths": 0,
+      "balance": 0
+    },
+    {
+      "name": "EvoTheDaddy",
+      "uuid": "77d629bd-964f-378f-a8b3-9814f3f529b9",
+      "playtime": 1418788,
+      "votes": 0,
+      "kills": 0,
+      "mobKills": 1,
+      "deaths": 0,
+      "balance": 1000
+    },
+    {
+      "name": "chempaa",
+      "uuid": "171b2a9d-c6ca-30ba-a74a-4cba96514b88",
+      "playtime": 1392449,
+      "votes": 0,
+      "kills": 0,
+      "mobKills": 1,
+      "deaths": 1,
+      "balance": 3000
+    },
+    {
+      "name": "DragonForgeMC",
+      "uuid": "52cdfa19-e9d9-35b6-80aa-fbb1d10ec987",
+      "playtime": 1391279,
+      "votes": 0,
+      "kills": 0,
+      "mobKills": 0,
+      "deaths": 0,
+      "balance": 3000
+    },
+    {
+      "name": "ChrolloLucilfer",
+      "uuid": "3bd97f8f-21cd-3feb-a802-b2b5a50ba7e6",
+      "playtime": 1368295,
+      "votes": 0,
+      "kills": 0,
+      "mobKills": 1,
+      "deaths": 2,
+      "balance": 0
+    },
+    {
+      "name": "NotVexo",
+      "uuid": "45198d4f-1d89-3b4b-8c0a-78d3ec4e93f7",
+      "playtime": 1329107,
+      "votes": 0,
+      "kills": 2,
+      "mobKills": 4,
+      "deaths": 2,
+      "balance": 3000
+    },
+    {
+      "name": "hlooyt",
+      "uuid": "44b5e796-3337-34f1-b02c-5e76d6042f1f",
+      "playtime": 1324013,
+      "votes": 0,
+      "kills": 2,
+      "mobKills": 2,
+      "deaths": 2,
+      "balance": 3000
+    },
+    {
+      "name": "dondonpiyos123",
+      "uuid": "c5aaed8b-0bac-3017-b014-98ee301ce4a2",
+      "playtime": 1308355,
+      "votes": 0,
+      "kills": 0,
+      "mobKills": 0,
+      "deaths": 0,
+      "balance": 3000
+    },
+    {
+      "name": "mrchany",
+      "uuid": "a51113a8-df52-3969-b2e0-82be361ea366",
+      "playtime": 1298866,
+      "votes": 0,
+      "kills": 0,
+      "mobKills": 0,
+      "deaths": 1,
+      "balance": 1000
+    },
+    {
+      "name": "BaapJi420",
+      "uuid": "678fea68-ca71-3d2d-82ff-572af4132c6f",
+      "playtime": 1210273,
+      "votes": 0,
+      "kills": 0,
+      "mobKills": 8,
+      "deaths": 1,
+      "balance": 1000
+    },
+    {
+      "name": "lionbhaiya31",
+      "uuid": "f9f5600f-cce8-3955-ac20-547da285c0d0",
+      "playtime": 941621,
+      "votes": 0,
+      "kills": 0,
+      "mobKills": 3,
+      "deaths": 2,
+      "balance": 3000
+    },
+    {
+      "name": "Rookie0001",
+      "uuid": "095d1379-f49d-32fa-9716-b2d6aec5d5b2",
+      "playtime": 908134,
+      "votes": 0,
+      "kills": 0,
+      "mobKills": 11,
+      "deaths": 1,
+      "balance": 3000
+    },
+    {
+      "name": "Lifero",
+      "uuid": "4552fe89-fd44-3175-b6ef-02bb25760694",
+      "playtime": 892373,
+      "votes": 0,
+      "kills": 0,
+      "mobKills": 0,
+      "deaths": 1,
+      "balance": 1000
+    },
+    {
+      "name": ".ACE14715",
+      "uuid": "00000000-0000-0000-0009-01f807e84a58",
+      "playtime": 879083,
+      "votes": 0,
+      "kills": 0,
+      "mobKills": 0,
+      "deaths": 1,
+      "balance": 3000
+    },
+    {
+      "name": "R1ng1ngRaptor19",
+      "uuid": "4a65be01-5cec-3612-af48-dc2b372c34f8",
+      "playtime": 669618,
+      "votes": 0,
+      "kills": 0,
+      "mobKills": 0,
+      "deaths": 1,
+      "balance": 0
+    },
+    {
+      "name": "SenpaiSpider",
+      "uuid": "d7deeba1-512a-3b28-b473-3974240ee6d7",
+      "playtime": 661459,
+      "votes": 0,
+      "kills": 0,
+      "mobKills": 0,
+      "deaths": 1,
+      "balance": 3000
+    },
+    {
+      "name": "Arceeyyy25",
+      "uuid": "cea88854-975b-35b9-86eb-07e2415fcc9e",
+      "playtime": 636748,
+      "votes": 0,
+      "kills": 0,
+      "mobKills": 2,
+      "deaths": 0,
+      "balance": 0
+    },
+    {
+      "name": "Myonir",
+      "uuid": "5501f1ee-e189-3b8a-aeb0-501f131b5737",
+      "playtime": 585730,
+      "votes": 0,
+      "kills": 0,
+      "mobKills": 1,
+      "deaths": 0,
+      "balance": 3000
+    },
+    {
+      "name": "WimpyKid10",
+      "uuid": "4b8a1996-0c87-3559-ab7c-b4cb41f37e63",
+      "playtime": 570246,
+      "votes": 0,
+      "kills": 0,
+      "mobKills": 5,
+      "deaths": 0,
+      "balance": 3000
+    },
+    {
+      "name": "bossking7866076",
+      "uuid": "3732833c-7331-3ae3-b200-d62628ca492e",
+      "playtime": 515422,
+      "votes": 0,
+      "kills": 0,
+      "mobKills": 0,
+      "deaths": 0,
+      "balance": 3000
+    },
+    {
+      "name": ".AmNarutoUzamaki",
+      "uuid": "00000000-0000-0000-0009-01faec39aac4",
+      "playtime": 512057,
+      "votes": 0,
+      "kills": 0,
+      "mobKills": 0,
+      "deaths": 0,
+      "balance": 3000
+    },
+    {
+      "name": "RKJha",
+      "uuid": "d7a19015-b337-35ac-8515-f755b35ce3f0",
+      "playtime": 507843,
+      "votes": 0,
+      "kills": 0,
+      "mobKills": 0,
+      "deaths": 0,
+      "balance": 3000
+    },
+    {
+      "name": "Anbuleon",
+      "uuid": "33ec9dcf-6233-36bc-a2a7-4a3eb99d5d34",
+      "playtime": 460847,
+      "votes": 0,
+      "kills": 0,
+      "mobKills": 2,
+      "deaths": 1,
+      "balance": 3000
+    },
+    {
+      "name": "SonGoku30809",
+      "uuid": "466bf12f-6e91-3623-bf44-6280a717707e",
+      "playtime": 441896,
+      "votes": 0,
+      "kills": 0,
+      "mobKills": 0,
+      "deaths": 1,
+      "balance": 3000
+    },
+    {
+      "name": ".RunicPopcorn282",
+      "uuid": "00000000-0000-0000-0009-01f9b8f33d8c",
+      "playtime": 361746,
+      "votes": 0,
+      "kills": 0,
+      "mobKills": 0,
+      "deaths": 0,
+      "balance": 3000
+    },
+    {
+      "name": ".xtzk1464",
+      "uuid": "00000000-0000-0000-0009-01feb84eb4b9",
+      "playtime": 360146,
+      "votes": 0,
+      "kills": 0,
+      "mobKills": 0,
+      "deaths": 0,
+      "balance": 3000
+    },
+    {
+      "name": "_vvlz4rd_",
+      "uuid": "0d51e9c8-4ead-3094-ada2-8742a7b24b87",
+      "playtime": 351908,
+      "votes": 0,
+      "kills": 0,
+      "mobKills": 1,
+      "deaths": 1,
+      "balance": 3000
+    },
+    {
+      "name": "Oplivingbird10",
+      "uuid": "4e8098ab-878f-38e8-8ad3-e150621a5231",
+      "playtime": 275202,
+      "votes": 0,
+      "kills": 0,
+      "mobKills": 0,
+      "deaths": 0,
+      "balance": 3000
+    },
+    {
+      "name": "Kraze",
+      "uuid": "109b7692-4d03-320b-a346-9e3fe1fd175a",
+      "playtime": 256473,
+      "votes": 0,
+      "kills": 0,
+      "mobKills": 0,
+      "deaths": 0,
+      "balance": 3000
+    },
+    {
+      "name": "PandaBaree",
+      "uuid": "05845aed-124b-3ce7-9dba-8d269c07deaf",
+      "playtime": 244860,
+      "votes": 0,
+      "kills": 0,
+      "mobKills": 0,
+      "deaths": 0,
+      "balance": 3000
+    },
+    {
+      "name": "sigmaboiz_24",
+      "uuid": "9088d6a7-5fbf-3471-9b34-743c7cce62d4",
+      "playtime": 243083,
+      "votes": 0,
+      "kills": 0,
+      "mobKills": 0,
+      "deaths": 0,
+      "balance": 2500
+    },
+    {
+      "name": "crimson00",
+      "uuid": "30519e1a-dc7f-35b2-9822-09e984ba0d8e",
+      "playtime": 223989,
+      "votes": 0,
+      "kills": 0,
+      "mobKills": 0,
+      "deaths": 0,
+      "balance": 3000
+    },
+    {
+      "name": "Nampat123",
+      "uuid": "30707183-4eb6-30f7-b8d6-e3bced1516ff",
+      "playtime": 221867,
+      "votes": 3,
+      "kills": 0,
+      "mobKills": 0,
+      "deaths": 0,
+      "balance": 3750
+    },
+    {
+      "name": ".BlastedLlama894",
+      "uuid": "00000000-0000-0000-0009-01f3c95f3e9b",
+      "playtime": 207121,
+      "votes": 0,
+      "kills": 0,
+      "mobKills": 0,
+      "deaths": 0,
+      "balance": 3000
+    },
+    {
+      "name": "SIUU",
+      "uuid": "80f2fae5-470f-3ae4-ab6e-a2b758ce4045",
+      "playtime": 194835,
+      "votes": 0,
+      "kills": 0,
+      "mobKills": 0,
+      "deaths": 0,
+      "balance": 3000
+    },
+    {
+      "name": "Bagrjede11",
+      "uuid": "5c4c60ff-21f2-3476-9a71-ca871fe58b73",
+      "playtime": 191174,
+      "votes": 0,
+      "kills": 0,
+      "mobKills": 0,
+      "deaths": 1,
+      "balance": 3000
+    },
+    {
+      "name": "le_12_Xip",
+      "uuid": "f5ac59d3-90e4-35db-aaa4-c1333c12e000",
+      "playtime": 188687,
+      "votes": 0,
+      "kills": 0,
+      "mobKills": 0,
+      "deaths": 0,
+      "balance": 3000
+    },
+    {
+      "name": ".hacker124432066",
+      "uuid": "00000000-0000-0000-0009-01f11dc80567",
+      "playtime": 180040,
+      "votes": 0,
+      "kills": 0,
+      "mobKills": 0,
+      "deaths": 0,
+      "balance": 0
+    },
+    {
+      "name": "Mr_RSG",
+      "uuid": "cc381398-b720-3aa3-bcfe-4a96e625d58a",
+      "playtime": 165978,
+      "votes": 0,
+      "kills": 0,
+      "mobKills": 0,
+      "deaths": 0,
+      "balance": 3000
+    },
+    {
+      "name": "_MIOW",
+      "uuid": "6032836d-f2bf-3263-a522-62bc9657aa41",
+      "playtime": 164865,
+      "votes": 0,
+      "kills": 0,
+      "mobKills": 0,
+      "deaths": 1,
+      "balance": 3000
+    },
+    {
+      "name": "Mekong_Jack",
+      "uuid": "0eaee825-cc4c-3fbc-8aba-a0e786eb5ed3",
+      "playtime": 159414,
+      "votes": 0,
+      "kills": 0,
+      "mobKills": 0,
+      "deaths": 0,
+      "balance": 3000
+    },
+    {
+      "name": ".gamelofi1478",
+      "uuid": "00000000-0000-0000-0009-01f6e2eef536",
+      "playtime": 146452,
+      "votes": 0,
+      "kills": 0,
+      "mobKills": 0,
+      "deaths": 0,
+      "balance": 3000
+    },
+    {
+      "name": "TierlessKumi",
+      "uuid": "605141ce-0089-333e-81eb-0dfff55d7337",
+      "playtime": 143435,
+      "votes": 0,
+      "kills": 0,
+      "mobKills": 0,
+      "deaths": 0,
+      "balance": 1000
+    },
+    {
+      "name": ".BiggerPark9132",
+      "uuid": "00000000-0000-0000-0009-01f7688ffaec",
+      "playtime": 142519,
+      "votes": 0,
+      "kills": 0,
+      "mobKills": 0,
+      "deaths": 0,
+      "balance": 3000
+    },
+    {
+      "name": "TheMiki150",
+      "uuid": "50dc1f9e-4d0d-3973-a980-52bd92a04d92",
+      "playtime": 140653,
+      "votes": 0,
+      "kills": 0,
+      "mobKills": 0,
+      "deaths": 0,
+      "balance": 3000
+    },
+    {
+      "name": "shitass",
+      "uuid": "c9048376-eab3-3f97-a742-6123e46e4791",
+      "playtime": 138170,
+      "votes": 0,
+      "kills": 0,
+      "mobKills": 0,
+      "deaths": 0,
+      "balance": 3000
+    },
+    {
+      "name": "yinazura",
+      "uuid": "0457987b-36dd-3337-ac72-b058f5d05b66",
+      "playtime": 126282,
+      "votes": 0,
+      "kills": 0,
+      "mobKills": 0,
+      "deaths": 0,
+      "balance": 3000
+    },
+    {
+      "name": "DMxIt_Hollbass",
+      "uuid": "58bf5a4a-4ab1-37bd-907f-e17601e1174d",
+      "playtime": 123025,
+      "votes": 0,
+      "kills": 0,
+      "mobKills": 0,
+      "deaths": 1,
+      "balance": 3000
+    },
+    {
+      "name": "Ahmad_PLAYER",
+      "uuid": "f7316a8d-c157-3169-8f81-2081f1a48c25",
+      "playtime": 121512,
+      "votes": 0,
+      "kills": 0,
+      "mobKills": 0,
+      "deaths": 0,
+      "balance": 0
+    },
+    {
+      "name": "kitsuneyina",
+      "uuid": "fc4ca9ef-91de-3761-94af-0cf1bf2196c7",
+      "playtime": 119501,
+      "votes": 0,
+      "kills": 0,
+      "mobKills": 0,
+      "deaths": 0,
+      "balance": 0
+    },
+    {
+      "name": "SoftieLuna",
+      "uuid": "68ea635c-3638-30c6-be39-091fe6408d10",
+      "playtime": 116778,
+      "votes": 0,
+      "kills": 0,
+      "mobKills": 0,
+      "deaths": 0,
+      "balance": 3000
+    },
+    {
+      "name": "AmNarutoUzamaki",
+      "uuid": "0cdf9dbc-8830-381e-b2bc-7cf1d688835b",
+      "playtime": 107453,
+      "votes": 0,
+      "kills": 0,
+      "mobKills": 0,
+      "deaths": 0,
+      "balance": 3000
+    },
+    {
+      "name": "CoolGamerz19",
+      "uuid": "29f8b4a0-72e7-31a9-bd62-b478829482f3",
+      "playtime": 99117,
+      "votes": 0,
+      "kills": 0,
+      "mobKills": 0,
+      "deaths": 0,
+      "balance": 3000
+    },
+    {
+      "name": "Golem765",
+      "uuid": "02b75abb-7578-3d17-9260-2376cfca38dd",
+      "playtime": 96335,
+      "votes": 0,
+      "kills": 0,
+      "mobKills": 0,
+      "deaths": 0,
+      "balance": 0
+    },
+    {
+      "name": "Esco",
+      "uuid": "962f90e5-ba5b-3b9a-bfb9-dc54193727b9",
+      "playtime": 95100,
+      "votes": 0,
+      "kills": 0,
+      "mobKills": 0,
+      "deaths": 0,
+      "balance": 3000
+    },
+    {
+      "name": "dangergamdud",
+      "uuid": "da2a5995-1195-36b9-aace-139d5bd31494",
+      "playtime": 91228,
+      "votes": 0,
+      "kills": 0,
+      "mobKills": 0,
+      "deaths": 0,
+      "balance": 3000
+    },
+    {
+      "name": "DMinik",
+      "uuid": "8f929aaf-669a-3aba-b193-fe6179451b0d",
+      "playtime": 82246,
+      "votes": 0,
+      "kills": 0,
+      "mobKills": 0,
+      "deaths": 0,
+      "balance": 1000
+    },
+    {
+      "name": "ottopylut",
+      "uuid": "330fd912-a06b-378b-be54-c4df4b47674f",
+      "playtime": 76719,
+      "votes": 0,
+      "kills": 0,
+      "mobKills": 0,
+      "deaths": 0,
+      "balance": 0
+    },
+    {
+      "name": "wafflessss_",
+      "uuid": "04b863a2-3791-325d-9763-62c3bcbba5dc",
+      "playtime": 75163,
+      "votes": 0,
+      "kills": 0,
+      "mobKills": 0,
+      "deaths": 0,
+      "balance": 3000
+    },
+    {
+      "name": "hunter123",
+      "uuid": "c8134cad-fc10-3893-bbcf-ec4ef3e872d6",
+      "playtime": 69290,
+      "votes": 0,
+      "kills": 0,
+      "mobKills": 0,
+      "deaths": 0,
+      "balance": 3000
+    },
+    {
+      "name": "HIChew1",
+      "uuid": "5f37a9c1-b9de-39ef-b475-cc76ca05c63a",
+      "playtime": 66165,
+      "votes": 0,
+      "kills": 0,
+      "mobKills": 0,
+      "deaths": 0,
+      "balance": 3000
+    },
+    {
+      "name": "AR_CHANNU_13",
+      "uuid": "0facaa9e-0436-30e0-b9c5-6d00083fbe7f",
+      "playtime": 66011,
+      "votes": 0,
+      "kills": 0,
+      "mobKills": 0,
+      "deaths": 0,
+      "balance": 3000
+    },
+    {
+      "name": "VeryDepth",
+      "uuid": "14c1e227-6c3b-3af5-83b9-aae3e20254b0",
+      "playtime": 60961,
+      "votes": 0,
+      "kills": 0,
+      "mobKills": 0,
+      "deaths": 0,
+      "balance": 0
+    },
+    {
+      "name": "AmmyChahal06",
+      "uuid": "a598102d-3497-3408-95d0-46063cab9ca5",
+      "playtime": 60512,
+      "votes": 0,
+      "kills": 0,
+      "mobKills": 0,
+      "deaths": 0,
+      "balance": 3000
+    },
+    {
+      "name": "spidy666",
+      "uuid": "95d755fe-1c12-3db3-9839-8ce19cc8c0c1",
+      "playtime": 60488,
+      "votes": 0,
+      "kills": 0,
+      "mobKills": 0,
+      "deaths": 2,
+      "balance": 3000
+    },
+    {
+      "name": ".GrownSatyr6110",
+      "uuid": "00000000-0000-0000-0009-01fd8520a3eb",
+      "playtime": 60367,
+      "votes": 0,
+      "kills": 0,
+      "mobKills": 0,
+      "deaths": 0,
+      "balance": 3000
+    },
+    {
+      "name": "mihir55554898",
+      "uuid": "d4bd9e3b-87be-345f-866b-989272ccc228",
+      "playtime": 60259,
+      "votes": 0,
+      "kills": 0,
+      "mobKills": 0,
+      "deaths": 0,
+      "balance": 3000
+    },
+    {
+      "name": "Ali08279",
+      "uuid": "cabcf90a-a320-31dd-95e9-2dc1f09420c3",
+      "playtime": 60222,
+      "votes": 0,
+      "kills": 0,
+      "mobKills": 0,
+      "deaths": 0,
+      "balance": 3000
+    },
+    {
+      "name": ".saina7546",
+      "uuid": "00000000-0000-0000-0009-01f2081ae530",
+      "playtime": 60168,
+      "votes": 0,
+      "kills": 0,
+      "mobKills": 0,
+      "deaths": 0,
+      "balance": 3000
+    },
+    {
+      "name": ".mkplays15",
+      "uuid": "00000000-0000-0000-0009-01f8cde559b4",
+      "playtime": 60146,
+      "votes": 0,
+      "kills": 0,
+      "mobKills": 0,
+      "deaths": 0,
+      "balance": 3000
+    },
+    {
+      "name": ".MadhavXD75",
+      "uuid": "00000000-0000-0000-0009-01f8156ccfc4",
+      "playtime": 60049,
+      "votes": 0,
+      "kills": 0,
+      "mobKills": 0,
+      "deaths": 0,
+      "balance": 3000
+    },
+    {
+      "name": ".Nalo02",
+      "uuid": "00000000-0000-0000-0009-01ff092d7f69",
+      "playtime": 60019,
+      "votes": 0,
+      "kills": 0,
+      "mobKills": 0,
+      "deaths": 0,
+      "balance": 3000
+    },
+    {
+      "name": "ME_Thunder69",
+      "uuid": "3923b829-355b-365a-b711-52ab8272c2ae",
+      "playtime": 60005,
+      "votes": 0,
+      "kills": 0,
+      "mobKills": 0,
+      "deaths": 0,
+      "balance": 3000
+    },
+    {
+      "name": "blood_raven8524",
+      "uuid": "876dac00-2742-3bb1-93f6-22cbc66610b8",
+      "playtime": 60003,
+      "votes": 0,
+      "kills": 0,
+      "mobKills": 0,
+      "deaths": 0,
+      "balance": 3000
+    },
+    {
+      "name": ".ErringPoet9627",
+      "uuid": "00000000-0000-0000-0009-01ffe72c5a5c",
+      "playtime": 59951,
+      "votes": 0,
+      "kills": 0,
+      "mobKills": 0,
+      "deaths": 0,
+      "balance": 3000
+    },
+    {
+      "name": ".Karae4756",
+      "uuid": "00000000-0000-0000-0009-01fb50a4076a",
+      "playtime": 59923,
+      "votes": 0,
+      "kills": 0,
+      "mobKills": 0,
+      "deaths": 0,
+      "balance": 3000
+    },
+    {
+      "name": "hacker124432066",
+      "uuid": "1ffb2b57-d270-396d-843a-4d17f60882e1",
+      "playtime": 59923,
+      "votes": 0,
+      "kills": 0,
+      "mobKills": 0,
+      "deaths": 0,
+      "balance": 0
+    },
+    {
+      "name": "Demir_Xojayev",
+      "uuid": "5b8a245b-6bf5-3046-b756-807bc42ac592",
+      "playtime": 59217,
+      "votes": 0,
+      "kills": 0,
+      "mobKills": 1,
+      "deaths": 0,
+      "balance": 0
+    },
+    {
+      "name": ".Youwish805",
+      "uuid": "00000000-0000-0000-0009-01ffaf624b35",
+      "playtime": 59029,
+      "votes": 0,
+      "kills": 0,
+      "mobKills": 0,
+      "deaths": 0,
+      "balance": 3000
+    },
+    {
+      "name": ".gamerboy86119",
+      "uuid": "00000000-0000-0000-0009-01fa77fdc236",
+      "playtime": 58824,
+      "votes": 0,
+      "kills": 0,
+      "mobKills": 0,
+      "deaths": 0,
+      "balance": 3000
+    },
+    {
+      "name": "ircco",
+      "uuid": "b6b937a7-c883-34f8-921b-76b0923e6f77",
+      "playtime": 47906,
+      "votes": 0,
+      "kills": 0,
+      "mobKills": 0,
+      "deaths": 0,
+      "balance": 3000
+    },
+    {
+      "name": "JUUNNPLAYZZ",
+      "uuid": "8c16ca66-19de-3cbf-97cf-36241883ee7c",
+      "playtime": 47187,
+      "votes": 0,
+      "kills": 0,
+      "mobKills": 0,
+      "deaths": 0,
+      "balance": 3000
+    },
+    {
+      "name": "muhammadmushtaq",
+      "uuid": "805148cf-4ffd-3d90-bb51-e0a1c8fc4d15",
+      "playtime": 46903,
+      "votes": 0,
+      "kills": 0,
+      "mobKills": 0,
+      "deaths": 0,
+      "balance": 3000
+    },
+    {
+      "name": "Flashy_Noty",
+      "uuid": "3c4e797a-aabf-3889-80ea-e06d67b03eb4",
+      "playtime": 37649,
+      "votes": 0,
+      "kills": 0,
+      "mobKills": 0,
+      "deaths": 0,
+      "balance": 3000
+    },
+    {
+      "name": "Huntermax",
+      "uuid": "2f707b24-d843-3981-9c3c-c40d97864253",
+      "playtime": 35656,
+      "votes": 0,
+      "kills": 0,
+      "mobKills": 0,
+      "deaths": 0,
+      "balance": 3000
+    },
+    {
+      "name": "StockFish7",
+      "uuid": "7635e8a6-d837-3ccb-8d94-1af42454e420",
+      "playtime": 32040,
+      "votes": 0,
+      "kills": 0,
+      "mobKills": 0,
+      "deaths": 0,
+      "balance": 3000
+    },
+    {
+      "name": "UZUMAKI_NARUTO45",
+      "uuid": "b5083f67-c1a1-3531-9ba9-606965a182ce",
+      "playtime": 31395,
+      "votes": 0,
+      "kills": 0,
+      "mobKills": 0,
+      "deaths": 0,
+      "balance": 3000
+    },
+    {
+      "name": "Arceeyyy",
+      "uuid": "0e5ff8f6-6e79-3b00-8fd6-ff55961bcc4c",
+      "playtime": 28614,
+      "votes": 0,
+      "kills": 0,
+      "mobKills": 0,
+      "deaths": 0,
+      "balance": 0
+    },
+    {
+      "name": "PrimeX",
+      "uuid": "bd775444-1eb3-3ec2-affe-d392677f1f2b",
+      "playtime": 22528,
+      "votes": 0,
+      "kills": 0,
+      "mobKills": 0,
+      "deaths": 0,
+      "balance": 3000
+    },
+    {
+      "name": "JakeNotFound",
+      "uuid": "6ee20525-9865-3088-a9ff-982705695cdd",
+      "playtime": 16864,
+      "votes": 0,
+      "kills": 0,
+      "mobKills": 0,
+      "deaths": 0,
+      "balance": 3000
+    },
+    {
+      "name": "MileyJo",
+      "uuid": "9cc4d643-a9c5-3d8d-b8d0-740f8bdf4baf",
+      "playtime": 15806,
+      "votes": 0,
+      "kills": 0,
+      "mobKills": 0,
+      "deaths": 0,
+      "balance": 0
+    },
+    {
+      "name": "aogota3",
+      "uuid": "57708cba-891a-317b-97b6-e2ec1a0e6b28",
+      "playtime": 15802,
+      "votes": 0,
+      "kills": 0,
+      "mobKills": 0,
+      "deaths": 0,
+      "balance": 1000
+    },
+    {
+      "name": "hazel_357",
+      "uuid": "dda8cf98-0004-30b8-a463-3dbbf44b7fc9",
+      "playtime": 13005,
+      "votes": 0,
+      "kills": 0,
+      "mobKills": 0,
+      "deaths": 0,
+      "balance": 3000
+    },
+    {
+      "name": "ddos4fun___",
+      "uuid": "b643604f-b95b-39be-9cb9-5cf990ae5f48",
+      "playtime": 8071,
+      "votes": 0,
+      "kills": 0,
+      "mobKills": 0,
+      "deaths": 0,
+      "balance": 3000
+    },
+    {
+      "name": "Hubibadubi",
+      "uuid": "13a700e9-e538-3cac-8b15-22e3e3a7d5c9",
+      "playtime": 4975,
+      "votes": 0,
+      "kills": 0,
+      "mobKills": 0,
+      "deaths": 0,
+      "balance": 3000
+    },
+    {
+      "name": "KodiakBear",
+      "uuid": "d3a5d4f0-2bd9-35cb-beb9-ef22c9d9add8",
+      "playtime": 3400,
+      "votes": 0,
+      "kills": 0,
+      "mobKills": 0,
+      "deaths": 0,
+      "balance": 3000
+    }
+  ]
+}
