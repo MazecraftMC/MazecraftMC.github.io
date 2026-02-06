@@ -201,11 +201,12 @@
 }
 
 /* Rank Column Styling */
-.rank-col {
+.leaderboard-table .rank-col {
   width: 80px;
-  font-weight: 800;
+  font-weight: 900;
   text-align: center;
   font-size: 1.2rem;
+  color: var(--color-black);
 }
 
 /* Top 3 Rank Styling */
@@ -256,11 +257,11 @@
 }
 
 /* Value Column (Hours/Money/Votes/Kills/Deaths) */
-.value-col {
+.leaderboard-table .value-col {
   text-align: right;
   font-size: 1.15rem;
-  font-weight: 800;
-  color: var(--color-emerald);
+  font-weight: 900;
+  color: var(--color-black);
   letter-spacing: 0.5px;
 }
 
