@@ -80,6 +80,42 @@ html {
   scroll-behavior: smooth;
 }
 
+/* === CUSTOM SCROLLBAR STYLES === */
+/* Webkit browsers (Chrome, Safari, Edge) */
+::-webkit-scrollbar {
+  width: 14px;
+  height: 14px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-stone);
+  border: 2px solid var(--color-black);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-gold);
+  border: 2px solid var(--color-black);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-yellow);
+}
+
+::-webkit-scrollbar-thumb:active {
+  background: var(--color-dark);
+}
+
+::-webkit-scrollbar-corner {
+  background: var(--color-stone);
+  border: 2px solid var(--color-black);
+}
+
+/* Firefox */
+* {
+  scrollbar-width: auto;
+  scrollbar-color: var(--color-gold) var(--color-stone);
+}
+
 body {
   font-family: 'Montserrat', sans-serif;
   background-color: var(--color-grass);

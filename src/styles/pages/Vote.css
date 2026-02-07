@@ -49,30 +49,22 @@
   margin-bottom: var(--spacing-xl);
 }
 
-/* Vote Card - Minecraft Panel Layout */
+/* Vote Card - Vertical Card Layout */
 .vote-card {
-  /* Minecraft Panel Style */
-  background: var(--mc-panel-bg);
-  border: 4px solid;
-  border-color: var(--mc-panel-light) var(--mc-panel-darker) var(--mc-panel-darker) var(--mc-panel-light);
+  background: var(--color-white);
+  border: var(--border-brutal);
   padding: 0;
   transition: all 0.15s ease;
   position: relative;
   display: flex;
   flex-direction: column;
-  box-shadow:
-    inset 2px 2px 0 rgba(255, 255, 255, 0.3),
-    inset -2px -2px 0 rgba(0, 0, 0, 0.2),
-    4px 4px 0 rgba(0, 0, 0, 0.4);
+  box-shadow: var(--shadow-brutal);
   overflow: hidden;
 }
 
 .vote-card:hover {
-  transform: translate(-2px, -2px);
-  box-shadow:
-    inset 2px 2px 0 rgba(255, 255, 255, 0.3),
-    inset -2px -2px 0 rgba(0, 0, 0, 0.2),
-    6px 6px 0 rgba(0, 0, 0, 0.4);
+  transform: translate(-4px, -4px);
+  box-shadow: var(--shadow-brutal-lg);
 }
 
 /* Card Header */
@@ -150,14 +142,12 @@
   white-space: nowrap;
 }
 
-/* Button - Minecraft Green Style */
+/* Button */
 .vote-button {
   padding: var(--spacing-sm) var(--spacing-md);
-  color: white;
-  /* Minecraft Green Button Style */
-  background: linear-gradient(180deg, #59b359 0%, #3d9b3d 50%, #2a8a2a 100%);
-  border: 3px solid;
-  border-color: #7ed17e var(--mc-bevel-dark) var(--mc-bevel-dark) #7ed17e;
+  color: var(--color-black);
+  background: var(--color-gold);
+  border: var(--border-brutal);
   font-size: 0.9rem;
   font-weight: 800;
   cursor: pointer;
@@ -165,20 +155,21 @@
   align-items: center;
   justify-content: center;
   gap: 8px;
-  transition: all 0.1s ease;
+  transition: all 0.15s ease;
   white-space: nowrap;
   text-transform: uppercase;
-  text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.4);
+  box-shadow: var(--shadow-brutal-sm);
 }
 
 .vote-button:hover {
-  background: linear-gradient(180deg, #6ec56e 0%, #4dab4d 50%, #3a9a3a 100%);
-  border-color: #8edf8e var(--mc-bevel-dark) var(--mc-bevel-dark) #8edf8e;
+  transform: translate(-2px, -2px);
+  box-shadow: var(--shadow-brutal);
+  background: var(--color-yellow);
 }
 
 .vote-button:active {
-  background: linear-gradient(180deg, #2a8a2a 0%, #3d9b3d 50%, #59b359 100%);
-  border-color: var(--mc-bevel-dark) #7ed17e #7ed17e var(--mc-bevel-dark);
+  transform: translate(2px, 2px);
+  box-shadow: none;
 }
 
 .vote-arrow {
