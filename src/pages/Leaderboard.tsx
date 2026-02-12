@@ -99,33 +99,57 @@ const Leaderboard = () => {
 
           setPlayers(processedPlayers);
         } else {
-          // Fetch Season 2 from PLAN API
-          const response = await fetch('/api/stats', {
-            method: 'GET',
-            headers: { 'Accept': 'application/json' }
-          });
+          // Fetch Season 2 from PLAN API (players + kills in parallel)
+          const [statsResponse, killsResponse] = await Promise.all([
+            fetch('/api/stats', {
+              method: 'GET',
+              headers: { 'Accept': 'application/json' }
+            }),
+            fetch('/api/stats-proxy', {
+              method: 'GET',
+              headers: { 'Accept': 'application/json' }
+            }).catch(() => null) // Don't fail if kills API is unavailable
+          ]);
 
-          if (!response.ok) {
-            throw new Error(`HTTP error! status: ${response.status}`);
+          if (!statsResponse.ok) {
+            throw new Error(`HTTP error! status: ${statsResponse.status}`);
           }
 
-          const json = await response.json();
+          const json = await statsResponse.json();
           const rawList = json.data || [];
+
+          // Build kills lookup map by player name
+          let killsMap: Record<string, { playerKills: number; mobKills: number; deaths: number }> = {};
+          if (killsResponse && killsResponse.ok) {
+            try {
+              const killsData = await killsResponse.json();
+              for (const p of (killsData.players || [])) {
+                killsMap[p.name] = {
+                  playerKills: p.playerKills || 0,
+                  mobKills: p.mobKills || 0,
+                  deaths: p.deaths || 0
+                };
+              }
+            } catch {
+              console.warn('Failed to parse kills data');
+            }
+          }
 
           const processedPlayers: Player[] = rawList.map((p: any) => {
             const name = p.name.replace(/<[^>]*>?/gm, '');
             const playtime = tryGetValue(p, 'activePlaytime.v', 'playtime.v', 'playtime', 'activePlaytime');
             const balance = parseFloat(p.balance?.v || p.balance || '0') || 0;
             const votes = tryGetValue(p, 'votes.v', 'votes');
+            const kills = killsMap[name];
 
             return {
               name,
               playtime,
               balance,
               votes,
-              kills: 0,
-              mobKills: 0,
-              deaths: 0
+              kills: kills?.playerKills || 0,
+              mobKills: kills?.mobKills || 0,
+              deaths: kills?.deaths || 0
             };
           });
 
@@ -195,7 +219,7 @@ const Leaderboard = () => {
   };
 
   const availableCategories = SEASON_CATEGORIES[activeSeason];
-  const isComingSoon = activeSeason === 2 && (activeCategory === 'kills' || activeCategory === 'mobKills' || activeCategory === 'deaths');
+  const isComingSoon = false; // Kill stats now fetched from stats server
 
   return (
     <div className="leaderboard-container">

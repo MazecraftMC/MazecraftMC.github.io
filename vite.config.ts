@@ -8,6 +8,12 @@ export default defineConfig({
     port: 3000,
     open: true,
     proxy: {
+      '/api/stats-proxy': {
+        target: 'http://node.siddz.com:25572',
+        changeOrigin: true,
+        secure: false,
+        rewrite: (path) => path.replace(/^\/api\/stats-proxy/, '/api/kills'),
+      },
       '/api/stats': {
         target: 'https://plan.mazecraftmc.fun',
         changeOrigin: true,
