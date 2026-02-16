@@ -40,6 +40,7 @@ const Footer: React.FC = () => {
             <li><Link to="/">Home</Link></li>
             <li><Link to="/maps">Map</Link></li>
             <li><Link to="/leaderboard">Leaderboard</Link></li>
+            <li><Link to="/team">Team</Link></li>
             <li><Link to="/docs">Documentation</Link></li>
           </ul>
         </div>

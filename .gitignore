@@ -41,9 +41,9 @@ Thumbs.db
 # Cache
 .cache/
 *.cache
+stats-server/cache.json
 
 # Temporary files
 *.tmp
 *.temp
 
-stats-server/
