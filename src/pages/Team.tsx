@@ -32,7 +32,7 @@ const teamMembers: TeamMember[] = [
         role: 'Admin',
         roleKey: 'admin',
         description: 'Server administrator and community manager. Always around to help players and maintain order.',
-        image: '/resources/staff/zell.png',
+        image: '/resources/staff/Zell.png',
         socials: [
             { platform: 'discord', url: '#' },
             { platform: 'twitter', url: '#' },
@@ -65,7 +65,7 @@ const teamMembers: TeamMember[] = [
         role: 'Moderator',
         roleKey: 'moderator',
         description: 'uhh... is max ig (ツ)',
-        image: '/resources/staff/Maxx_tern.png',
+        image: '/resources/staff/maxxtern.png',
         socials: [
             { platform: 'discord', url: '#' },
             { platform: 'twitch', url: '#' },
@@ -111,8 +111,12 @@ function Team() {
 
             <div className="team-content">
                 <div className="team-grid">
-                    {teamMembers.map((member) => (
-                        <div className="team-card" key={member.name}>
+                    {teamMembers.map((member, index) => (
+                        <div
+                            className="team-card"
+                            key={member.name}
+                            style={{ animationDelay: `${index * 0.1}s` }}
+                        >
                             <div className={`team-card-banner role-${member.roleKey}`}>
                                 <span>{member.role}</span>
                             </div>

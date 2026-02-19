@@ -40,8 +40,8 @@ const navItems: NavItem[] = [
             { id: 'home-commands', title: 'Home Commands' },
             { id: 'claim-commands', title: 'Land Claim Commands' },
             { id: 'jobs-commands', title: 'Jobs Commands' },
-            { id: 'graves-commands', title: 'Graves Commands' },
             { id: 'trades-commands', title: 'Trades Commands' },
+            { id: 'shop-commands', title: 'Shop Commands' },
             { id: 'misc-commands', title: 'Miscellaneous Commands' }
         ]
     },
@@ -57,8 +57,7 @@ const navItems: NavItem[] = [
             { id: 'backpack-recipes', title: 'Backpack Recipes' },
             { id: 'armor-recipes', title: 'Armor Recipes' },
             { id: 'weapons', title: 'Weapons' },
-            { id: 'waystone-warps', title: 'Waystone Warps' },
-            { id: 'shops', title: 'Shops' }
+            { id: 'waystone-warps', title: 'Waystone Warps' }
         ]
     }
 ]
@@ -488,31 +487,6 @@ const Docs: React.FC = () => {
                     </section>
                 )}
 
-                {/* Graves Commands */}
-                {activeSection === 'graves-commands' && (
-                    <section className="docs-section">
-                        <h1>Graves Commands</h1>
-                        <p className="docs-lead">
-                            When you die, your items are saved in a grave.
-                        </p>
-
-                        <CommandTable
-                            commands={[
-                                { command: '/graves list', description: 'View your active graves' },
-                                { command: '/graves tp <id>', description: 'Teleport to a specific grave' }
-                            ]}
-                        />
-
-                        <Callout type="info" title="How Graves Work">
-                            When you die, a grave is created containing your inventory and XP. Simply click on the grave to retrieve your items!
-                        </Callout>
-
-                        <Callout type="warning" title="Grave Expiration">
-                            Graves expire after 1 hour. Make sure to collect your items before they're lost!
-                        </Callout>
-                    </section>
-                )}
-
                 {/* Trades Commands */}
                 {activeSection === 'trades-commands' && (
                     <section className="docs-section">
@@ -693,15 +667,30 @@ const Docs: React.FC = () => {
                     </section>
                 )}
 
-                {/* Shops */}
-                {activeSection === 'shops' && (
+                {/* Shop Commands */}
+                {activeSection === 'shop-commands' && (
                     <section className="docs-section">
-                        <h1>Shops</h1>
+                        <h1>Shop Commands</h1>
                         <p className="docs-lead">
-                            Create player shops to buy and sell items.
+                            Buy and sell items using the server shop and player shops.
                         </p>
 
-                        <h2>Creating a Shop</h2>
+                        <h2>Server Shop</h2>
+                        <CommandTable
+                            commands={[
+                                { command: '/shop', description: 'Open the main server shop menu' },
+                                { command: '/sell', description: 'Sell the item currently in your hand' },
+                                { command: '/sellall', description: 'Sell all sellable items in your inventory' },
+                                { command: '/sellgui', description: 'Open a GUI to sell items in bulk' }
+                            ]}
+                        />
+
+                        <h2>Player Shops</h2>
+                        <p>
+                            Create chest shops to trade with other players.
+                        </p>
+
+                        <h3>Creating a Shop</h3>
                         <ol>
                             <li>Place a chest or barrel</li>
                             <li>Hold the item you want to sell</li>
@@ -709,7 +698,7 @@ const Docs: React.FC = () => {
                             <li>Follow the prompts to set your prices</li>
                         </ol>
 
-                        <h2>Shop Types</h2>
+                        <h3>Shop Types</h3>
                         <ul>
                             <li><strong>Sell Shop:</strong> Sell items to other players</li>
                             <li><strong>Buy Shop:</strong> Buy items from other players</li>

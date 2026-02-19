@@ -187,6 +187,7 @@
     opacity: 0;
     transform: translateY(30px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -198,14 +199,81 @@
   opacity: 0;
 }
 
-.team-card:nth-child(1) { animation-delay: 0.05s; }
-.team-card:nth-child(2) { animation-delay: 0.12s; }
-.team-card:nth-child(3) { animation-delay: 0.19s; }
-.team-card:nth-child(4) { animation-delay: 0.26s; }
-.team-card:nth-child(5) { animation-delay: 0.33s; }
-.team-card:nth-child(6) { animation-delay: 0.40s; }
-.team-card:nth-child(7) { animation-delay: 0.47s; }
-.team-card:nth-child(8) { animation-delay: 0.54s; }
+/* === JOIN SECTION === */
+.join-section {
+  margin-top: var(--spacing-xl);
+  background: var(--color-black);
+  border: var(--border-brutal);
+  box-shadow: var(--shadow-brutal);
+  padding: clamp(2rem, 5vh, 4rem) var(--spacing-md);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  color: var(--color-gold);
+}
+
+.join-section::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: radial-gradient(var(--color-gold) 1px, transparent 1px);
+  background-size: 20px 20px;
+  opacity: 0.1;
+  pointer-events: none;
+}
+
+.join-content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-md);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.join-content h2 {
+  font-size: clamp(1.8rem, 4vh, 2.5rem);
+  text-transform: uppercase;
+  font-weight: 900;
+  margin: 0;
+  line-height: 1.1;
+  color: var(--color-gold);
+}
+
+.join-content p {
+  font-size: clamp(1rem, 2vh, 1.2rem);
+  font-weight: 500;
+  opacity: 0.9;
+  max-width: 500px;
+  margin: 0;
+  color: var(--color-white);
+}
+
+.join-button {
+  background: var(--color-gold);
+  color: var(--color-black);
+  font-size: 1.1rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  padding: 1rem 2rem;
+  border: var(--border-brutal);
+  box-shadow: var(--shadow-brutal);
+  text-decoration: none;
+  transition: all 0.2s ease;
+  display: inline-block;
+  margin-top: var(--spacing-sm);
+}
+
+.join-button:hover {
+  transform: translate(-4px, -4px);
+  box-shadow: 8px 8px 0 var(--color-white);
+  background: var(--color-white);
+}
 
 /* === RESPONSIVE === */
 @media (max-width: 768px) {

@@ -7,7 +7,6 @@ interface VotingSite {
   name: string
   url: string
   description: string
-  rewards: string
 }
 
 const Vote = () => {
@@ -17,37 +16,36 @@ const Vote = () => {
     {
       name: 'Minecraft.Buzz',
       url: 'https://minecraft.buzz/vote/18471',
-      description: 'Vote once every 24 hours and unlock exclusive rewards!',
-      rewards: '+250 Money'
+      description: 'Vote once every 24 hours and unlock exclusive rewards!'
     },
     {
       name: 'MinecraftServers.org',
       url: 'https://minecraftservers.org/vote/682202',
-      description: 'Help us grow with your daily vote and earn coins!',
-      rewards: '+250 Money'
+      description: 'Help us grow with your daily vote and earn coins!'
     },
     {
       name: 'Minecraft-Server-List',
       url: 'https://minecraft-server-list.com/server/517103/vote',
-      description: 'Support us with your vote and get rewarded instantly!',
-      rewards: '+250 Money'
+      description: 'Support us with your vote and get rewarded instantly!'
     },
     {
       name: 'Minecraft-MP',
       url: 'https://minecraft-mp.com/server/352767/vote',
-      description: 'Climb the ranks with your vote and earn top rewards!',
-      rewards: '+250 Money'
+      description: 'Climb the ranks with your vote and earn top rewards!'
+    },
+    {
+      name: 'Minecraft-Server.net',
+      url: 'https://minecraft-server.net/vote/MazecraftMCN',
+      description: 'Climb the ranks with your vote and earn top rewards!'
+    },
+    {
+      name: 'TopG',
+      url: 'https://topg.org/minecraft-servers/server-679368#vote',
+      description: 'Climb the ranks with your vote and earn top rewards!'
     }
   ]
 
-  const handleVoteClick = (site: VotingSite) => {
-    showToast(`Opening ${site.name}...`, 'info')
-    window.open(site.url, '_blank', 'noopener,noreferrer')
-  }
-
-  // Initialize animations
   useEffect(() => {
-    // Animate header
     anime({
       targets: '.vote-header',
       translateY: [-30, 0],
@@ -56,24 +54,13 @@ const Vote = () => {
       easing: 'easeOutExpo'
     })
 
-    // Animate voting site cards
     anime({
-      targets: '.vote-card',
-      translateY: [30, 0],
-      opacity: [0, 1],
-      duration: 600,
-      delay: anime.stagger(150, { start: 300 }),
-      easing: 'easeOutExpo'
-    })
-
-    // Animate reward badges
-    anime({
-      targets: '.vote-reward',
-      scale: [0.8, 1],
+      targets: '.vote-list-item',
+      translateX: [-20, 0],
       opacity: [0, 1],
       duration: 500,
-      delay: anime.stagger(100, { start: 800 }),
-      easing: 'easeOutElastic(1, .6)'
+      delay: anime.stagger(100, { start: 300 }),
+      easing: 'easeOutExpo'
     })
   }, [])
 
@@ -87,48 +74,24 @@ const Vote = () => {
           </p>
         </div>
 
-        <div className="vote-sites-grid">
+        <div className="vote-list">
           {votingSites.map((site, index) => (
-            <div key={index} className="vote-card">
-              <div className="vote-card-header">
-                <span className="vote-card-badge">{index + 1}</span>
-                <h3 className="vote-card-title">{site.name}</h3>
+            <a
+              key={index}
+              className="vote-list-item"
+              href={site.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => showToast(`Opening ${site.name}...`, 'info')}
+            >
+              <span className="vote-list-badge">{index + 1}</span>
+              <div className="vote-list-info">
+                <span className="vote-list-name">{site.name}</span>
+                <span className="vote-list-desc">{site.description}</span>
               </div>
-
-              <p className="vote-card-description">{site.description}</p>
-
-              <div className="vote-card-footer">
-                <div className="vote-rewards">
-                  <span className="vote-reward-label">Reward</span>
-                  <span className="vote-reward">{site.rewards}</span>
-                </div>
-
-                <button
-                  className="vote-button"
-                  onClick={() => handleVoteClick(site)}
-                >
-                  Vote Now
-                  <span className="vote-arrow">→</span>
-                </button>
-              </div>
-            </div>
+              <span className="vote-list-arrow">→</span>
+            </a>
           ))}
-        </div>
-
-        <div className="vote-info">
-          <div className="vote-info-icon">
-            <svg viewBox="0 0 24 24" fill="currentColor">
-              <path d="M13,9H11V7H13M13,17H11V11H13M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2Z" />
-            </svg>
-          </div>
-          <div className="vote-info-content">
-            <h4>How Voting Works</h4>
-            <ul>
-              <li>Vote on each site once every 24 hours</li>
-              <li>Rewards are credited instantly to your account</li>
-              <li>Make sure you're logged in to receive rewards</li>
-            </ul>
-          </div>
         </div>
       </div>
     </div>
